@@ -1,0 +1,977 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* OvertureAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* OvertureAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		62573343121A5B4700E1356F /* TAMusicXMLImporterTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 62573342121A5B4700E1356F /* TAMusicXMLImporterTestCase.m */; };
+		6265F3FD121884A80010DEE2 /* TAMusicCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6265F3EB121884800010DEE2 /* TAMusicCommon.m */; };
+		6265F3FE121884A80010DEE2 /* TAMusicMeasure.m in Sources */ = {isa = PBXBuildFile; fileRef = 6265F3ED121884800010DEE2 /* TAMusicMeasure.m */; };
+		6265F3FF121884A80010DEE2 /* TAMusicPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 6265F3EF121884800010DEE2 /* TAMusicPart.m */; };
+		6265F400121884A80010DEE2 /* TAMusicScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6265F3F1121884800010DEE2 /* TAMusicScore.m */; };
+		62C598D012188744003842DF /* TAMusicMeasureTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6265F3E1121884760010DEE2 /* TAMusicMeasureTestCase.m */; };
+		62C598D112188744003842DF /* TAMusicPartTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6265F3E3121884760010DEE2 /* TAMusicPartTestCase.m */; };
+		62C598D212188744003842DF /* TAMusicScoreTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6265F3E5121884760010DEE2 /* TAMusicScoreTestCase.m */; };
+		62C598D312188744003842DF /* TAMusicCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6265F3EB121884800010DEE2 /* TAMusicCommon.m */; };
+		62C598D412188744003842DF /* TAMusicMeasure.m in Sources */ = {isa = PBXBuildFile; fileRef = 6265F3ED121884800010DEE2 /* TAMusicMeasure.m */; };
+		62C598D512188744003842DF /* TAMusicPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 6265F3EF121884800010DEE2 /* TAMusicPart.m */; };
+		62C598D612188744003842DF /* TAMusicScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6265F3F1121884800010DEE2 /* TAMusicScore.m */; };
+		62C5995F121887F5003842DF /* 01a-Pitches-Pitches.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598EB121887F5003842DF /* 01a-Pitches-Pitches.xml */; };
+		62C59960121887F5003842DF /* 01b-Pitches-Intervals.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598EC121887F5003842DF /* 01b-Pitches-Intervals.xml */; };
+		62C59961121887F5003842DF /* 01c-Pitches-NoVoiceElement.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598ED121887F5003842DF /* 01c-Pitches-NoVoiceElement.xml */; };
+		62C59962121887F5003842DF /* 01d-Pitches-Microtones.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598EE121887F5003842DF /* 01d-Pitches-Microtones.xml */; };
+		62C59963121887F5003842DF /* 02a-Rests-Durations.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598EF121887F5003842DF /* 02a-Rests-Durations.xml */; };
+		62C59964121887F5003842DF /* 02b-Rests-PitchedRests.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598F0121887F5003842DF /* 02b-Rests-PitchedRests.xml */; };
+		62C59965121887F5003842DF /* 02c-Rests-MultiMeasureRests.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598F1121887F5003842DF /* 02c-Rests-MultiMeasureRests.xml */; };
+		62C59966121887F5003842DF /* 02d-Rests-Multimeasure-TimeSignatures.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598F2121887F5003842DF /* 02d-Rests-Multimeasure-TimeSignatures.xml */; };
+		62C59967121887F5003842DF /* 02e-Rests-NoType.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598F3121887F5003842DF /* 02e-Rests-NoType.xml */; };
+		62C59968121887F5003842DF /* 03a-Rhythm-Durations.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598F4121887F5003842DF /* 03a-Rhythm-Durations.xml */; };
+		62C59969121887F5003842DF /* 03b-Rhythm-Backup.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598F5121887F5003842DF /* 03b-Rhythm-Backup.xml */; };
+		62C5996A121887F5003842DF /* 03c-Rhythm-DivisionChange.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598F6121887F5003842DF /* 03c-Rhythm-DivisionChange.xml */; };
+		62C5996B121887F5003842DF /* 11a-TimeSignatures.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598F7121887F5003842DF /* 11a-TimeSignatures.xml */; };
+		62C5996C121887F5003842DF /* 11b-TimeSignatures-NoTime.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598F8121887F5003842DF /* 11b-TimeSignatures-NoTime.xml */; };
+		62C5996D121887F5003842DF /* 11c-TimeSignatures-CompoundSimple.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598F9121887F5003842DF /* 11c-TimeSignatures-CompoundSimple.xml */; };
+		62C5996E121887F5003842DF /* 11d-TimeSignatures-CompoundMultiple.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598FA121887F5003842DF /* 11d-TimeSignatures-CompoundMultiple.xml */; };
+		62C5996F121887F5003842DF /* 11e-TimeSignatures-CompoundMixed.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598FB121887F5003842DF /* 11e-TimeSignatures-CompoundMixed.xml */; };
+		62C59970121887F5003842DF /* 11f-TimeSignatures-SymbolMeaning.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598FC121887F5003842DF /* 11f-TimeSignatures-SymbolMeaning.xml */; };
+		62C59971121887F5003842DF /* 11g-TimeSignatures-SingleNumber.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598FD121887F5003842DF /* 11g-TimeSignatures-SingleNumber.xml */; };
+		62C59972121887F5003842DF /* 11h-TimeSignatures-SenzaMisura.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598FE121887F5003842DF /* 11h-TimeSignatures-SenzaMisura.xml */; };
+		62C59973121887F5003842DF /* 12a-Clefs.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C598FF121887F5003842DF /* 12a-Clefs.xml */; };
+		62C59974121887F5003842DF /* 12b-Clefs-NoKeyOrClef.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59900121887F5003842DF /* 12b-Clefs-NoKeyOrClef.xml */; };
+		62C59975121887F5003842DF /* 13a-KeySignatures.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59901121887F5003842DF /* 13a-KeySignatures.xml */; };
+		62C59976121887F5003842DF /* 13b-KeySignatures-ChurchModes.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59902121887F5003842DF /* 13b-KeySignatures-ChurchModes.xml */; };
+		62C59977121887F5003842DF /* 13c-KeySignatures-NonTraditional.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59903121887F5003842DF /* 13c-KeySignatures-NonTraditional.xml */; };
+		62C59978121887F5003842DF /* 13d-KeySignatures-Microtones.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59904121887F5003842DF /* 13d-KeySignatures-Microtones.xml */; };
+		62C59979121887F5003842DF /* 21a-Chord-Basic.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59905121887F5003842DF /* 21a-Chord-Basic.xml */; };
+		62C5997A121887F5003842DF /* 21b-Chords-TwoNotes.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59906121887F5003842DF /* 21b-Chords-TwoNotes.xml */; };
+		62C5997B121887F5003842DF /* 21c-Chords-ThreeNotesDuration.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59907121887F5003842DF /* 21c-Chords-ThreeNotesDuration.xml */; };
+		62C5997C121887F5003842DF /* 21d-Chords-SchubertStabatMater.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59908121887F5003842DF /* 21d-Chords-SchubertStabatMater.xml */; };
+		62C5997D121887F5003842DF /* 21e-Chords-PickupMeasures.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59909121887F5003842DF /* 21e-Chords-PickupMeasures.xml */; };
+		62C5997E121887F5003842DF /* 21f-Chord-ElementInBetween.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5990A121887F5003842DF /* 21f-Chord-ElementInBetween.xml */; };
+		62C5997F121887F5003842DF /* 22a-Noteheads.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5990B121887F5003842DF /* 22a-Noteheads.xml */; };
+		62C59980121887F5003842DF /* 22b-Staff-Notestyles.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5990C121887F5003842DF /* 22b-Staff-Notestyles.xml */; };
+		62C59981121887F5003842DF /* 22c-Noteheads-Chords.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5990D121887F5003842DF /* 22c-Noteheads-Chords.xml */; };
+		62C59982121887F5003842DF /* 22d-Parenthesized-Noteheads.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5990E121887F5003842DF /* 22d-Parenthesized-Noteheads.xml */; };
+		62C59983121887F5003842DF /* 23a-Tuplets.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5990F121887F5003842DF /* 23a-Tuplets.xml */; };
+		62C59984121887F5003842DF /* 23b-Tuplets-Styles.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59910121887F5003842DF /* 23b-Tuplets-Styles.xml */; };
+		62C59985121887F5003842DF /* 23c-Tuplet-Display-NonStandard.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59911121887F5003842DF /* 23c-Tuplet-Display-NonStandard.xml */; };
+		62C59986121887F5003842DF /* 23d-Tuplets-Nested.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59912121887F5003842DF /* 23d-Tuplets-Nested.xml */; };
+		62C59987121887F5003842DF /* 23e-Tuplets-Tremolo.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59913121887F5003842DF /* 23e-Tuplets-Tremolo.xml */; };
+		62C59988121887F5003842DF /* 23f-Tuplets-DurationButNoBracket.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59914121887F5003842DF /* 23f-Tuplets-DurationButNoBracket.xml */; };
+		62C59989121887F5003842DF /* 24a-GraceNotes.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59915121887F5003842DF /* 24a-GraceNotes.xml */; };
+		62C5998A121887F5003842DF /* 24b-ChordAsGraceNote.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59916121887F5003842DF /* 24b-ChordAsGraceNote.xml */; };
+		62C5998B121887F5003842DF /* 24c-GraceNote-MeasureEnd.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59917121887F5003842DF /* 24c-GraceNote-MeasureEnd.xml */; };
+		62C5998C121887F5003842DF /* 24d-AfterGrace.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59918121887F5003842DF /* 24d-AfterGrace.xml */; };
+		62C5998D121887F5003842DF /* 24e-GraceNote-StaffChange.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59919121887F5003842DF /* 24e-GraceNote-StaffChange.xml */; };
+		62C5998E121887F5003842DF /* 24f-GraceNote-Slur.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5991A121887F5003842DF /* 24f-GraceNote-Slur.xml */; };
+		62C5998F121887F5003842DF /* 31a-Directions.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5991B121887F5003842DF /* 31a-Directions.xml */; };
+		62C59990121887F5003842DF /* 31c-MetronomeMarks.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5991C121887F5003842DF /* 31c-MetronomeMarks.xml */; };
+		62C59991121887F5003842DF /* 32a-Notations.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5991D121887F5003842DF /* 32a-Notations.xml */; };
+		62C59992121887F5003842DF /* 32b-Articulations-Texts.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5991E121887F5003842DF /* 32b-Articulations-Texts.xml */; };
+		62C59993121887F5003842DF /* 32c-MultipleNotationChildren.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5991F121887F5003842DF /* 32c-MultipleNotationChildren.xml */; };
+		62C59994121887F5003842DF /* 32d-Arpeggio.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59920121887F5003842DF /* 32d-Arpeggio.xml */; };
+		62C59995121887F5003842DF /* 33a-Spanners.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59921121887F5003842DF /* 33a-Spanners.xml */; };
+		62C59996121887F5003842DF /* 33b-Spanners-Tie.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59922121887F5003842DF /* 33b-Spanners-Tie.xml */; };
+		62C59997121887F5003842DF /* 33c-Spanners-Slurs.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59923121887F5003842DF /* 33c-Spanners-Slurs.xml */; };
+		62C59998121887F5003842DF /* 33d-Spanners-OctaveShifts.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59924121887F5003842DF /* 33d-Spanners-OctaveShifts.xml */; };
+		62C59999121887F5003842DF /* 33e-Spanners-OctaveShifts-InvalidSize.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59925121887F5003842DF /* 33e-Spanners-OctaveShifts-InvalidSize.xml */; };
+		62C5999A121887F5003842DF /* 33f-Trill-EndingOnGraceNote.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59926121887F5003842DF /* 33f-Trill-EndingOnGraceNote.xml */; };
+		62C5999B121887F5003842DF /* 33g-Slur-ChordedNotes.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59927121887F5003842DF /* 33g-Slur-ChordedNotes.xml */; };
+		62C5999C121887F5003842DF /* 33h-Spanners-Glissando.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59928121887F5003842DF /* 33h-Spanners-Glissando.xml */; };
+		62C5999D121887F5003842DF /* 41a-MultiParts-Partorder.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59929121887F5003842DF /* 41a-MultiParts-Partorder.xml */; };
+		62C5999E121887F5003842DF /* 41b-MultiParts-MoreThan10.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5992A121887F5003842DF /* 41b-MultiParts-MoreThan10.xml */; };
+		62C5999F121887F5003842DF /* 41c-StaffGroups.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5992B121887F5003842DF /* 41c-StaffGroups.xml */; };
+		62C599A0121887F5003842DF /* 41d-StaffGroups-Nested.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5992C121887F5003842DF /* 41d-StaffGroups-Nested.xml */; };
+		62C599A1121887F5003842DF /* 41e-StaffGroups-InstrumentNames-Linebroken.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5992D121887F5003842DF /* 41e-StaffGroups-InstrumentNames-Linebroken.xml */; };
+		62C599A2121887F5003842DF /* 41f-StaffGroups-Overlapping.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5992E121887F5003842DF /* 41f-StaffGroups-Overlapping.xml */; };
+		62C599A3121887F5003842DF /* 41g-PartNoId.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5992F121887F5003842DF /* 41g-PartNoId.xml */; };
+		62C599A4121887F5003842DF /* 41h-TooManyParts.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59930121887F5003842DF /* 41h-TooManyParts.xml */; };
+		62C599A5121887F5003842DF /* 42a-MultiVoice-TwoVoicesOnStaff-Lyrics.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59931121887F5003842DF /* 42a-MultiVoice-TwoVoicesOnStaff-Lyrics.xml */; };
+		62C599A6121887F5003842DF /* 42b-MultiVoice-MidMeasureClefChange.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59932121887F5003842DF /* 42b-MultiVoice-MidMeasureClefChange.xml */; };
+		62C599A7121887F5003842DF /* 43a-PianoStaff.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59933121887F5003842DF /* 43a-PianoStaff.xml */; };
+		62C599A8121887F5003842DF /* 43b-MultiStaff-DifferentKeys.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59934121887F5003842DF /* 43b-MultiStaff-DifferentKeys.xml */; };
+		62C599A9121887F5003842DF /* 43c-MultiStaff-DifferentKeysAfterBackup.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59935121887F5003842DF /* 43c-MultiStaff-DifferentKeysAfterBackup.xml */; };
+		62C599AA121887F5003842DF /* 43d-MultiStaff-StaffChange.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59936121887F5003842DF /* 43d-MultiStaff-StaffChange.xml */; };
+		62C599AB121887F5003842DF /* 43e-Multistaff-ClefDynamics.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59937121887F5003842DF /* 43e-Multistaff-ClefDynamics.xml */; };
+		62C599AC121887F5003842DF /* 45a-SimpleRepeat.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59938121887F5003842DF /* 45a-SimpleRepeat.xml */; };
+		62C599AD121887F5003842DF /* 45b-RepeatWithAlternatives.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59939121887F5003842DF /* 45b-RepeatWithAlternatives.xml */; };
+		62C599AE121887F5003842DF /* 45c-RepeatMultipleTimes.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5993A121887F5003842DF /* 45c-RepeatMultipleTimes.xml */; };
+		62C599AF121887F5003842DF /* 45d-Repeats-Nested-Alternatives.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5993B121887F5003842DF /* 45d-Repeats-Nested-Alternatives.xml */; };
+		62C599B0121887F5003842DF /* 45e-Repeats-Nested-Alternatives.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5993C121887F5003842DF /* 45e-Repeats-Nested-Alternatives.xml */; };
+		62C599B1121887F5003842DF /* 45f-Repeats-InvalidEndings.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5993D121887F5003842DF /* 45f-Repeats-InvalidEndings.xml */; };
+		62C599B2121887F5003842DF /* 45g-Repeats-NotEnded.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5993E121887F5003842DF /* 45g-Repeats-NotEnded.xml */; };
+		62C599B3121887F5003842DF /* 46a-Barlines.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5993F121887F5003842DF /* 46a-Barlines.xml */; };
+		62C599B4121887F5003842DF /* 46b-MidmeasureBarline.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59940121887F5003842DF /* 46b-MidmeasureBarline.xml */; };
+		62C599B5121887F5003842DF /* 46c-Midmeasure-Clef.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59941121887F5003842DF /* 46c-Midmeasure-Clef.xml */; };
+		62C599B6121887F5003842DF /* 46d-PickupMeasure-ImplicitMeasures.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59942121887F5003842DF /* 46d-PickupMeasure-ImplicitMeasures.xml */; };
+		62C599B7121887F5003842DF /* 46e-PickupMeasure-SecondVoiceStartsLater.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59943121887F5003842DF /* 46e-PickupMeasure-SecondVoiceStartsLater.xml */; };
+		62C599B8121887F5003842DF /* 51b-Header-Quotes.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59944121887F5003842DF /* 51b-Header-Quotes.xml */; };
+		62C599B9121887F5003842DF /* 51c-MultipleRights.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59945121887F5003842DF /* 51c-MultipleRights.xml */; };
+		62C599BA121887F5003842DF /* 52a-PageLayout.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59946121887F5003842DF /* 52a-PageLayout.xml */; };
+		62C599BB121887F5003842DF /* 61a-Lyrics.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59947121887F5003842DF /* 61a-Lyrics.xml */; };
+		62C599BC121887F5003842DF /* 61b-MultipleLyrics.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59948121887F5003842DF /* 61b-MultipleLyrics.xml */; };
+		62C599BD121887F5003842DF /* 61c-Lyrics-Pianostaff.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59949121887F5003842DF /* 61c-Lyrics-Pianostaff.xml */; };
+		62C599BE121887F5003842DF /* 61d-Lyrics-Melisma.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5994A121887F5003842DF /* 61d-Lyrics-Melisma.xml */; };
+		62C599BF121887F5003842DF /* 61e-Lyrics-Chords.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5994B121887F5003842DF /* 61e-Lyrics-Chords.xml */; };
+		62C599C0121887F5003842DF /* 61f-Lyrics-GracedNotes.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5994C121887F5003842DF /* 61f-Lyrics-GracedNotes.xml */; };
+		62C599C1121887F5003842DF /* 61g-Lyrics-NameNumber.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5994D121887F5003842DF /* 61g-Lyrics-NameNumber.xml */; };
+		62C599C2121887F5003842DF /* 61h-Lyrics-BeamsMelismata.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5994E121887F5003842DF /* 61h-Lyrics-BeamsMelismata.xml */; };
+		62C599C3121887F5003842DF /* 61i-Lyrics-Chords.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5994F121887F5003842DF /* 61i-Lyrics-Chords.xml */; };
+		62C599C4121887F5003842DF /* 61j-Lyrics-Elisions.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59950121887F5003842DF /* 61j-Lyrics-Elisions.xml */; };
+		62C599C5121887F5003842DF /* 61k-Lyrics-SpannersExtenders.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59951121887F5003842DF /* 61k-Lyrics-SpannersExtenders.xml */; };
+		62C599C6121887F5003842DF /* 71a-Chordnames.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59952121887F5003842DF /* 71a-Chordnames.xml */; };
+		62C599C7121887F5003842DF /* 71c-ChordsFrets.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59953121887F5003842DF /* 71c-ChordsFrets.xml */; };
+		62C599C8121887F5003842DF /* 71d-ChordsFrets-Multistaff.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59954121887F5003842DF /* 71d-ChordsFrets-Multistaff.xml */; };
+		62C599C9121887F5003842DF /* 71e-TabStaves.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59955121887F5003842DF /* 71e-TabStaves.xml */; };
+		62C599CA121887F5003842DF /* 71f-AllChordTypes.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59956121887F5003842DF /* 71f-AllChordTypes.xml */; };
+		62C599CB121887F5003842DF /* 72a-TransposingInstruments.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59957121887F5003842DF /* 72a-TransposingInstruments.xml */; };
+		62C599CC121887F5003842DF /* 72b-TransposingInstruments-Full.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59958121887F5003842DF /* 72b-TransposingInstruments-Full.xml */; };
+		62C599CD121887F5003842DF /* 73a-Percussion.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C59959121887F5003842DF /* 73a-Percussion.xml */; };
+		62C599CE121887F5003842DF /* 74a-FiguredBass.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5995A121887F5003842DF /* 74a-FiguredBass.xml */; };
+		62C599CF121887F5003842DF /* 75a-AccordionRegistrations.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5995B121887F5003842DF /* 75a-AccordionRegistrations.xml */; };
+		62C599D0121887F5003842DF /* 90a-Compressed-MusicXML.mxl in Resources */ = {isa = PBXBuildFile; fileRef = 62C5995C121887F5003842DF /* 90a-Compressed-MusicXML.mxl */; };
+		62C599D1121887F5003842DF /* 99a-Sibelius5-IgnoreBeaming.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5995D121887F5003842DF /* 99a-Sibelius5-IgnoreBeaming.xml */; };
+		62C599D2121887F5003842DF /* 99b-Lyrics-BeamsMelismata-IgnoreBeams.xml in Resources */ = {isa = PBXBuildFile; fileRef = 62C5995E121887F5003842DF /* 99b-Lyrics-BeamsMelismata-IgnoreBeams.xml */; };
+		62C599EF12188C43003842DF /* TAMusicXMLImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C599EE12188C43003842DF /* TAMusicXMLImporter.m */; };
+		62C599F012188C43003842DF /* TAMusicXMLImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C599EE12188C43003842DF /* TAMusicXMLImporter.m */; };
+		62C599F412188C79003842DF /* TAMusicImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C599F312188C79003842DF /* TAMusicImporter.m */; };
+		62C599F512188C79003842DF /* TAMusicImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C599F312188C79003842DF /* TAMusicImporter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		62C599E912188B2B003842DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6265F41F121885E10010DEE2;
+			remoteInfo = "TAMusic Test Bundle";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* OvertureAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OvertureAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* OvertureAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OvertureAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* Overture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Overture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Overture_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Overture_Prefix.pch; sourceTree = "<group>"; };
+		62573341121A5B4700E1356F /* TAMusicXMLImporterTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicXMLImporterTestCase.h; path = "Classes/TAMusic/Unit Tests/TAMusicXMLImporterTestCase.h"; sourceTree = "<group>"; };
+		62573342121A5B4700E1356F /* TAMusicXMLImporterTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicXMLImporterTestCase.m; path = "Classes/TAMusic/Unit Tests/TAMusicXMLImporterTestCase.m"; sourceTree = "<group>"; };
+		6265F3D41218840F0010DEE2 /* TAMusic Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TAMusic Unit Tests-Info.plist"; sourceTree = "<group>"; };
+		6265F3E0121884760010DEE2 /* TAMusicMeasureTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicMeasureTestCase.h; path = "Classes/TAMusic/Unit Tests/TAMusicMeasureTestCase.h"; sourceTree = "<group>"; };
+		6265F3E1121884760010DEE2 /* TAMusicMeasureTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicMeasureTestCase.m; path = "Classes/TAMusic/Unit Tests/TAMusicMeasureTestCase.m"; sourceTree = "<group>"; };
+		6265F3E2121884760010DEE2 /* TAMusicPartTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicPartTestCase.h; path = "Classes/TAMusic/Unit Tests/TAMusicPartTestCase.h"; sourceTree = "<group>"; };
+		6265F3E3121884760010DEE2 /* TAMusicPartTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicPartTestCase.m; path = "Classes/TAMusic/Unit Tests/TAMusicPartTestCase.m"; sourceTree = "<group>"; };
+		6265F3E4121884760010DEE2 /* TAMusicScoreTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicScoreTestCase.h; path = "Classes/TAMusic/Unit Tests/TAMusicScoreTestCase.h"; sourceTree = "<group>"; };
+		6265F3E5121884760010DEE2 /* TAMusicScoreTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicScoreTestCase.m; path = "Classes/TAMusic/Unit Tests/TAMusicScoreTestCase.m"; sourceTree = "<group>"; };
+		6265F3E9121884800010DEE2 /* TAMusic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusic.h; path = Classes/TAMusic/TAMusic.h; sourceTree = "<group>"; };
+		6265F3EA121884800010DEE2 /* TAMusicCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicCommon.h; path = Classes/TAMusic/TAMusicCommon.h; sourceTree = "<group>"; };
+		6265F3EB121884800010DEE2 /* TAMusicCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicCommon.m; path = Classes/TAMusic/TAMusicCommon.m; sourceTree = "<group>"; };
+		6265F3EC121884800010DEE2 /* TAMusicMeasure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicMeasure.h; path = Classes/TAMusic/TAMusicMeasure.h; sourceTree = "<group>"; };
+		6265F3ED121884800010DEE2 /* TAMusicMeasure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicMeasure.m; path = Classes/TAMusic/TAMusicMeasure.m; sourceTree = "<group>"; };
+		6265F3EE121884800010DEE2 /* TAMusicPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicPart.h; path = Classes/TAMusic/TAMusicPart.h; sourceTree = "<group>"; };
+		6265F3EF121884800010DEE2 /* TAMusicPart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicPart.m; path = Classes/TAMusic/TAMusicPart.m; sourceTree = "<group>"; };
+		6265F3F0121884800010DEE2 /* TAMusicScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicScore.h; path = Classes/TAMusic/TAMusicScore.h; sourceTree = "<group>"; };
+		6265F3F1121884800010DEE2 /* TAMusicScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicScore.m; path = Classes/TAMusic/TAMusicScore.m; sourceTree = "<group>"; };
+		6265F420121885E10010DEE2 /* TAMusic Test Bundle.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TAMusic Test Bundle.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6265F421121885E10010DEE2 /* TAMusic Test Bundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TAMusic Test Bundle-Info.plist"; sourceTree = "<group>"; };
+		62C598EB121887F5003842DF /* 01a-Pitches-Pitches.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "01a-Pitches-Pitches.xml"; path = "MusicXML Test Suite Files/01a-Pitches-Pitches.xml"; sourceTree = "<group>"; };
+		62C598EC121887F5003842DF /* 01b-Pitches-Intervals.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "01b-Pitches-Intervals.xml"; path = "MusicXML Test Suite Files/01b-Pitches-Intervals.xml"; sourceTree = "<group>"; };
+		62C598ED121887F5003842DF /* 01c-Pitches-NoVoiceElement.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "01c-Pitches-NoVoiceElement.xml"; path = "MusicXML Test Suite Files/01c-Pitches-NoVoiceElement.xml"; sourceTree = "<group>"; };
+		62C598EE121887F5003842DF /* 01d-Pitches-Microtones.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "01d-Pitches-Microtones.xml"; path = "MusicXML Test Suite Files/01d-Pitches-Microtones.xml"; sourceTree = "<group>"; };
+		62C598EF121887F5003842DF /* 02a-Rests-Durations.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "02a-Rests-Durations.xml"; path = "MusicXML Test Suite Files/02a-Rests-Durations.xml"; sourceTree = "<group>"; };
+		62C598F0121887F5003842DF /* 02b-Rests-PitchedRests.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "02b-Rests-PitchedRests.xml"; path = "MusicXML Test Suite Files/02b-Rests-PitchedRests.xml"; sourceTree = "<group>"; };
+		62C598F1121887F5003842DF /* 02c-Rests-MultiMeasureRests.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "02c-Rests-MultiMeasureRests.xml"; path = "MusicXML Test Suite Files/02c-Rests-MultiMeasureRests.xml"; sourceTree = "<group>"; };
+		62C598F2121887F5003842DF /* 02d-Rests-Multimeasure-TimeSignatures.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "02d-Rests-Multimeasure-TimeSignatures.xml"; path = "MusicXML Test Suite Files/02d-Rests-Multimeasure-TimeSignatures.xml"; sourceTree = "<group>"; };
+		62C598F3121887F5003842DF /* 02e-Rests-NoType.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "02e-Rests-NoType.xml"; path = "MusicXML Test Suite Files/02e-Rests-NoType.xml"; sourceTree = "<group>"; };
+		62C598F4121887F5003842DF /* 03a-Rhythm-Durations.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "03a-Rhythm-Durations.xml"; path = "MusicXML Test Suite Files/03a-Rhythm-Durations.xml"; sourceTree = "<group>"; };
+		62C598F5121887F5003842DF /* 03b-Rhythm-Backup.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "03b-Rhythm-Backup.xml"; path = "MusicXML Test Suite Files/03b-Rhythm-Backup.xml"; sourceTree = "<group>"; };
+		62C598F6121887F5003842DF /* 03c-Rhythm-DivisionChange.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "03c-Rhythm-DivisionChange.xml"; path = "MusicXML Test Suite Files/03c-Rhythm-DivisionChange.xml"; sourceTree = "<group>"; };
+		62C598F7121887F5003842DF /* 11a-TimeSignatures.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "11a-TimeSignatures.xml"; path = "MusicXML Test Suite Files/11a-TimeSignatures.xml"; sourceTree = "<group>"; };
+		62C598F8121887F5003842DF /* 11b-TimeSignatures-NoTime.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "11b-TimeSignatures-NoTime.xml"; path = "MusicXML Test Suite Files/11b-TimeSignatures-NoTime.xml"; sourceTree = "<group>"; };
+		62C598F9121887F5003842DF /* 11c-TimeSignatures-CompoundSimple.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "11c-TimeSignatures-CompoundSimple.xml"; path = "MusicXML Test Suite Files/11c-TimeSignatures-CompoundSimple.xml"; sourceTree = "<group>"; };
+		62C598FA121887F5003842DF /* 11d-TimeSignatures-CompoundMultiple.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "11d-TimeSignatures-CompoundMultiple.xml"; path = "MusicXML Test Suite Files/11d-TimeSignatures-CompoundMultiple.xml"; sourceTree = "<group>"; };
+		62C598FB121887F5003842DF /* 11e-TimeSignatures-CompoundMixed.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "11e-TimeSignatures-CompoundMixed.xml"; path = "MusicXML Test Suite Files/11e-TimeSignatures-CompoundMixed.xml"; sourceTree = "<group>"; };
+		62C598FC121887F5003842DF /* 11f-TimeSignatures-SymbolMeaning.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "11f-TimeSignatures-SymbolMeaning.xml"; path = "MusicXML Test Suite Files/11f-TimeSignatures-SymbolMeaning.xml"; sourceTree = "<group>"; };
+		62C598FD121887F5003842DF /* 11g-TimeSignatures-SingleNumber.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "11g-TimeSignatures-SingleNumber.xml"; path = "MusicXML Test Suite Files/11g-TimeSignatures-SingleNumber.xml"; sourceTree = "<group>"; };
+		62C598FE121887F5003842DF /* 11h-TimeSignatures-SenzaMisura.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "11h-TimeSignatures-SenzaMisura.xml"; path = "MusicXML Test Suite Files/11h-TimeSignatures-SenzaMisura.xml"; sourceTree = "<group>"; };
+		62C598FF121887F5003842DF /* 12a-Clefs.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "12a-Clefs.xml"; path = "MusicXML Test Suite Files/12a-Clefs.xml"; sourceTree = "<group>"; };
+		62C59900121887F5003842DF /* 12b-Clefs-NoKeyOrClef.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "12b-Clefs-NoKeyOrClef.xml"; path = "MusicXML Test Suite Files/12b-Clefs-NoKeyOrClef.xml"; sourceTree = "<group>"; };
+		62C59901121887F5003842DF /* 13a-KeySignatures.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "13a-KeySignatures.xml"; path = "MusicXML Test Suite Files/13a-KeySignatures.xml"; sourceTree = "<group>"; };
+		62C59902121887F5003842DF /* 13b-KeySignatures-ChurchModes.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "13b-KeySignatures-ChurchModes.xml"; path = "MusicXML Test Suite Files/13b-KeySignatures-ChurchModes.xml"; sourceTree = "<group>"; };
+		62C59903121887F5003842DF /* 13c-KeySignatures-NonTraditional.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "13c-KeySignatures-NonTraditional.xml"; path = "MusicXML Test Suite Files/13c-KeySignatures-NonTraditional.xml"; sourceTree = "<group>"; };
+		62C59904121887F5003842DF /* 13d-KeySignatures-Microtones.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "13d-KeySignatures-Microtones.xml"; path = "MusicXML Test Suite Files/13d-KeySignatures-Microtones.xml"; sourceTree = "<group>"; };
+		62C59905121887F5003842DF /* 21a-Chord-Basic.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "21a-Chord-Basic.xml"; path = "MusicXML Test Suite Files/21a-Chord-Basic.xml"; sourceTree = "<group>"; };
+		62C59906121887F5003842DF /* 21b-Chords-TwoNotes.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "21b-Chords-TwoNotes.xml"; path = "MusicXML Test Suite Files/21b-Chords-TwoNotes.xml"; sourceTree = "<group>"; };
+		62C59907121887F5003842DF /* 21c-Chords-ThreeNotesDuration.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "21c-Chords-ThreeNotesDuration.xml"; path = "MusicXML Test Suite Files/21c-Chords-ThreeNotesDuration.xml"; sourceTree = "<group>"; };
+		62C59908121887F5003842DF /* 21d-Chords-SchubertStabatMater.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "21d-Chords-SchubertStabatMater.xml"; path = "MusicXML Test Suite Files/21d-Chords-SchubertStabatMater.xml"; sourceTree = "<group>"; };
+		62C59909121887F5003842DF /* 21e-Chords-PickupMeasures.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "21e-Chords-PickupMeasures.xml"; path = "MusicXML Test Suite Files/21e-Chords-PickupMeasures.xml"; sourceTree = "<group>"; };
+		62C5990A121887F5003842DF /* 21f-Chord-ElementInBetween.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "21f-Chord-ElementInBetween.xml"; path = "MusicXML Test Suite Files/21f-Chord-ElementInBetween.xml"; sourceTree = "<group>"; };
+		62C5990B121887F5003842DF /* 22a-Noteheads.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "22a-Noteheads.xml"; path = "MusicXML Test Suite Files/22a-Noteheads.xml"; sourceTree = "<group>"; };
+		62C5990C121887F5003842DF /* 22b-Staff-Notestyles.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "22b-Staff-Notestyles.xml"; path = "MusicXML Test Suite Files/22b-Staff-Notestyles.xml"; sourceTree = "<group>"; };
+		62C5990D121887F5003842DF /* 22c-Noteheads-Chords.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "22c-Noteheads-Chords.xml"; path = "MusicXML Test Suite Files/22c-Noteheads-Chords.xml"; sourceTree = "<group>"; };
+		62C5990E121887F5003842DF /* 22d-Parenthesized-Noteheads.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "22d-Parenthesized-Noteheads.xml"; path = "MusicXML Test Suite Files/22d-Parenthesized-Noteheads.xml"; sourceTree = "<group>"; };
+		62C5990F121887F5003842DF /* 23a-Tuplets.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "23a-Tuplets.xml"; path = "MusicXML Test Suite Files/23a-Tuplets.xml"; sourceTree = "<group>"; };
+		62C59910121887F5003842DF /* 23b-Tuplets-Styles.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "23b-Tuplets-Styles.xml"; path = "MusicXML Test Suite Files/23b-Tuplets-Styles.xml"; sourceTree = "<group>"; };
+		62C59911121887F5003842DF /* 23c-Tuplet-Display-NonStandard.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "23c-Tuplet-Display-NonStandard.xml"; path = "MusicXML Test Suite Files/23c-Tuplet-Display-NonStandard.xml"; sourceTree = "<group>"; };
+		62C59912121887F5003842DF /* 23d-Tuplets-Nested.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "23d-Tuplets-Nested.xml"; path = "MusicXML Test Suite Files/23d-Tuplets-Nested.xml"; sourceTree = "<group>"; };
+		62C59913121887F5003842DF /* 23e-Tuplets-Tremolo.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "23e-Tuplets-Tremolo.xml"; path = "MusicXML Test Suite Files/23e-Tuplets-Tremolo.xml"; sourceTree = "<group>"; };
+		62C59914121887F5003842DF /* 23f-Tuplets-DurationButNoBracket.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "23f-Tuplets-DurationButNoBracket.xml"; path = "MusicXML Test Suite Files/23f-Tuplets-DurationButNoBracket.xml"; sourceTree = "<group>"; };
+		62C59915121887F5003842DF /* 24a-GraceNotes.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "24a-GraceNotes.xml"; path = "MusicXML Test Suite Files/24a-GraceNotes.xml"; sourceTree = "<group>"; };
+		62C59916121887F5003842DF /* 24b-ChordAsGraceNote.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "24b-ChordAsGraceNote.xml"; path = "MusicXML Test Suite Files/24b-ChordAsGraceNote.xml"; sourceTree = "<group>"; };
+		62C59917121887F5003842DF /* 24c-GraceNote-MeasureEnd.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "24c-GraceNote-MeasureEnd.xml"; path = "MusicXML Test Suite Files/24c-GraceNote-MeasureEnd.xml"; sourceTree = "<group>"; };
+		62C59918121887F5003842DF /* 24d-AfterGrace.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "24d-AfterGrace.xml"; path = "MusicXML Test Suite Files/24d-AfterGrace.xml"; sourceTree = "<group>"; };
+		62C59919121887F5003842DF /* 24e-GraceNote-StaffChange.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "24e-GraceNote-StaffChange.xml"; path = "MusicXML Test Suite Files/24e-GraceNote-StaffChange.xml"; sourceTree = "<group>"; };
+		62C5991A121887F5003842DF /* 24f-GraceNote-Slur.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "24f-GraceNote-Slur.xml"; path = "MusicXML Test Suite Files/24f-GraceNote-Slur.xml"; sourceTree = "<group>"; };
+		62C5991B121887F5003842DF /* 31a-Directions.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "31a-Directions.xml"; path = "MusicXML Test Suite Files/31a-Directions.xml"; sourceTree = "<group>"; };
+		62C5991C121887F5003842DF /* 31c-MetronomeMarks.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "31c-MetronomeMarks.xml"; path = "MusicXML Test Suite Files/31c-MetronomeMarks.xml"; sourceTree = "<group>"; };
+		62C5991D121887F5003842DF /* 32a-Notations.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "32a-Notations.xml"; path = "MusicXML Test Suite Files/32a-Notations.xml"; sourceTree = "<group>"; };
+		62C5991E121887F5003842DF /* 32b-Articulations-Texts.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "32b-Articulations-Texts.xml"; path = "MusicXML Test Suite Files/32b-Articulations-Texts.xml"; sourceTree = "<group>"; };
+		62C5991F121887F5003842DF /* 32c-MultipleNotationChildren.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "32c-MultipleNotationChildren.xml"; path = "MusicXML Test Suite Files/32c-MultipleNotationChildren.xml"; sourceTree = "<group>"; };
+		62C59920121887F5003842DF /* 32d-Arpeggio.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "32d-Arpeggio.xml"; path = "MusicXML Test Suite Files/32d-Arpeggio.xml"; sourceTree = "<group>"; };
+		62C59921121887F5003842DF /* 33a-Spanners.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "33a-Spanners.xml"; path = "MusicXML Test Suite Files/33a-Spanners.xml"; sourceTree = "<group>"; };
+		62C59922121887F5003842DF /* 33b-Spanners-Tie.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "33b-Spanners-Tie.xml"; path = "MusicXML Test Suite Files/33b-Spanners-Tie.xml"; sourceTree = "<group>"; };
+		62C59923121887F5003842DF /* 33c-Spanners-Slurs.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "33c-Spanners-Slurs.xml"; path = "MusicXML Test Suite Files/33c-Spanners-Slurs.xml"; sourceTree = "<group>"; };
+		62C59924121887F5003842DF /* 33d-Spanners-OctaveShifts.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "33d-Spanners-OctaveShifts.xml"; path = "MusicXML Test Suite Files/33d-Spanners-OctaveShifts.xml"; sourceTree = "<group>"; };
+		62C59925121887F5003842DF /* 33e-Spanners-OctaveShifts-InvalidSize.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "33e-Spanners-OctaveShifts-InvalidSize.xml"; path = "MusicXML Test Suite Files/33e-Spanners-OctaveShifts-InvalidSize.xml"; sourceTree = "<group>"; };
+		62C59926121887F5003842DF /* 33f-Trill-EndingOnGraceNote.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "33f-Trill-EndingOnGraceNote.xml"; path = "MusicXML Test Suite Files/33f-Trill-EndingOnGraceNote.xml"; sourceTree = "<group>"; };
+		62C59927121887F5003842DF /* 33g-Slur-ChordedNotes.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "33g-Slur-ChordedNotes.xml"; path = "MusicXML Test Suite Files/33g-Slur-ChordedNotes.xml"; sourceTree = "<group>"; };
+		62C59928121887F5003842DF /* 33h-Spanners-Glissando.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "33h-Spanners-Glissando.xml"; path = "MusicXML Test Suite Files/33h-Spanners-Glissando.xml"; sourceTree = "<group>"; };
+		62C59929121887F5003842DF /* 41a-MultiParts-Partorder.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "41a-MultiParts-Partorder.xml"; path = "MusicXML Test Suite Files/41a-MultiParts-Partorder.xml"; sourceTree = "<group>"; };
+		62C5992A121887F5003842DF /* 41b-MultiParts-MoreThan10.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "41b-MultiParts-MoreThan10.xml"; path = "MusicXML Test Suite Files/41b-MultiParts-MoreThan10.xml"; sourceTree = "<group>"; };
+		62C5992B121887F5003842DF /* 41c-StaffGroups.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "41c-StaffGroups.xml"; path = "MusicXML Test Suite Files/41c-StaffGroups.xml"; sourceTree = "<group>"; };
+		62C5992C121887F5003842DF /* 41d-StaffGroups-Nested.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "41d-StaffGroups-Nested.xml"; path = "MusicXML Test Suite Files/41d-StaffGroups-Nested.xml"; sourceTree = "<group>"; };
+		62C5992D121887F5003842DF /* 41e-StaffGroups-InstrumentNames-Linebroken.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "41e-StaffGroups-InstrumentNames-Linebroken.xml"; path = "MusicXML Test Suite Files/41e-StaffGroups-InstrumentNames-Linebroken.xml"; sourceTree = "<group>"; };
+		62C5992E121887F5003842DF /* 41f-StaffGroups-Overlapping.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "41f-StaffGroups-Overlapping.xml"; path = "MusicXML Test Suite Files/41f-StaffGroups-Overlapping.xml"; sourceTree = "<group>"; };
+		62C5992F121887F5003842DF /* 41g-PartNoId.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "41g-PartNoId.xml"; path = "MusicXML Test Suite Files/41g-PartNoId.xml"; sourceTree = "<group>"; };
+		62C59930121887F5003842DF /* 41h-TooManyParts.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "41h-TooManyParts.xml"; path = "MusicXML Test Suite Files/41h-TooManyParts.xml"; sourceTree = "<group>"; };
+		62C59931121887F5003842DF /* 42a-MultiVoice-TwoVoicesOnStaff-Lyrics.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "42a-MultiVoice-TwoVoicesOnStaff-Lyrics.xml"; path = "MusicXML Test Suite Files/42a-MultiVoice-TwoVoicesOnStaff-Lyrics.xml"; sourceTree = "<group>"; };
+		62C59932121887F5003842DF /* 42b-MultiVoice-MidMeasureClefChange.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "42b-MultiVoice-MidMeasureClefChange.xml"; path = "MusicXML Test Suite Files/42b-MultiVoice-MidMeasureClefChange.xml"; sourceTree = "<group>"; };
+		62C59933121887F5003842DF /* 43a-PianoStaff.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "43a-PianoStaff.xml"; path = "MusicXML Test Suite Files/43a-PianoStaff.xml"; sourceTree = "<group>"; };
+		62C59934121887F5003842DF /* 43b-MultiStaff-DifferentKeys.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "43b-MultiStaff-DifferentKeys.xml"; path = "MusicXML Test Suite Files/43b-MultiStaff-DifferentKeys.xml"; sourceTree = "<group>"; };
+		62C59935121887F5003842DF /* 43c-MultiStaff-DifferentKeysAfterBackup.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "43c-MultiStaff-DifferentKeysAfterBackup.xml"; path = "MusicXML Test Suite Files/43c-MultiStaff-DifferentKeysAfterBackup.xml"; sourceTree = "<group>"; };
+		62C59936121887F5003842DF /* 43d-MultiStaff-StaffChange.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "43d-MultiStaff-StaffChange.xml"; path = "MusicXML Test Suite Files/43d-MultiStaff-StaffChange.xml"; sourceTree = "<group>"; };
+		62C59937121887F5003842DF /* 43e-Multistaff-ClefDynamics.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "43e-Multistaff-ClefDynamics.xml"; path = "MusicXML Test Suite Files/43e-Multistaff-ClefDynamics.xml"; sourceTree = "<group>"; };
+		62C59938121887F5003842DF /* 45a-SimpleRepeat.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "45a-SimpleRepeat.xml"; path = "MusicXML Test Suite Files/45a-SimpleRepeat.xml"; sourceTree = "<group>"; };
+		62C59939121887F5003842DF /* 45b-RepeatWithAlternatives.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "45b-RepeatWithAlternatives.xml"; path = "MusicXML Test Suite Files/45b-RepeatWithAlternatives.xml"; sourceTree = "<group>"; };
+		62C5993A121887F5003842DF /* 45c-RepeatMultipleTimes.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "45c-RepeatMultipleTimes.xml"; path = "MusicXML Test Suite Files/45c-RepeatMultipleTimes.xml"; sourceTree = "<group>"; };
+		62C5993B121887F5003842DF /* 45d-Repeats-Nested-Alternatives.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "45d-Repeats-Nested-Alternatives.xml"; path = "MusicXML Test Suite Files/45d-Repeats-Nested-Alternatives.xml"; sourceTree = "<group>"; };
+		62C5993C121887F5003842DF /* 45e-Repeats-Nested-Alternatives.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "45e-Repeats-Nested-Alternatives.xml"; path = "MusicXML Test Suite Files/45e-Repeats-Nested-Alternatives.xml"; sourceTree = "<group>"; };
+		62C5993D121887F5003842DF /* 45f-Repeats-InvalidEndings.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "45f-Repeats-InvalidEndings.xml"; path = "MusicXML Test Suite Files/45f-Repeats-InvalidEndings.xml"; sourceTree = "<group>"; };
+		62C5993E121887F5003842DF /* 45g-Repeats-NotEnded.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "45g-Repeats-NotEnded.xml"; path = "MusicXML Test Suite Files/45g-Repeats-NotEnded.xml"; sourceTree = "<group>"; };
+		62C5993F121887F5003842DF /* 46a-Barlines.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "46a-Barlines.xml"; path = "MusicXML Test Suite Files/46a-Barlines.xml"; sourceTree = "<group>"; };
+		62C59940121887F5003842DF /* 46b-MidmeasureBarline.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "46b-MidmeasureBarline.xml"; path = "MusicXML Test Suite Files/46b-MidmeasureBarline.xml"; sourceTree = "<group>"; };
+		62C59941121887F5003842DF /* 46c-Midmeasure-Clef.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "46c-Midmeasure-Clef.xml"; path = "MusicXML Test Suite Files/46c-Midmeasure-Clef.xml"; sourceTree = "<group>"; };
+		62C59942121887F5003842DF /* 46d-PickupMeasure-ImplicitMeasures.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "46d-PickupMeasure-ImplicitMeasures.xml"; path = "MusicXML Test Suite Files/46d-PickupMeasure-ImplicitMeasures.xml"; sourceTree = "<group>"; };
+		62C59943121887F5003842DF /* 46e-PickupMeasure-SecondVoiceStartsLater.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "46e-PickupMeasure-SecondVoiceStartsLater.xml"; path = "MusicXML Test Suite Files/46e-PickupMeasure-SecondVoiceStartsLater.xml"; sourceTree = "<group>"; };
+		62C59944121887F5003842DF /* 51b-Header-Quotes.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "51b-Header-Quotes.xml"; path = "MusicXML Test Suite Files/51b-Header-Quotes.xml"; sourceTree = "<group>"; };
+		62C59945121887F5003842DF /* 51c-MultipleRights.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "51c-MultipleRights.xml"; path = "MusicXML Test Suite Files/51c-MultipleRights.xml"; sourceTree = "<group>"; };
+		62C59946121887F5003842DF /* 52a-PageLayout.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "52a-PageLayout.xml"; path = "MusicXML Test Suite Files/52a-PageLayout.xml"; sourceTree = "<group>"; };
+		62C59947121887F5003842DF /* 61a-Lyrics.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "61a-Lyrics.xml"; path = "MusicXML Test Suite Files/61a-Lyrics.xml"; sourceTree = "<group>"; };
+		62C59948121887F5003842DF /* 61b-MultipleLyrics.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "61b-MultipleLyrics.xml"; path = "MusicXML Test Suite Files/61b-MultipleLyrics.xml"; sourceTree = "<group>"; };
+		62C59949121887F5003842DF /* 61c-Lyrics-Pianostaff.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "61c-Lyrics-Pianostaff.xml"; path = "MusicXML Test Suite Files/61c-Lyrics-Pianostaff.xml"; sourceTree = "<group>"; };
+		62C5994A121887F5003842DF /* 61d-Lyrics-Melisma.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "61d-Lyrics-Melisma.xml"; path = "MusicXML Test Suite Files/61d-Lyrics-Melisma.xml"; sourceTree = "<group>"; };
+		62C5994B121887F5003842DF /* 61e-Lyrics-Chords.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "61e-Lyrics-Chords.xml"; path = "MusicXML Test Suite Files/61e-Lyrics-Chords.xml"; sourceTree = "<group>"; };
+		62C5994C121887F5003842DF /* 61f-Lyrics-GracedNotes.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "61f-Lyrics-GracedNotes.xml"; path = "MusicXML Test Suite Files/61f-Lyrics-GracedNotes.xml"; sourceTree = "<group>"; };
+		62C5994D121887F5003842DF /* 61g-Lyrics-NameNumber.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "61g-Lyrics-NameNumber.xml"; path = "MusicXML Test Suite Files/61g-Lyrics-NameNumber.xml"; sourceTree = "<group>"; };
+		62C5994E121887F5003842DF /* 61h-Lyrics-BeamsMelismata.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "61h-Lyrics-BeamsMelismata.xml"; path = "MusicXML Test Suite Files/61h-Lyrics-BeamsMelismata.xml"; sourceTree = "<group>"; };
+		62C5994F121887F5003842DF /* 61i-Lyrics-Chords.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "61i-Lyrics-Chords.xml"; path = "MusicXML Test Suite Files/61i-Lyrics-Chords.xml"; sourceTree = "<group>"; };
+		62C59950121887F5003842DF /* 61j-Lyrics-Elisions.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "61j-Lyrics-Elisions.xml"; path = "MusicXML Test Suite Files/61j-Lyrics-Elisions.xml"; sourceTree = "<group>"; };
+		62C59951121887F5003842DF /* 61k-Lyrics-SpannersExtenders.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "61k-Lyrics-SpannersExtenders.xml"; path = "MusicXML Test Suite Files/61k-Lyrics-SpannersExtenders.xml"; sourceTree = "<group>"; };
+		62C59952121887F5003842DF /* 71a-Chordnames.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "71a-Chordnames.xml"; path = "MusicXML Test Suite Files/71a-Chordnames.xml"; sourceTree = "<group>"; };
+		62C59953121887F5003842DF /* 71c-ChordsFrets.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "71c-ChordsFrets.xml"; path = "MusicXML Test Suite Files/71c-ChordsFrets.xml"; sourceTree = "<group>"; };
+		62C59954121887F5003842DF /* 71d-ChordsFrets-Multistaff.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "71d-ChordsFrets-Multistaff.xml"; path = "MusicXML Test Suite Files/71d-ChordsFrets-Multistaff.xml"; sourceTree = "<group>"; };
+		62C59955121887F5003842DF /* 71e-TabStaves.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "71e-TabStaves.xml"; path = "MusicXML Test Suite Files/71e-TabStaves.xml"; sourceTree = "<group>"; };
+		62C59956121887F5003842DF /* 71f-AllChordTypes.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "71f-AllChordTypes.xml"; path = "MusicXML Test Suite Files/71f-AllChordTypes.xml"; sourceTree = "<group>"; };
+		62C59957121887F5003842DF /* 72a-TransposingInstruments.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "72a-TransposingInstruments.xml"; path = "MusicXML Test Suite Files/72a-TransposingInstruments.xml"; sourceTree = "<group>"; };
+		62C59958121887F5003842DF /* 72b-TransposingInstruments-Full.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "72b-TransposingInstruments-Full.xml"; path = "MusicXML Test Suite Files/72b-TransposingInstruments-Full.xml"; sourceTree = "<group>"; };
+		62C59959121887F5003842DF /* 73a-Percussion.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "73a-Percussion.xml"; path = "MusicXML Test Suite Files/73a-Percussion.xml"; sourceTree = "<group>"; };
+		62C5995A121887F5003842DF /* 74a-FiguredBass.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "74a-FiguredBass.xml"; path = "MusicXML Test Suite Files/74a-FiguredBass.xml"; sourceTree = "<group>"; };
+		62C5995B121887F5003842DF /* 75a-AccordionRegistrations.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "75a-AccordionRegistrations.xml"; path = "MusicXML Test Suite Files/75a-AccordionRegistrations.xml"; sourceTree = "<group>"; };
+		62C5995C121887F5003842DF /* 90a-Compressed-MusicXML.mxl */ = {isa = PBXFileReference; lastKnownFileType = file; name = "90a-Compressed-MusicXML.mxl"; path = "MusicXML Test Suite Files/90a-Compressed-MusicXML.mxl"; sourceTree = "<group>"; };
+		62C5995D121887F5003842DF /* 99a-Sibelius5-IgnoreBeaming.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "99a-Sibelius5-IgnoreBeaming.xml"; path = "MusicXML Test Suite Files/99a-Sibelius5-IgnoreBeaming.xml"; sourceTree = "<group>"; };
+		62C5995E121887F5003842DF /* 99b-Lyrics-BeamsMelismata-IgnoreBeams.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "99b-Lyrics-BeamsMelismata-IgnoreBeams.xml"; path = "MusicXML Test Suite Files/99b-Lyrics-BeamsMelismata-IgnoreBeams.xml"; sourceTree = "<group>"; };
+		62C599ED12188C43003842DF /* TAMusicXMLImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicXMLImporter.h; path = Classes/TAMusic/Importers/TAMusicXMLImporter.h; sourceTree = "<group>"; };
+		62C599EE12188C43003842DF /* TAMusicXMLImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicXMLImporter.m; path = Classes/TAMusic/Importers/TAMusicXMLImporter.m; sourceTree = "<group>"; };
+		62C599F212188C79003842DF /* TAMusicImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicImporter.h; path = Classes/TAMusic/Importers/TAMusicImporter.h; sourceTree = "<group>"; };
+		62C599F312188C79003842DF /* TAMusicImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicImporter.m; path = Classes/TAMusic/Importers/TAMusicImporter.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Overture-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Overture-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6265F41D121885E10010DEE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* OvertureAppDelegate.h */,
+				1D3623250D0F684500981E51 /* OvertureAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Overture.app */,
+				6265F420121885E10010DEE2 /* TAMusic Test Bundle.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				6265F3D91218841D0010DEE2 /* TAMusic */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				6265F3D41218840F0010DEE2 /* TAMusic Unit Tests-Info.plist */,
+				6265F421121885E10010DEE2 /* TAMusic Test Bundle-Info.plist */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* Overture_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				62C598E9121887C0003842DF /* MusicXML Test Files */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Overture-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6265F3D91218841D0010DEE2 /* TAMusic */ = {
+			isa = PBXGroup;
+			children = (
+				6265F3DB121884290010DEE2 /* Unit Tests */,
+				6265F3DA121884240010DEE2 /* Library */,
+			);
+			name = TAMusic;
+			sourceTree = "<group>";
+		};
+		6265F3DA121884240010DEE2 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				62C599F112188C57003842DF /* Importer */,
+				6265F3E9121884800010DEE2 /* TAMusic.h */,
+				6265F3EA121884800010DEE2 /* TAMusicCommon.h */,
+				6265F3EB121884800010DEE2 /* TAMusicCommon.m */,
+				6265F3EC121884800010DEE2 /* TAMusicMeasure.h */,
+				6265F3ED121884800010DEE2 /* TAMusicMeasure.m */,
+				6265F3EE121884800010DEE2 /* TAMusicPart.h */,
+				6265F3EF121884800010DEE2 /* TAMusicPart.m */,
+				6265F3F0121884800010DEE2 /* TAMusicScore.h */,
+				6265F3F1121884800010DEE2 /* TAMusicScore.m */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		6265F3DB121884290010DEE2 /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6265F3E0121884760010DEE2 /* TAMusicMeasureTestCase.h */,
+				6265F3E1121884760010DEE2 /* TAMusicMeasureTestCase.m */,
+				6265F3E2121884760010DEE2 /* TAMusicPartTestCase.h */,
+				6265F3E3121884760010DEE2 /* TAMusicPartTestCase.m */,
+				6265F3E4121884760010DEE2 /* TAMusicScoreTestCase.h */,
+				6265F3E5121884760010DEE2 /* TAMusicScoreTestCase.m */,
+				62573341121A5B4700E1356F /* TAMusicXMLImporterTestCase.h */,
+				62573342121A5B4700E1356F /* TAMusicXMLImporterTestCase.m */,
+			);
+			name = "Unit Tests";
+			sourceTree = "<group>";
+		};
+		62C598E9121887C0003842DF /* MusicXML Test Files */ = {
+			isa = PBXGroup;
+			children = (
+				62C598EB121887F5003842DF /* 01a-Pitches-Pitches.xml */,
+				62C598EC121887F5003842DF /* 01b-Pitches-Intervals.xml */,
+				62C598ED121887F5003842DF /* 01c-Pitches-NoVoiceElement.xml */,
+				62C598EE121887F5003842DF /* 01d-Pitches-Microtones.xml */,
+				62C598EF121887F5003842DF /* 02a-Rests-Durations.xml */,
+				62C598F0121887F5003842DF /* 02b-Rests-PitchedRests.xml */,
+				62C598F1121887F5003842DF /* 02c-Rests-MultiMeasureRests.xml */,
+				62C598F2121887F5003842DF /* 02d-Rests-Multimeasure-TimeSignatures.xml */,
+				62C598F3121887F5003842DF /* 02e-Rests-NoType.xml */,
+				62C598F4121887F5003842DF /* 03a-Rhythm-Durations.xml */,
+				62C598F5121887F5003842DF /* 03b-Rhythm-Backup.xml */,
+				62C598F6121887F5003842DF /* 03c-Rhythm-DivisionChange.xml */,
+				62C598F7121887F5003842DF /* 11a-TimeSignatures.xml */,
+				62C598F8121887F5003842DF /* 11b-TimeSignatures-NoTime.xml */,
+				62C598F9121887F5003842DF /* 11c-TimeSignatures-CompoundSimple.xml */,
+				62C598FA121887F5003842DF /* 11d-TimeSignatures-CompoundMultiple.xml */,
+				62C598FB121887F5003842DF /* 11e-TimeSignatures-CompoundMixed.xml */,
+				62C598FC121887F5003842DF /* 11f-TimeSignatures-SymbolMeaning.xml */,
+				62C598FD121887F5003842DF /* 11g-TimeSignatures-SingleNumber.xml */,
+				62C598FE121887F5003842DF /* 11h-TimeSignatures-SenzaMisura.xml */,
+				62C598FF121887F5003842DF /* 12a-Clefs.xml */,
+				62C59900121887F5003842DF /* 12b-Clefs-NoKeyOrClef.xml */,
+				62C59901121887F5003842DF /* 13a-KeySignatures.xml */,
+				62C59902121887F5003842DF /* 13b-KeySignatures-ChurchModes.xml */,
+				62C59903121887F5003842DF /* 13c-KeySignatures-NonTraditional.xml */,
+				62C59904121887F5003842DF /* 13d-KeySignatures-Microtones.xml */,
+				62C59905121887F5003842DF /* 21a-Chord-Basic.xml */,
+				62C59906121887F5003842DF /* 21b-Chords-TwoNotes.xml */,
+				62C59907121887F5003842DF /* 21c-Chords-ThreeNotesDuration.xml */,
+				62C59908121887F5003842DF /* 21d-Chords-SchubertStabatMater.xml */,
+				62C59909121887F5003842DF /* 21e-Chords-PickupMeasures.xml */,
+				62C5990A121887F5003842DF /* 21f-Chord-ElementInBetween.xml */,
+				62C5990B121887F5003842DF /* 22a-Noteheads.xml */,
+				62C5990C121887F5003842DF /* 22b-Staff-Notestyles.xml */,
+				62C5990D121887F5003842DF /* 22c-Noteheads-Chords.xml */,
+				62C5990E121887F5003842DF /* 22d-Parenthesized-Noteheads.xml */,
+				62C5990F121887F5003842DF /* 23a-Tuplets.xml */,
+				62C59910121887F5003842DF /* 23b-Tuplets-Styles.xml */,
+				62C59911121887F5003842DF /* 23c-Tuplet-Display-NonStandard.xml */,
+				62C59912121887F5003842DF /* 23d-Tuplets-Nested.xml */,
+				62C59913121887F5003842DF /* 23e-Tuplets-Tremolo.xml */,
+				62C59914121887F5003842DF /* 23f-Tuplets-DurationButNoBracket.xml */,
+				62C59915121887F5003842DF /* 24a-GraceNotes.xml */,
+				62C59916121887F5003842DF /* 24b-ChordAsGraceNote.xml */,
+				62C59917121887F5003842DF /* 24c-GraceNote-MeasureEnd.xml */,
+				62C59918121887F5003842DF /* 24d-AfterGrace.xml */,
+				62C59919121887F5003842DF /* 24e-GraceNote-StaffChange.xml */,
+				62C5991A121887F5003842DF /* 24f-GraceNote-Slur.xml */,
+				62C5991B121887F5003842DF /* 31a-Directions.xml */,
+				62C5991C121887F5003842DF /* 31c-MetronomeMarks.xml */,
+				62C5991D121887F5003842DF /* 32a-Notations.xml */,
+				62C5991E121887F5003842DF /* 32b-Articulations-Texts.xml */,
+				62C5991F121887F5003842DF /* 32c-MultipleNotationChildren.xml */,
+				62C59920121887F5003842DF /* 32d-Arpeggio.xml */,
+				62C59921121887F5003842DF /* 33a-Spanners.xml */,
+				62C59922121887F5003842DF /* 33b-Spanners-Tie.xml */,
+				62C59923121887F5003842DF /* 33c-Spanners-Slurs.xml */,
+				62C59924121887F5003842DF /* 33d-Spanners-OctaveShifts.xml */,
+				62C59925121887F5003842DF /* 33e-Spanners-OctaveShifts-InvalidSize.xml */,
+				62C59926121887F5003842DF /* 33f-Trill-EndingOnGraceNote.xml */,
+				62C59927121887F5003842DF /* 33g-Slur-ChordedNotes.xml */,
+				62C59928121887F5003842DF /* 33h-Spanners-Glissando.xml */,
+				62C59929121887F5003842DF /* 41a-MultiParts-Partorder.xml */,
+				62C5992A121887F5003842DF /* 41b-MultiParts-MoreThan10.xml */,
+				62C5992B121887F5003842DF /* 41c-StaffGroups.xml */,
+				62C5992C121887F5003842DF /* 41d-StaffGroups-Nested.xml */,
+				62C5992D121887F5003842DF /* 41e-StaffGroups-InstrumentNames-Linebroken.xml */,
+				62C5992E121887F5003842DF /* 41f-StaffGroups-Overlapping.xml */,
+				62C5992F121887F5003842DF /* 41g-PartNoId.xml */,
+				62C59930121887F5003842DF /* 41h-TooManyParts.xml */,
+				62C59931121887F5003842DF /* 42a-MultiVoice-TwoVoicesOnStaff-Lyrics.xml */,
+				62C59932121887F5003842DF /* 42b-MultiVoice-MidMeasureClefChange.xml */,
+				62C59933121887F5003842DF /* 43a-PianoStaff.xml */,
+				62C59934121887F5003842DF /* 43b-MultiStaff-DifferentKeys.xml */,
+				62C59935121887F5003842DF /* 43c-MultiStaff-DifferentKeysAfterBackup.xml */,
+				62C59936121887F5003842DF /* 43d-MultiStaff-StaffChange.xml */,
+				62C59937121887F5003842DF /* 43e-Multistaff-ClefDynamics.xml */,
+				62C59938121887F5003842DF /* 45a-SimpleRepeat.xml */,
+				62C59939121887F5003842DF /* 45b-RepeatWithAlternatives.xml */,
+				62C5993A121887F5003842DF /* 45c-RepeatMultipleTimes.xml */,
+				62C5993B121887F5003842DF /* 45d-Repeats-Nested-Alternatives.xml */,
+				62C5993C121887F5003842DF /* 45e-Repeats-Nested-Alternatives.xml */,
+				62C5993D121887F5003842DF /* 45f-Repeats-InvalidEndings.xml */,
+				62C5993E121887F5003842DF /* 45g-Repeats-NotEnded.xml */,
+				62C5993F121887F5003842DF /* 46a-Barlines.xml */,
+				62C59940121887F5003842DF /* 46b-MidmeasureBarline.xml */,
+				62C59941121887F5003842DF /* 46c-Midmeasure-Clef.xml */,
+				62C59942121887F5003842DF /* 46d-PickupMeasure-ImplicitMeasures.xml */,
+				62C59943121887F5003842DF /* 46e-PickupMeasure-SecondVoiceStartsLater.xml */,
+				62C59944121887F5003842DF /* 51b-Header-Quotes.xml */,
+				62C59945121887F5003842DF /* 51c-MultipleRights.xml */,
+				62C59946121887F5003842DF /* 52a-PageLayout.xml */,
+				62C59947121887F5003842DF /* 61a-Lyrics.xml */,
+				62C59948121887F5003842DF /* 61b-MultipleLyrics.xml */,
+				62C59949121887F5003842DF /* 61c-Lyrics-Pianostaff.xml */,
+				62C5994A121887F5003842DF /* 61d-Lyrics-Melisma.xml */,
+				62C5994B121887F5003842DF /* 61e-Lyrics-Chords.xml */,
+				62C5994C121887F5003842DF /* 61f-Lyrics-GracedNotes.xml */,
+				62C5994D121887F5003842DF /* 61g-Lyrics-NameNumber.xml */,
+				62C5994E121887F5003842DF /* 61h-Lyrics-BeamsMelismata.xml */,
+				62C5994F121887F5003842DF /* 61i-Lyrics-Chords.xml */,
+				62C59950121887F5003842DF /* 61j-Lyrics-Elisions.xml */,
+				62C59951121887F5003842DF /* 61k-Lyrics-SpannersExtenders.xml */,
+				62C59952121887F5003842DF /* 71a-Chordnames.xml */,
+				62C59953121887F5003842DF /* 71c-ChordsFrets.xml */,
+				62C59954121887F5003842DF /* 71d-ChordsFrets-Multistaff.xml */,
+				62C59955121887F5003842DF /* 71e-TabStaves.xml */,
+				62C59956121887F5003842DF /* 71f-AllChordTypes.xml */,
+				62C59957121887F5003842DF /* 72a-TransposingInstruments.xml */,
+				62C59958121887F5003842DF /* 72b-TransposingInstruments-Full.xml */,
+				62C59959121887F5003842DF /* 73a-Percussion.xml */,
+				62C5995A121887F5003842DF /* 74a-FiguredBass.xml */,
+				62C5995B121887F5003842DF /* 75a-AccordionRegistrations.xml */,
+				62C5995C121887F5003842DF /* 90a-Compressed-MusicXML.mxl */,
+				62C5995D121887F5003842DF /* 99a-Sibelius5-IgnoreBeaming.xml */,
+				62C5995E121887F5003842DF /* 99b-Lyrics-BeamsMelismata-IgnoreBeams.xml */,
+			);
+			name = "MusicXML Test Files";
+			sourceTree = "<group>";
+		};
+		62C599F112188C57003842DF /* Importer */ = {
+			isa = PBXGroup;
+			children = (
+				62C599ED12188C43003842DF /* TAMusicXMLImporter.h */,
+				62C599EE12188C43003842DF /* TAMusicXMLImporter.m */,
+				62C599F212188C79003842DF /* TAMusicImporter.h */,
+				62C599F312188C79003842DF /* TAMusicImporter.m */,
+			);
+			name = Importer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Overture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Overture" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				62C599EA12188B2B003842DF /* PBXTargetDependency */,
+			);
+			name = Overture;
+			productName = Overture;
+			productReference = 1D6058910D05DD3D006BFB54 /* Overture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6265F41F121885E10010DEE2 /* TAMusic Test Bundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6265F424121885E20010DEE2 /* Build configuration list for PBXNativeTarget "TAMusic Test Bundle" */;
+			buildPhases = (
+				6265F41B121885E10010DEE2 /* Resources */,
+				6265F41C121885E10010DEE2 /* Sources */,
+				6265F41D121885E10010DEE2 /* Frameworks */,
+				6265F41E121885E10010DEE2 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TAMusic Test Bundle";
+			productName = "TAMusic Test Bundle";
+			productReference = 6265F420121885E10010DEE2 /* TAMusic Test Bundle.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Overture" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Overture */,
+				6265F41F121885E10010DEE2 /* TAMusic Test Bundle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				62C5995F121887F5003842DF /* 01a-Pitches-Pitches.xml in Resources */,
+				62C59960121887F5003842DF /* 01b-Pitches-Intervals.xml in Resources */,
+				62C59961121887F5003842DF /* 01c-Pitches-NoVoiceElement.xml in Resources */,
+				62C59962121887F5003842DF /* 01d-Pitches-Microtones.xml in Resources */,
+				62C59963121887F5003842DF /* 02a-Rests-Durations.xml in Resources */,
+				62C59964121887F5003842DF /* 02b-Rests-PitchedRests.xml in Resources */,
+				62C59965121887F5003842DF /* 02c-Rests-MultiMeasureRests.xml in Resources */,
+				62C59966121887F5003842DF /* 02d-Rests-Multimeasure-TimeSignatures.xml in Resources */,
+				62C59967121887F5003842DF /* 02e-Rests-NoType.xml in Resources */,
+				62C59968121887F5003842DF /* 03a-Rhythm-Durations.xml in Resources */,
+				62C59969121887F5003842DF /* 03b-Rhythm-Backup.xml in Resources */,
+				62C5996A121887F5003842DF /* 03c-Rhythm-DivisionChange.xml in Resources */,
+				62C5996B121887F5003842DF /* 11a-TimeSignatures.xml in Resources */,
+				62C5996C121887F5003842DF /* 11b-TimeSignatures-NoTime.xml in Resources */,
+				62C5996D121887F5003842DF /* 11c-TimeSignatures-CompoundSimple.xml in Resources */,
+				62C5996E121887F5003842DF /* 11d-TimeSignatures-CompoundMultiple.xml in Resources */,
+				62C5996F121887F5003842DF /* 11e-TimeSignatures-CompoundMixed.xml in Resources */,
+				62C59970121887F5003842DF /* 11f-TimeSignatures-SymbolMeaning.xml in Resources */,
+				62C59971121887F5003842DF /* 11g-TimeSignatures-SingleNumber.xml in Resources */,
+				62C59972121887F5003842DF /* 11h-TimeSignatures-SenzaMisura.xml in Resources */,
+				62C59973121887F5003842DF /* 12a-Clefs.xml in Resources */,
+				62C59974121887F5003842DF /* 12b-Clefs-NoKeyOrClef.xml in Resources */,
+				62C59975121887F5003842DF /* 13a-KeySignatures.xml in Resources */,
+				62C59976121887F5003842DF /* 13b-KeySignatures-ChurchModes.xml in Resources */,
+				62C59977121887F5003842DF /* 13c-KeySignatures-NonTraditional.xml in Resources */,
+				62C59978121887F5003842DF /* 13d-KeySignatures-Microtones.xml in Resources */,
+				62C59979121887F5003842DF /* 21a-Chord-Basic.xml in Resources */,
+				62C5997A121887F5003842DF /* 21b-Chords-TwoNotes.xml in Resources */,
+				62C5997B121887F5003842DF /* 21c-Chords-ThreeNotesDuration.xml in Resources */,
+				62C5997C121887F5003842DF /* 21d-Chords-SchubertStabatMater.xml in Resources */,
+				62C5997D121887F5003842DF /* 21e-Chords-PickupMeasures.xml in Resources */,
+				62C5997E121887F5003842DF /* 21f-Chord-ElementInBetween.xml in Resources */,
+				62C5997F121887F5003842DF /* 22a-Noteheads.xml in Resources */,
+				62C59980121887F5003842DF /* 22b-Staff-Notestyles.xml in Resources */,
+				62C59981121887F5003842DF /* 22c-Noteheads-Chords.xml in Resources */,
+				62C59982121887F5003842DF /* 22d-Parenthesized-Noteheads.xml in Resources */,
+				62C59983121887F5003842DF /* 23a-Tuplets.xml in Resources */,
+				62C59984121887F5003842DF /* 23b-Tuplets-Styles.xml in Resources */,
+				62C59985121887F5003842DF /* 23c-Tuplet-Display-NonStandard.xml in Resources */,
+				62C59986121887F5003842DF /* 23d-Tuplets-Nested.xml in Resources */,
+				62C59987121887F5003842DF /* 23e-Tuplets-Tremolo.xml in Resources */,
+				62C59988121887F5003842DF /* 23f-Tuplets-DurationButNoBracket.xml in Resources */,
+				62C59989121887F5003842DF /* 24a-GraceNotes.xml in Resources */,
+				62C5998A121887F5003842DF /* 24b-ChordAsGraceNote.xml in Resources */,
+				62C5998B121887F5003842DF /* 24c-GraceNote-MeasureEnd.xml in Resources */,
+				62C5998C121887F5003842DF /* 24d-AfterGrace.xml in Resources */,
+				62C5998D121887F5003842DF /* 24e-GraceNote-StaffChange.xml in Resources */,
+				62C5998E121887F5003842DF /* 24f-GraceNote-Slur.xml in Resources */,
+				62C5998F121887F5003842DF /* 31a-Directions.xml in Resources */,
+				62C59990121887F5003842DF /* 31c-MetronomeMarks.xml in Resources */,
+				62C59991121887F5003842DF /* 32a-Notations.xml in Resources */,
+				62C59992121887F5003842DF /* 32b-Articulations-Texts.xml in Resources */,
+				62C59993121887F5003842DF /* 32c-MultipleNotationChildren.xml in Resources */,
+				62C59994121887F5003842DF /* 32d-Arpeggio.xml in Resources */,
+				62C59995121887F5003842DF /* 33a-Spanners.xml in Resources */,
+				62C59996121887F5003842DF /* 33b-Spanners-Tie.xml in Resources */,
+				62C59997121887F5003842DF /* 33c-Spanners-Slurs.xml in Resources */,
+				62C59998121887F5003842DF /* 33d-Spanners-OctaveShifts.xml in Resources */,
+				62C59999121887F5003842DF /* 33e-Spanners-OctaveShifts-InvalidSize.xml in Resources */,
+				62C5999A121887F5003842DF /* 33f-Trill-EndingOnGraceNote.xml in Resources */,
+				62C5999B121887F5003842DF /* 33g-Slur-ChordedNotes.xml in Resources */,
+				62C5999C121887F5003842DF /* 33h-Spanners-Glissando.xml in Resources */,
+				62C5999D121887F5003842DF /* 41a-MultiParts-Partorder.xml in Resources */,
+				62C5999E121887F5003842DF /* 41b-MultiParts-MoreThan10.xml in Resources */,
+				62C5999F121887F5003842DF /* 41c-StaffGroups.xml in Resources */,
+				62C599A0121887F5003842DF /* 41d-StaffGroups-Nested.xml in Resources */,
+				62C599A1121887F5003842DF /* 41e-StaffGroups-InstrumentNames-Linebroken.xml in Resources */,
+				62C599A2121887F5003842DF /* 41f-StaffGroups-Overlapping.xml in Resources */,
+				62C599A3121887F5003842DF /* 41g-PartNoId.xml in Resources */,
+				62C599A4121887F5003842DF /* 41h-TooManyParts.xml in Resources */,
+				62C599A5121887F5003842DF /* 42a-MultiVoice-TwoVoicesOnStaff-Lyrics.xml in Resources */,
+				62C599A6121887F5003842DF /* 42b-MultiVoice-MidMeasureClefChange.xml in Resources */,
+				62C599A7121887F5003842DF /* 43a-PianoStaff.xml in Resources */,
+				62C599A8121887F5003842DF /* 43b-MultiStaff-DifferentKeys.xml in Resources */,
+				62C599A9121887F5003842DF /* 43c-MultiStaff-DifferentKeysAfterBackup.xml in Resources */,
+				62C599AA121887F5003842DF /* 43d-MultiStaff-StaffChange.xml in Resources */,
+				62C599AB121887F5003842DF /* 43e-Multistaff-ClefDynamics.xml in Resources */,
+				62C599AC121887F5003842DF /* 45a-SimpleRepeat.xml in Resources */,
+				62C599AD121887F5003842DF /* 45b-RepeatWithAlternatives.xml in Resources */,
+				62C599AE121887F5003842DF /* 45c-RepeatMultipleTimes.xml in Resources */,
+				62C599AF121887F5003842DF /* 45d-Repeats-Nested-Alternatives.xml in Resources */,
+				62C599B0121887F5003842DF /* 45e-Repeats-Nested-Alternatives.xml in Resources */,
+				62C599B1121887F5003842DF /* 45f-Repeats-InvalidEndings.xml in Resources */,
+				62C599B2121887F5003842DF /* 45g-Repeats-NotEnded.xml in Resources */,
+				62C599B3121887F5003842DF /* 46a-Barlines.xml in Resources */,
+				62C599B4121887F5003842DF /* 46b-MidmeasureBarline.xml in Resources */,
+				62C599B5121887F5003842DF /* 46c-Midmeasure-Clef.xml in Resources */,
+				62C599B6121887F5003842DF /* 46d-PickupMeasure-ImplicitMeasures.xml in Resources */,
+				62C599B7121887F5003842DF /* 46e-PickupMeasure-SecondVoiceStartsLater.xml in Resources */,
+				62C599B8121887F5003842DF /* 51b-Header-Quotes.xml in Resources */,
+				62C599B9121887F5003842DF /* 51c-MultipleRights.xml in Resources */,
+				62C599BA121887F5003842DF /* 52a-PageLayout.xml in Resources */,
+				62C599BB121887F5003842DF /* 61a-Lyrics.xml in Resources */,
+				62C599BC121887F5003842DF /* 61b-MultipleLyrics.xml in Resources */,
+				62C599BD121887F5003842DF /* 61c-Lyrics-Pianostaff.xml in Resources */,
+				62C599BE121887F5003842DF /* 61d-Lyrics-Melisma.xml in Resources */,
+				62C599BF121887F5003842DF /* 61e-Lyrics-Chords.xml in Resources */,
+				62C599C0121887F5003842DF /* 61f-Lyrics-GracedNotes.xml in Resources */,
+				62C599C1121887F5003842DF /* 61g-Lyrics-NameNumber.xml in Resources */,
+				62C599C2121887F5003842DF /* 61h-Lyrics-BeamsMelismata.xml in Resources */,
+				62C599C3121887F5003842DF /* 61i-Lyrics-Chords.xml in Resources */,
+				62C599C4121887F5003842DF /* 61j-Lyrics-Elisions.xml in Resources */,
+				62C599C5121887F5003842DF /* 61k-Lyrics-SpannersExtenders.xml in Resources */,
+				62C599C6121887F5003842DF /* 71a-Chordnames.xml in Resources */,
+				62C599C7121887F5003842DF /* 71c-ChordsFrets.xml in Resources */,
+				62C599C8121887F5003842DF /* 71d-ChordsFrets-Multistaff.xml in Resources */,
+				62C599C9121887F5003842DF /* 71e-TabStaves.xml in Resources */,
+				62C599CA121887F5003842DF /* 71f-AllChordTypes.xml in Resources */,
+				62C599CB121887F5003842DF /* 72a-TransposingInstruments.xml in Resources */,
+				62C599CC121887F5003842DF /* 72b-TransposingInstruments-Full.xml in Resources */,
+				62C599CD121887F5003842DF /* 73a-Percussion.xml in Resources */,
+				62C599CE121887F5003842DF /* 74a-FiguredBass.xml in Resources */,
+				62C599CF121887F5003842DF /* 75a-AccordionRegistrations.xml in Resources */,
+				62C599D0121887F5003842DF /* 90a-Compressed-MusicXML.mxl in Resources */,
+				62C599D1121887F5003842DF /* 99a-Sibelius5-IgnoreBeaming.xml in Resources */,
+				62C599D2121887F5003842DF /* 99b-Lyrics-BeamsMelismata-IgnoreBeams.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6265F41B121885E10010DEE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6265F41E121885E10010DEE2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* OvertureAppDelegate.m in Sources */,
+				6265F3FD121884A80010DEE2 /* TAMusicCommon.m in Sources */,
+				6265F3FE121884A80010DEE2 /* TAMusicMeasure.m in Sources */,
+				6265F3FF121884A80010DEE2 /* TAMusicPart.m in Sources */,
+				6265F400121884A80010DEE2 /* TAMusicScore.m in Sources */,
+				62C599EF12188C43003842DF /* TAMusicXMLImporter.m in Sources */,
+				62C599F512188C79003842DF /* TAMusicImporter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6265F41C121885E10010DEE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62C598D012188744003842DF /* TAMusicMeasureTestCase.m in Sources */,
+				62C598D112188744003842DF /* TAMusicPartTestCase.m in Sources */,
+				62C598D212188744003842DF /* TAMusicScoreTestCase.m in Sources */,
+				62C598D312188744003842DF /* TAMusicCommon.m in Sources */,
+				62C598D412188744003842DF /* TAMusicMeasure.m in Sources */,
+				62C598D512188744003842DF /* TAMusicPart.m in Sources */,
+				62C598D612188744003842DF /* TAMusicScore.m in Sources */,
+				62C599F012188C43003842DF /* TAMusicXMLImporter.m in Sources */,
+				62C599F412188C79003842DF /* TAMusicImporter.m in Sources */,
+				62573343121A5B4700E1356F /* TAMusicXMLImporterTestCase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		62C599EA12188B2B003842DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6265F41F121885E10010DEE2 /* TAMusic Test Bundle */;
+			targetProxy = 62C599E912188B2B003842DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Overture_Prefix.pch;
+				INFOPLIST_FILE = "Overture-Info.plist";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = Overture;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Overture_Prefix.pch;
+				INFOPLIST_FILE = "Overture-Info.plist";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = Overture;
+				SDKROOT = iphoneos4.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6265F422121885E20010DEE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(CONFIGURATION_BUILD_DIR)/Overture.app/Overture";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = "TAMusic Test Bundle-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "TAMusic Test Bundle";
+				SDKROOT = iphoneos4.0;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		6265F423121885E20010DEE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(CONFIGURATION_BUILD_DIR)/Overture.app/Overture";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				INFOPLIST_FILE = "TAMusic Test Bundle-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "TAMusic Test Bundle";
+				SDKROOT = iphoneos4.0;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Overture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6265F424121885E20010DEE2 /* Build configuration list for PBXNativeTarget "TAMusic Test Bundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6265F422121885E20010DEE2 /* Debug */,
+				6265F423121885E20010DEE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Overture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
