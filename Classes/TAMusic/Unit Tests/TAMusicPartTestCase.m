@@ -16,15 +16,19 @@
 	TAMusicPart *part = [[TAMusicPart alloc] init];
 	part.name = @"Bb Trumpet";
 	part.instrumentName = @"Bb Trumpet";
-	part.measures = [NSArray array];
+	
+	TAMusicMeasure *measure1 = [[TAMusicMeasure alloc] init];
+	[part addMeasure:measure1];
+	[measure1 release];
 	
 	STAssertNotNil(part, @"Part should not be nil");
 	
 	STAssertEqualObjects(part.name, @"Bb Trumpet", @"Name should be Bb Trumpet");
 	STAssertEqualObjects(part.instrumentName, @"Bb Trumpet", @"Name should be Bb Trumpet");
 
-	STAssertEquals([part numberOfMeasures], (NSUInteger)0, @"Part should have 5 measures.");
-	STAssertNil([part measureAtIndex:0], @"Measure should exist");
+	STAssertNotNil(part.measures, @"Should have measures");
+	STAssertEquals([part numberOfMeasures], (NSUInteger)1, @"Part should have 1 measures.");
+	STAssertNotNil([part measureAtIndex:0], @"Measure should exist");
 	
 	[part release];
 }

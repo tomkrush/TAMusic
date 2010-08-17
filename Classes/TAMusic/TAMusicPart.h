@@ -15,15 +15,18 @@
 	NSString *_name;
 	NSString *_UID;
 	NSString *_instrumentName;
-	NSArray *_measures;
+	NSMutableArray *_measures;
 }
 
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *UID;
 @property (nonatomic, retain) NSString *instrumentName;
-@property (nonatomic, retain) NSArray *measures;
+@property (nonatomic, readonly) NSArray *measures;
 
 - (NSUInteger)numberOfMeasures;
 - (TAMusicMeasure *)measureAtIndex:(NSUInteger)index;
+
+- (void)addMeasure:(TAMusicMeasure *)measure;
+- (void)insertPart:(TAMusicMeasure *)measure atIndex:(NSUInteger)index;
 
 @end
