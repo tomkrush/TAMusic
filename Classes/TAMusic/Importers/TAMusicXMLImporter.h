@@ -9,18 +9,22 @@
 #import <Foundation/Foundation.h>
 #import "TAMusicImporter.h"
 #import "TAMusicPart.h"
+#import "TAMusicMeasure.h"
 
 typedef NSUInteger TAMusicXMLElementKey;
 
 
 typedef NSUInteger TAMusicXMLElement;
 
-@interface TAMusicXMLImporter : TAMusicImporter <NSXMLParserDelegate>
+@interface TAMusicXMLImporter : TAMusicImporter
 {
 	NSString *_element;
 	NSString *_buffer;
 	
 	TAMusicPart *_part;
+	TATimeSignature _timeSignature;
+	TAKeySignature _keySignature;
+	TAMusicMeasure *_measure;
 }
 
 - (id)initWithContentsOfFile:(NSString *)path;

@@ -8,20 +8,44 @@
 
 #import "TAMusicCommon.h"
 
-TAKeySignature TAKeySignatureMake(NSUInteger beatCount, NSUInteger beatDuration)
+TATimeSignature TATimeSignatureMake(NSUInteger beatCount, NSUInteger beatDuration)
+{
+	TATimeSignature timeSignature;
+	timeSignature.beatCount = beatCount;
+	timeSignature.beatDuration = beatDuration;
+	timeSignature.symbol = TAMusicSymbolNone;
+	
+	return timeSignature;
+}
+
+BOOL TATimeSignatureIsNull(TATimeSignature timeSignature)
+{
+	if (isnan(timeSignature.beatCount) || isnan(timeSignature.beatDuration) )
+	{
+		return TRUE;
+	}
+	
+	return FALSE;
+}
+
+TAKeySignature TAKeySignatureMake(NSInteger fifth, TAMusicMode mode)
 {
 	TAKeySignature keySignature;
-	keySignature.beatCount = beatCount;
-	keySignature.beatDuration = beatDuration;
+	keySignature.fifth = fifth;
+	keySignature.mode = mode;
 	
 	return keySignature;
 }
 
-TATimeSignature TATimeSignatureMake(NSInteger fifth, TAMusicMode mode)
+
+BOOL TAKeySignatureIsNull(TAKeySignature keySignature)
 {
-	TATimeSignature timeSignature;
-	timeSignature.fifth = fifth;
-	timeSignature.mode = mode;
+	// NSLog(@"mode: %d", timeSignature.mode);
+
+	if ( isnan(keySignature.fifth) || isnan(keySignature.mode) )
+	{
+		return TRUE;
+	}
 	
-	return timeSignature;
+	return FALSE;
 }

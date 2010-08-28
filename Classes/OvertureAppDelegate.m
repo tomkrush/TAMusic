@@ -7,7 +7,6 @@
 //
 
 #import "OvertureAppDelegate.h"
-#import "TAMusic.h"
 
 @implementation OvertureAppDelegate
 
@@ -17,26 +16,25 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-	
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
+{    
     // Override point for customization after application launch.
-
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"01a-Pitches-Pitches" ofType:@"xml"];
-	
-	TAMusicXMLImporter *importer = [[TAMusicXMLImporter alloc] initWithContentsOfFile:path];
-	
-	TAMusicScore *score = importer.score;
-	
-	NSLog(@"%@", score.title);
-	NSLog(@"Number of Parts: %d", [score numberOfParts]);
-	NSLog(@"Parts %@", [score.parts valueForKey:@"name"]);
-	
-	[importer release];
-	
-	
+		
+	[self.window addSubview:self.rootController.view];	
+		
     [window makeKeyAndVisible];
 	
 	return YES;
+}
+
+- (RootController *)rootController
+{
+	if ( ! _rootController )
+	{
+		_rootController = [[RootController alloc] init];
+	}
+	
+	return _rootController;
 }
 
 
@@ -73,6 +71,7 @@
 
 
 - (void)dealloc {
+	[_rootController release];
     [window release];
     [super dealloc];
 }

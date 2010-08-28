@@ -88,6 +88,56 @@
 	{
 		[self clearBuffer];	
 	}
+	else if ( [elementName isEqualToString:@"fifths"] )
+	{
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"mode"] )
+	{
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"time"] )
+	{
+		[self clearBuffer];
+
+		NSString *symbol = [attributeDict valueForKey:@"symbol"];
+		
+		if ( symbol )
+		{
+			if ( [symbol isEqualToString:@"common"] )
+			{
+				_timeSignature.symbol = TAMusicSymbolCommon;
+			}
+			else if ( [symbol isEqualToString:@"cut"] )
+			{
+				_timeSignature.symbol = TAMusicSymbolCut;
+			}
+		}
+		else
+		{
+			_timeSignature.symbol = TAMusicSymbolNone;
+		}
+	}
+	else if ( [elementName isEqualToString:@"beats"] )
+	{
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"beats-type"] )
+	{		
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"measure"] )
+	{
+		[self clearBuffer];	
+
+		if ( _measure )
+		{
+			[_part addMeasure:_measure];
+			[_measure release];
+		}
+		
+		_measure = [[TAMusicMeasure alloc] init];
+	}
 
 	_element = elementName;
 }
@@ -108,6 +158,31 @@
 		}
 		
 		[self clearBuffer];	
+	}
+	else if ( [elementName isEqualToString:@"fifths"] )
+	{
+		_keySignature.fifth = [[self buffer] intValue];
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"mode"] )
+	{		
+		_keySignature.mode = [[self buffer] isEqualToString:@"minor"] ? TAMusicModeMinor : TAMusicModeMajor;
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"beats"] )
+	{
+		_timeSignature.beatDuration = [[self buffer] intValue];
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"beats-type"] )
+	{		
+		_timeSignature.beatCount = [[self buffer] intValue];
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"measure"] )
+	{
+		_measure.keySignature = _keySignature;
+		_measure.timeSignature = _timeSignature;
 	}
 }
 

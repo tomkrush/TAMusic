@@ -8,6 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
+enum
+{
+   TAMusicSymbolCommon,
+   TAMusicSymbolCut,
+   TAMusicSymbolNone
+};
+typedef NSUInteger TAMusicSymbol;
+
+struct TATimeSignature 
+{
+   NSUInteger beatCount;
+   NSUInteger beatDuration;
+   TAMusicSymbol symbol;
+};
+typedef struct TATimeSignature TATimeSignature;
+
+TATimeSignature TATimeSignatureMake(NSUInteger beatCount, NSUInteger beatDuration);
+
+BOOL TATimeSignatureIsNull(TATimeSignature timeSignature);
+
 enum 
 {
    TAMusicModeMajor,
@@ -17,19 +37,11 @@ typedef NSUInteger TAMusicMode;
 
 struct TAKeySignature 
 {
-   NSUInteger beatCount;
-   NSUInteger beatDuration;
-};
-typedef struct TAKeySignature TAKeySignature;
-
-TAKeySignature TAKeySignatureMake(NSUInteger beatCount, NSUInteger beatDuration);
-
-
-struct TATimeSignature 
-{
    NSInteger fifth;
    TAMusicMode mode;
 };
-typedef struct TATimeSignature TATimeSignature;
+typedef struct TAKeySignature TAKeySignature;
 
-TATimeSignature TATimeSignatureMake(NSInteger fifth, TAMusicMode mode);
+TAKeySignature TAKeySignatureMake(NSInteger fifth, TAMusicMode mode);
+
+BOOL TAKeySignatureIsNull(TAKeySignature keySignature);
