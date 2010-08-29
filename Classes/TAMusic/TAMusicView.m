@@ -50,7 +50,7 @@
 		
 		[staff release];
 		
-		staffFrame.origin.y += 50 + staffFrame.size.height;
+		staffFrame.origin.y += (height * 2) + staffFrame.size.height;
 	}
 }
 

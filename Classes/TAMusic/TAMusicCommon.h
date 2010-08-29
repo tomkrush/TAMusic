@@ -49,7 +49,8 @@ enum
 {
    TAMusicClefSignC,
    TAMusicClefSignF,
-   TAMusicClefSignG
+   TAMusicClefSignG,
+   TAMusicClefSignPercussion
 };
 typedef NSUInteger TAMusicClefSign;
 

@@ -209,6 +209,10 @@
 		{
 			_clef.sign = TAMusicClefSignF;
 		}
+		else if ( [[self buffer] isEqualToString:@"percussion"] )
+		{
+			_clef.sign = TAMusicClefSignPercussion;
+		}
 		else
 		{
 			_clef.sign = TAMusicClefSignG;

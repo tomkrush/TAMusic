@@ -114,6 +114,10 @@
 			CGRect clefRect = rect;
 
 			TAMusicGlyph glyph;
+			
+			CGFloat offset = 0;
+
+			NSUInteger line = measure.clef.line;
 
 			switch (measure.clef.sign) 
 			{
@@ -123,15 +127,18 @@
 				case TAMusicClefSignF:
 					glyph = TAMusicGlyphBassClef;
 					break;
+				case TAMusicClefSignPercussion:
+					glyph = TAMusicGlyphPercussionClef;
+					offset = -1;
+					line = 3;
+					break;
 				case TAMusicClefSignC:
 					glyph = TAMusicGlyphAltoClef;
 					break;
 			}
-						
-			NSUInteger line = measure.clef.line;
-						
+	
 			clefRect.origin.x += TAMusicSpaceBeforeClef;
-			clefRect.origin.y -= (interval * (line)) + interval;
+			clefRect.origin.y -= (interval * (line + offset)) + interval;
 
 			NSString *string = [TAMusicFont characterForSymbol:glyph];
 			CGSize clefSize = [TAMusicFont sizeOfSymbol:glyph];

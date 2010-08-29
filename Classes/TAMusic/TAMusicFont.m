@@ -45,6 +45,10 @@
 			bytes = "\xEF\x81\xB4";
 		break;
 
+		case TAMusicGlyphPercussionClef:
+			bytes = "\xEF\x82\x8B";
+		break;
+
 		case TAMusicGlyphBassClef:
 			bytes = "\xEF\x80\xBF";
 		break;

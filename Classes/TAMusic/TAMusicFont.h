@@ -19,6 +19,7 @@ enum
 	TAMusicGlyphBassClefUp,
 	TAMusicGlyphBassClefDown,
 	TAMusicGlyphBassClef,
+	TAMusicGlyphPercussionClef,
 	
 	// Numbers
 	TAMusicGlyphZero,
