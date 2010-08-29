@@ -25,7 +25,7 @@
 {
 	if ( ! _musicView )
 	{
-		NSString *path = [[NSBundle mainBundle] pathForResource:@"12a-Clefs" ofType:@"xml"];
+		NSString *path = [[NSBundle mainBundle] pathForResource:@"12b-Clefs-NoKeyOrClef" ofType:@"xml"];
 		
 		TAMusicXMLImporter *importer = [[TAMusicXMLImporter alloc] initWithContentsOfFile:path];
 		

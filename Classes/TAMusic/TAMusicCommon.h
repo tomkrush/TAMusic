@@ -28,6 +28,8 @@ void TATimeSignatureLog(TATimeSignature timeSignature);
 TATimeSignature TATimeSignatureMake(NSUInteger beatCount, NSUInteger beatDuration);
 BOOL TAMusicTimeSignatureIsEqualToTimeSignature(TATimeSignature timeSignature1, TATimeSignature timeSignature2);
 
+TATimeSignature TATimeSignatureDefault();
+
 CGSize TAMusicTimeSignatureSize(TATimeSignature timeSignature);
 
 enum 
@@ -46,6 +48,7 @@ typedef struct TAKeySignature TAKeySignature;
 
 TAKeySignature TAKeySignatureMake(NSInteger fifth, TAMusicMode mode);
 BOOL TAMusicKeySignatureIsEqualToKeySignature(TAKeySignature keySignature1, TAKeySignature keySignature2);
+TAKeySignature TAKeySignatureDefault();
 
 enum 
 {
@@ -64,5 +67,6 @@ struct TAMusicClef
 typedef struct TAMusicClef TAMusicClef;
 
 TAMusicClef TAMusicClefMake(TAMusicClefSign sign, NSInteger line);
+TAMusicClef TAMusicClefDefault();
 
 BOOL TAMusicClefIsEqualToClef(TAMusicClef sign1, TAMusicClef sign2);

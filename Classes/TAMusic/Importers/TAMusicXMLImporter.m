@@ -56,6 +56,10 @@
 			NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
 			[parser setDelegate:self];
 
+			_clef = TAMusicClefDefault();
+			_timeSignature = TATimeSignatureDefault();
+			_keySignature = TAKeySignatureDefault();
+
 			[parser parse];
 
 			[parser release];

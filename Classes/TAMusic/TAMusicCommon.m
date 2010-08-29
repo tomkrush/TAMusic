@@ -9,6 +9,11 @@
 #import "TAMusicCommon.h"
 #import "TAMusicFont.h"
 
+TATimeSignature TATimeSignatureDefault()
+{
+	return TATimeSignatureMake(4, 4);
+}
+
 TATimeSignature TATimeSignatureMake(NSUInteger beatCount, NSUInteger beatDuration)
 {
 	TATimeSignature timeSignature;
@@ -78,6 +83,11 @@ TAKeySignature TAKeySignatureMake(NSInteger fifth, TAMusicMode mode)
 	return keySignature;
 }
 
+TAKeySignature TAKeySignatureDefault()
+{
+	return TAKeySignatureMake(0, TAMusicModeMajor);
+}
+
 BOOL TAMusicKeySignatureIsEqualToKeySignature(TAKeySignature keySignature1, TAKeySignature keySignature2)
 {
 	if ( keySignature1.fifth == keySignature2.fifth && keySignature1.mode == keySignature2.mode) 
@@ -95,6 +105,11 @@ TAMusicClef TAMusicClefMake(TAMusicClefSign sign, NSInteger line)
 	clef.line = line;
 	
 	return clef;
+}
+
+TAMusicClef TAMusicClefDefault()
+{
+	return TAMusicClefMake(TAMusicClefSignG, 2);
 }
 
 BOOL TAMusicClefIsEqualToClef(TAMusicClef clef1, TAMusicClef clef2)
