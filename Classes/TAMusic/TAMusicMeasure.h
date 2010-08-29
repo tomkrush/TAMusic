@@ -9,16 +9,27 @@
 #import <Foundation/Foundation.h>
 #import "TAMusicCommon.h"
 
+#import <CoreText/CoreText.h>
+
+const CGFloat TAMusicSpaceBeforeClef;
+const CGFloat TAMusicSpaceAfterClef;
+
+// Needs to be adjusted for score / parts
+const CGFloat TAMusicSpaceBeforeTimeSignature;
+const CGFloat TAMusicSpaceAfterTimeSignature;
+
+CGSize TAMusicTimeSignatureSize(TATimeSignature timeSignature);
+
 @class TAMusicStaff;
 
 enum
 {
-   TAMusicMeasureOptionsTimeSignature	= 0,
-   TAMusicMeasureOptionsKeySignature	= 1 << 0,
-   TAMusicMeasureOptionsClef			= 1 << 1,
-   TAMusicMeasureOptionsNotes			= 1 << 2,
-   TAMusicMeasureOptionsLyrics			= 1 << 3,
-   TAMusicMeasureOptionsNone			= 1 << 4
+   TAMusicMeasureOptionsTimeSignature	= 1 << 0,
+   TAMusicMeasureOptionsKeySignature	= 1 << 1,
+   TAMusicMeasureOptionsClef			= 1 << 2,
+   TAMusicMeasureOptionsNotes			= 1 << 3,
+   TAMusicMeasureOptionsLyrics			= 1 << 4,
+   TAMusicMeasureOptionsNone			= 1 << 5
 };
 typedef NSUInteger TAMusicMeasureOptions;
 

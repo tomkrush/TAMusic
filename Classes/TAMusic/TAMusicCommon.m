@@ -7,6 +7,7 @@
 //
 
 #import "TAMusicCommon.h"
+#import "TAMusicFont.h"
 
 TATimeSignature TATimeSignatureMake(NSUInteger beatCount, NSUInteger beatDuration)
 {
@@ -16,6 +17,46 @@ TATimeSignature TATimeSignatureMake(NSUInteger beatCount, NSUInteger beatDuratio
 	timeSignature.symbol = TAMusicSymbolNone;
 	
 	return timeSignature;
+}
+
+CGSize TAMusicTimeSignatureSize(TATimeSignature timeSignature)
+{
+	TAMusicSymbol symbol = timeSignature.symbol;
+
+	CGSize size;
+
+	if ( symbol == TAMusicSymbolNone )
+	{		
+		CGSize beatCount = [TAMusicFont sizeOfNumber:timeSignature.beatCount];
+		CGSize beatDuration = [TAMusicFont sizeOfNumber:timeSignature.beatDuration];	
+
+		size.width = beatCount.width >= beatDuration.width ? beatCount.width: beatDuration.width;
+		size.height = beatCount.height + beatDuration.height;
+	}
+	else
+	{
+		TAMusicGlyph glyph = symbol == TAMusicSymbolCut ? TAMusicGlyphCutTime : TAMusicGlyphCommonTime;
+		
+		size = [TAMusicFont sizeOfSymbol:glyph];
+	}
+	
+	return size;
+}
+
+void TATimeSignatureLog(TATimeSignature timeSignature)
+{
+	NSString *symbol = @"None";
+	
+	if ( timeSignature.symbol == TAMusicSymbolCommon )
+	{
+		symbol = @"Common";
+	}
+	else if ( timeSignature.symbol == TAMusicSymbolCut )
+	{
+		symbol = @"Cut";
+	}
+	
+	NSLog(@"Time Signature:{beatCount:%d, beatDuration:%d, symbol:%@}", timeSignature.beatCount, timeSignature.beatDuration, symbol);
 }
 
 TAKeySignature TAKeySignatureMake(NSInteger fifth, TAMusicMode mode)

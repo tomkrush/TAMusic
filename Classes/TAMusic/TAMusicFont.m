@@ -73,7 +73,7 @@
 			bytes = "\xEF\x80\xB5";
 		break;
 		
-		case TAMusicGlyphSize:
+		case TAMusicGlyphSix:
 			bytes = "\xEF\x80\xB6";
 		break;
 		
@@ -88,6 +88,22 @@
 		case TAMusicGlyphNine:
 			bytes = "\xEF\x80\xB9";
 		break;
+		
+		case TAMusicGlyphCutTime:
+			bytes = "\xEF\x81\x83";
+		break;
+		
+		case TAMusicGlyphCommonTime:
+			bytes = "\xEF\x81\xA3";
+		break;
+
+		case TAMusicGlyphPlus:
+			bytes = "\xEF\x80\xAB";
+		break;
+		
+		case TAMusicGlyphMinus:
+			bytes = "\xEF\x80\xAD";
+		break;	
 
 		case TAMusicGlyphNone:
 			bytes = "";
@@ -104,11 +120,82 @@
 	return [string autorelease];
 }
 
++ (NSString *)characterForNumber:(NSInteger)number
+{
+	NSString *numberString = [NSString stringWithFormat:@"%d", number];
+
+	NSString *result = @"";
+
+	for ( NSUInteger i = 0; i < [numberString length]; i++ )
+	{
+		number = [[numberString substringWithRange:NSMakeRange(i, 1)] intValue];
+		
+		TAMusicGlyph glyph = TAMusicGlyphNone;
+
+		if ( number == 0 )
+		{
+			glyph = TAMusicGlyphZero;
+		}
+		else if ( number == 1 )
+		{
+			glyph = TAMusicGlyphOne;
+		}
+		else if ( number == 2 )
+		{
+			glyph = TAMusicGlyphTwo;
+		}
+		else if ( number == 3 )
+		{
+			glyph = TAMusicGlyphThree;
+		}
+		else if ( number == 4 )
+		{
+			glyph = TAMusicGlyphFour;
+		}	
+		else if ( number == 5 )
+		{
+			glyph = TAMusicGlyphFive;
+		}
+		else if ( number == 6 )
+		{
+			glyph = TAMusicGlyphSix;
+		}
+		else if ( number == 7 )
+		{
+			glyph = TAMusicGlyphSeven;
+		}
+		else if ( number == 8 )
+		{
+			glyph = TAMusicGlyphEight;
+		}
+		else if ( number == 9 )
+		{
+			glyph = TAMusicGlyphNine;
+		}
+		
+		result = [result stringByAppendingString:[TAMusicFont characterForSymbol:glyph]];
+	}
+					
+	return result;
+}
+
 + (CGSize)sizeOfSymbol:(TAMusicGlyph)symbol
 {
 	NSString *glyph = [TAMusicFont characterForSymbol:symbol];
 
-	return [glyph sizeWithFont:[UIFont fontWithName:@"Maestro" size:38.0f]];
+	return [TAMusicFont sizeOfString:glyph];
+}
+
++ (CGSize)sizeOfNumber:(NSUInteger)number
+{
+	NSString *glyph = [TAMusicFont characterForNumber:number];
+
+	return [TAMusicFont sizeOfString:glyph];
+}
+
++ (CGSize)sizeOfString:(NSString *)string
+{
+	return [string sizeWithFont:[UIFont fontWithName:@"Maestro" size:44.0f]];
 }
 
 @end

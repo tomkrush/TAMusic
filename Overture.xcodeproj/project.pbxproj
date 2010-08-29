@@ -170,14 +170,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 62708F321229903300DA149B /* TAToolkit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libTAToolkit.a */;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = TAToolkit;
 		};
 		62708F391229904200DA149B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 62708F321229903300DA149B /* TAToolkit.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* TAToolkit */;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = TAToolkit;
 		};
 /* End PBXContainerItemProxy section */
@@ -961,12 +961,13 @@
 				GCC_PREFIX_HEADER = Overture_Prefix.pch;
 				HEADER_SEARCH_PATHS = Frameworks/TAToolkit;
 				INFOPLIST_FILE = "Overture-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
 				PRODUCT_NAME = Overture;
-				SDKROOT = iphoneos3.2;
+				SDKROOT = iphoneos4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -981,12 +982,13 @@
 				GCC_PREFIX_HEADER = Overture_Prefix.pch;
 				HEADER_SEARCH_PATHS = Frameworks/TAToolkit;
 				INFOPLIST_FILE = "Overture-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
 				PRODUCT_NAME = Overture;
-				SDKROOT = iphoneos3.2;
+				SDKROOT = iphoneos4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;

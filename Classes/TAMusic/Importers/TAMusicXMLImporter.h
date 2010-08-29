@@ -16,7 +16,7 @@ typedef NSUInteger TAMusicXMLElementKey;
 
 typedef NSUInteger TAMusicXMLElement;
 
-@interface TAMusicXMLImporter : TAMusicImporter
+@interface TAMusicXMLImporter : TAMusicImporter <NSXMLParserDelegate>
 {
 	NSString *_element;
 	NSString *_buffer;

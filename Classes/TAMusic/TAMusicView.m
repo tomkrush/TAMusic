@@ -35,15 +35,12 @@
 	CFRange measureRange = CFRangeMake(0, numberOfMeasures);
 	
 	CGFloat height = 32;
-	height = 88;
+	height = 44;
 	
 	CGRect staffFrame = CGRectMake(50, 70, rect.size.width, height);
-		
-	BOOL good = YES;
-	
-	while (/*measureRange.length > 0 */ good) 
+			
+	while (measureRange.length > 0) 
 	{			
-		good = NO;
 		TAMusicStaff *staff = [[TAMusicStaff alloc] initWithPart:part frame:staffFrame inRange:measureRange];
 				
 		measureRange.location = staff.measureRange.location + staff.measureRange.length;

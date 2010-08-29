@@ -12,10 +12,19 @@
 #import "TAMusicStaff.h"
 #import "TAMusicFont.h"
 
+const CGFloat TAMusicSpaceBeforeClef = 6;
+const CGFloat TAMusicSpaceAfterClef = 0;
+
+// Needs to be adjusted for score / parts
+const CGFloat TAMusicSpaceBeforeTimeSignature = 6;
+const CGFloat TAMusicSpaceAfterTimeSignature = 3;
+
 BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOptions option)
 {
 	return (options & option) != 0;
 }
+
+
 
 @implementation TAMusicMeasure
 
@@ -40,15 +49,19 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 		// Add width of clef
 		CGSize size = [TAMusicFont sizeOfSymbol:TAMusicGlyphTrebleClef];
 				
-		width += size.width;
-	}
-	
-	if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsTimeSignature) )
-	{
-		// Add width of clef
-		width += 22;
+		width += TAMusicSpaceBeforeClef + size.width + TAMusicSpaceAfterClef;
 	}
 
+	if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsTimeSignature) )
+	{
+		CGSize size = TAMusicTimeSignatureSize(self.timeSignature);
+	
+		CGSizeLog(size);
+	
+		// Add width of clef
+		width += TAMusicSpaceBeforeTimeSignature + size.width + TAMusicSpaceAfterTimeSignature;
+	}
+	
 	if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsKeySignature) )
 	{
 		// Add width of clef
@@ -58,7 +71,7 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 	if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsNotes) )
 	{
 		// Add width of clef
-		width += 72;
+		width += 120;
 	}
 		
 	return width; 
@@ -73,10 +86,10 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 		options |= TAMusicMeasureOptionsClef | TAMusicMeasureOptionsKeySignature;
 	//}
 	
-	if ( self.number == 1 )
-	{
+//	if ( self.number == 1 )
+//	{
 		options |= TAMusicMeasureOptionsTimeSignature;
-	}	
+//	}	
 
 	return options;
 }

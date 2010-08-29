@@ -27,10 +27,18 @@ enum
 	TAMusicGlyphThree,
 	TAMusicGlyphFour,
 	TAMusicGlyphFive,
-	TAMusicGlyphSize,
+	TAMusicGlyphSix,
 	TAMusicGlyphSeven,
 	TAMusicGlyphEight,
 	TAMusicGlyphNine,
+	
+	// Plus + Minus
+	TAMusicGlyphPlus,
+	TAMusicGlyphMinus,
+	
+	// Time Signature Symbols,
+	TAMusicGlyphCutTime,
+	TAMusicGlyphCommonTime,
 	
 	TAMusicGlyphNone
 };
@@ -43,6 +51,13 @@ typedef NSUInteger TAMusicGlyph;
 
 + (NSString *)characterForSymbol:(TAMusicGlyph)symbol;
 
++ (NSString *)characterForNumber:(NSInteger)number;
+
 + (CGSize)sizeOfSymbol:(TAMusicGlyph)symbol;
+
++ (CGSize)sizeOfString:(NSString *)string;
+
++ (CGSize)sizeOfNumber:(NSUInteger)number;
+
 
 @end

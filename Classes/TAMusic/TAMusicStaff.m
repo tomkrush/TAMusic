@@ -106,6 +106,9 @@
 		CGContextSaveGState(context);
 		CGContextSetAllowsAntialiasing(context, YES);
 
+		CGFloat x = 0.0f;
+
+		// Draw Clef
 //		if ( i == 0 )
 //		{
 			CGRect clefRect = rect;
@@ -127,9 +130,12 @@
 						
 			NSUInteger line = measure.clef.line;
 						
-			clefRect.origin.y -= (interval * (line)) + interval - 3.5;
+			clefRect.origin.x += TAMusicSpaceBeforeClef;
+			clefRect.origin.y -= (interval * (line)) + interval;
 
 			NSString *string = [TAMusicFont characterForSymbol:glyph];
+			CGSize clefSize = [TAMusicFont sizeOfSymbol:glyph];
+			clefRect.size.width = clefSize.width;
 
 			UIFont *font = [UIFont fontWithName:@"Maestro" size:self.frame.size.height];
 
@@ -137,7 +143,65 @@
 			[[UIColor blackColor] set];
 
 			[string drawInRect:clefRect withFont:font];
+			
+			x += clefRect.size.width + TAMusicSpaceAfterClef;
 //		}
+		
+		
+		
+		CGContextRestoreGState(context);
+
+		// Draw Time Signature
+		CGContextSaveGState(context);
+				
+		TAMusicSymbol symbol = measure.timeSignature.symbol;
+		
+		if ( symbol == TAMusicSymbolNone )
+		{
+			NSString *beatCount = [TAMusicFont characterForNumber:measure.timeSignature.beatCount];
+			NSString *beatDuration = [TAMusicFont characterForNumber:measure.timeSignature.beatDuration];		
+		
+			CGSize beatCountSize = [TAMusicFont sizeOfString:beatCount];
+			CGSize beatDurationSize = [TAMusicFont sizeOfString:beatDuration];
+		
+			CGSize timeSignatureSize = TAMusicTimeSignatureSize(measure.timeSignature);
+			
+			CGRect timeSignatureRect = rect;
+			timeSignatureRect.size = timeSignatureSize;
+
+			[[UIColor blackColor] set];
+
+			// Base
+			CGFloat timeSignatureXOrigin = timeSignatureRect.origin.x + TAMusicSpaceBeforeTimeSignature + x;
+			
+			timeSignatureRect.origin.x = timeSignatureXOrigin + (( timeSignatureSize.width - beatCountSize.width) / 2);
+			timeSignatureRect.origin.y -= (interval * 3);
+
+			[beatCount drawInRect:timeSignatureRect withFont:font];	
+			
+			timeSignatureRect.origin.x = timeSignatureXOrigin + (( timeSignatureSize.width - beatDurationSize.width) / 2);
+			timeSignatureRect.origin.y -= (interval * 2);
+			[beatDuration drawInRect:timeSignatureRect withFont:font];
+		}
+		else
+		{
+			if ( symbol == TAMusicSymbolCut )
+			{
+				string = [TAMusicFont characterForSymbol:TAMusicGlyphCutTime];
+			}
+			else {
+				string = [TAMusicFont characterForSymbol:TAMusicGlyphCommonTime];
+			}
+	
+			[[UIColor blackColor] set];
+			
+			CGRect timeSignatureRect = rect;
+			timeSignatureRect.origin.x += TAMusicSpaceBeforeTimeSignature + x;
+			timeSignatureRect.size.width -= (x - timeSignatureRect.origin.x);
+			timeSignatureRect.origin.y -= (interval * (3)) + interval;
+			
+			[string drawInRect:timeSignatureRect withFont:font];
+		}
 		
 		CGContextRestoreGState(context);
 
@@ -145,20 +209,28 @@
 		CGContextSaveGState(context);
 		CGContextSetAllowsAntialiasing(context, NO);
 		CGContextSetLineCap(context, kCGLineCapRound);
-		CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:222/255 green:198/255 blue:137/255 alpha:0.2f].CGColor);
-		CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:0 green:0 blue:0 alpha:1.0f].CGColor);
-		CGContextStrokeRect(context, rect);
+		CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:222/255 green:198/255 blue:137/255 alpha:0.4f].CGColor);
+		//CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:0 green:0 blue:0 alpha:1.0f].CGColor);
+		
+		// Draw Outer border
+		CGContextMoveToPoint(context, rect.origin.x, rect.origin.y);
+		CGContextAddLineToPoint(context, rect.origin.x + width, rect.origin.y);
+		CGContextAddLineToPoint(context, rect.origin.x + width, rect.origin.y+rect.size.height);
+		CGContextAddLineToPoint(context, rect.origin.x, rect.origin.y+rect.size.height);
 		
 		CGFloat y = interval;
 				
+		// Draw Lines
 		for ( NSUInteger l = 0; l < 3; l++ )
 		{
 			CGContextMoveToPoint(context, rect.origin.x, rect.origin.y + y);
 			CGContextAddLineToPoint(context, rect.origin.x + width, rect.origin.y + y);
-			CGContextStrokePath(context);
 			
 			y += interval;
 		}
+
+		CGContextStrokePath(context);
+
 
 		CGContextRestoreGState(context);
 		

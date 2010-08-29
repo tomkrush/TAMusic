@@ -24,7 +24,10 @@ struct TATimeSignature
 };
 typedef struct TATimeSignature TATimeSignature;
 
+void TATimeSignatureLog(TATimeSignature timeSignature);
 TATimeSignature TATimeSignatureMake(NSUInteger beatCount, NSUInteger beatDuration);
+
+CGSize TAMusicTimeSignatureSize(TATimeSignature timeSignature);
 
 enum 
 {

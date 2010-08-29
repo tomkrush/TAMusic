@@ -122,7 +122,7 @@
 	{
 		[self clearBuffer];
 	}
-	else if ( [elementName isEqualToString:@"beats-type"] )
+	else if ( [elementName isEqualToString:@"beat-type"] )
 	{		
 		[self clearBuffer];
 	}
@@ -189,7 +189,7 @@
 		_timeSignature.beatDuration = [[self buffer] intValue];
 		[self clearBuffer];
 	}
-	else if ( [elementName isEqualToString:@"beats-type"] )
+	else if ( [elementName isEqualToString:@"beat-type"] )
 	{		
 		_timeSignature.beatCount = [[self buffer] intValue];
 		[self clearBuffer];
@@ -218,9 +218,25 @@
 	}
 	else if ( [elementName isEqualToString:@"measure"] )
 	{
+		// Fix Time Signature (Cut Time)
+		if ( _timeSignature.beatCount == 2 && _timeSignature.beatDuration == 2 && _timeSignature.symbol == TAMusicSymbolCommon )
+		{
+			_timeSignature.symbol = TAMusicSymbolCut;
+		}
+		
+		TATimeSignatureLog(_timeSignature);
+		
+		// Assign parts to measure
 		_measure.keySignature = _keySignature;
 		_measure.timeSignature = _timeSignature;
 		_measure.clef = _clef;
+		
+		if ( _measure )
+		{
+			[_part addMeasure:_measure];
+			[_measure release];
+			_measure = nil;
+		}
 	}
 }
 
