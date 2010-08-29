@@ -18,3 +18,4 @@
 #import "TAMusicInstrument.h"
 #import "TAMusicView.h"
 #import "TAMusicStaff.h"
+#import "TAMusicFont.h"

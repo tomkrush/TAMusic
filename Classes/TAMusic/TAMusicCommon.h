@@ -26,8 +26,6 @@ typedef struct TATimeSignature TATimeSignature;
 
 TATimeSignature TATimeSignatureMake(NSUInteger beatCount, NSUInteger beatDuration);
 
-BOOL TATimeSignatureIsNull(TATimeSignature timeSignature);
-
 enum 
 {
    TAMusicModeMajor,
@@ -44,4 +42,19 @@ typedef struct TAKeySignature TAKeySignature;
 
 TAKeySignature TAKeySignatureMake(NSInteger fifth, TAMusicMode mode);
 
-BOOL TAKeySignatureIsNull(TAKeySignature keySignature);
+enum 
+{
+   TAMusicClefSignC,
+   TAMusicClefSignF,
+   TAMusicClefSignG
+};
+typedef NSUInteger TAMusicClefSign;
+
+struct TAMusicClef 
+{
+   TAMusicClefSign sign;
+   NSInteger line;
+};
+typedef struct TAMusicClef TAMusicClef;
+
+TAMusicClef TAMusicClefMake(TAMusicClefSign sign, NSInteger line);

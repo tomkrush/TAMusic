@@ -18,16 +18,6 @@ TATimeSignature TATimeSignatureMake(NSUInteger beatCount, NSUInteger beatDuratio
 	return timeSignature;
 }
 
-BOOL TATimeSignatureIsNull(TATimeSignature timeSignature)
-{
-	if (isnan(timeSignature.beatCount) || isnan(timeSignature.beatDuration) )
-	{
-		return TRUE;
-	}
-	
-	return FALSE;
-}
-
 TAKeySignature TAKeySignatureMake(NSInteger fifth, TAMusicMode mode)
 {
 	TAKeySignature keySignature;
@@ -37,15 +27,11 @@ TAKeySignature TAKeySignatureMake(NSInteger fifth, TAMusicMode mode)
 	return keySignature;
 }
 
-
-BOOL TAKeySignatureIsNull(TAKeySignature keySignature)
+TAMusicClef TAMusicClefMake(TAMusicClefSign sign, NSInteger line)
 {
-	// NSLog(@"mode: %d", timeSignature.mode);
-
-	if ( isnan(keySignature.fifth) || isnan(keySignature.mode) )
-	{
-		return TRUE;
-	}
+	TAMusicClef clef;
+	clef.sign = sign;
+	clef.line = line;
 	
-	return FALSE;
+	return clef;
 }

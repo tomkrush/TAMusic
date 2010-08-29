@@ -24,6 +24,7 @@ typedef NSUInteger TAMusicXMLElement;
 	TAMusicPart *_part;
 	TATimeSignature _timeSignature;
 	TAKeySignature _keySignature;
+	TAMusicClef _clef;
 	TAMusicMeasure *_measure;
 }
 

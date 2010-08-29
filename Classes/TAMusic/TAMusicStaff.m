@@ -7,6 +7,7 @@
 //
 
 #import "TAMusicStaff.h"
+#import <CoreText/CoreText.h>
 
 @implementation TAMusicStaff
 
@@ -89,6 +90,8 @@
 - (void)drawInContext:(CGContextRef)context
 {
 	CGRect rect = _frame;
+	CGFloat interval = _frame.size.height / 4;
+
 	
 	for (NSUInteger i = 0; i < [self.measures count]; i++) 
 	{
@@ -99,15 +102,55 @@
 		CGFloat width = [measure width:options] + _extraSpace;
 	
 		rect.size.width = width;
+		
+		CGContextSaveGState(context);
+		CGContextSetAllowsAntialiasing(context, YES);
+
+//		if ( i == 0 )
+//		{
+			CGRect clefRect = rect;
+
+			TAMusicGlyph glyph;
+
+			switch (measure.clef.sign) 
+			{
+				case TAMusicClefSignG:
+					glyph = TAMusicGlyphTrebleClef;
+					break;
+				case TAMusicClefSignF:
+					glyph = TAMusicGlyphBassClef;
+					break;
+				case TAMusicClefSignC:
+					glyph = TAMusicGlyphAltoClef;
+					break;
+			}
+						
+			NSUInteger line = measure.clef.line;
+						
+			clefRect.origin.y -= (interval * (line)) + interval - 3.5;
+
+			NSString *string = [TAMusicFont characterForSymbol:glyph];
+
+			UIFont *font = [UIFont fontWithName:@"Maestro" size:self.frame.size.height];
+
+			[[UIColor colorWithWhite:0.0f alpha:0.75f] set];
+			[[UIColor blackColor] set];
+
+			[string drawInRect:clefRect withFont:font];
+//		}
+		
+		CGContextRestoreGState(context);
+
 			
+		CGContextSaveGState(context);
 		CGContextSetAllowsAntialiasing(context, NO);
 		CGContextSetLineCap(context, kCGLineCapRound);
 		CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:222/255 green:198/255 blue:137/255 alpha:0.2f].CGColor);
+		CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:0 green:0 blue:0 alpha:1.0f].CGColor);
 		CGContextStrokeRect(context, rect);
 		
-		CGFloat interval = _frame.size.height / 4;
 		CGFloat y = interval;
-		
+				
 		for ( NSUInteger l = 0; l < 3; l++ )
 		{
 			CGContextMoveToPoint(context, rect.origin.x, rect.origin.y + y);
@@ -116,8 +159,11 @@
 			
 			y += interval;
 		}
+
+		CGContextRestoreGState(context);
 		
 		rect.origin.x += width;
+		
 	}
 }
 

@@ -31,6 +31,8 @@
 		6265F400121884A80010DEE2 /* TAMusicScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6265F3F1121884800010DEE2 /* TAMusicScore.m */; };
 		62708C931229792800DA149B /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62708C921229792800DA149B /* RootController.m */; };
 		62708F381229903600DA149B /* libTAToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62708F371229903300DA149B /* libTAToolkit.a */; };
+		6270924A1229FA1700DA149B /* TAMusicFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 627092491229FA1700DA149B /* TAMusicFont.m */; };
+		6270942F122A19F200DA149B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6270942E122A19F200DA149B /* CoreText.framework */; };
 		62962EC3121A5FCE002F6246 /* TAMusicStaffLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62962EC2121A5FCE002F6246 /* TAMusicStaffLayer.m */; };
 		62962EFA121A603D002F6246 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62962EF9121A603D002F6246 /* QuartzCore.framework */; };
 		62ABE1881227918400A20A82 /* TAMusicCommonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62ABE1871227918400A20A82 /* TAMusicCommonTests.m */; };
@@ -226,6 +228,9 @@
 		62708C911229792800DA149B /* RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootController.h; sourceTree = "<group>"; };
 		62708C921229792800DA149B /* RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootController.m; sourceTree = "<group>"; };
 		62708F321229903300DA149B /* TAToolkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TAToolkit.xcodeproj; path = Frameworks/TAToolkit/TAToolkit.xcodeproj; sourceTree = "<group>"; };
+		627092481229FA1700DA149B /* TAMusicFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicFont.h; path = Classes/TAMusic/TAMusicFont.h; sourceTree = "<group>"; };
+		627092491229FA1700DA149B /* TAMusicFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicFont.m; path = Classes/TAMusic/TAMusicFont.m; sourceTree = "<group>"; };
+		6270942E122A19F200DA149B /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		62962EC1121A5FCE002F6246 /* TAMusicStaffLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicStaffLayer.h; path = Classes/TAMusic/Layers/TAMusicStaffLayer.h; sourceTree = "<group>"; };
 		62962EC2121A5FCE002F6246 /* TAMusicStaffLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicStaffLayer.m; path = Classes/TAMusic/Layers/TAMusicStaffLayer.m; sourceTree = "<group>"; };
 		62962EF9121A603D002F6246 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -364,6 +369,7 @@
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				62962EFA121A603D002F6246 /* QuartzCore.framework in Frameworks */,
 				62708F381229903600DA149B /* libTAToolkit.a in Frameworks */,
+				6270942F122A19F200DA149B /* CoreText.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +446,7 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				62962EF9121A603D002F6246 /* QuartzCore.framework */,
+				6270942E122A19F200DA149B /* CoreText.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -487,6 +494,8 @@
 				620FD91B12287C9900EDE2B7 /* TAMusicView.m */,
 				620FDA4512289E0F00EDE2B7 /* TAMusicStaff.h */,
 				620FDA4612289E0F00EDE2B7 /* TAMusicStaff.m */,
+				627092481229FA1700DA149B /* TAMusicFont.h */,
+				627092491229FA1700DA149B /* TAMusicFont.m */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -904,6 +913,7 @@
 				620FD91C12287C9900EDE2B7 /* TAMusicView.m in Sources */,
 				620FDA4712289E0F00EDE2B7 /* TAMusicStaff.m in Sources */,
 				62708C931229792800DA149B /* RootController.m in Sources */,
+				6270924A1229FA1700DA149B /* TAMusicFont.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

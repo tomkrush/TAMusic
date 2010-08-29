@@ -145,6 +145,14 @@
 			_measure.number = [number intValue];
 		}
 	}
+	else if ( [elementName isEqualToString:@"line"] )
+	{
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"sign"] )
+	{		
+		[self clearBuffer];
+	}
 
 	_element = elementName;
 }
@@ -186,10 +194,33 @@
 		_timeSignature.beatCount = [[self buffer] intValue];
 		[self clearBuffer];
 	}
+	else if ( [elementName isEqualToString:@"line"] )
+	{
+		_clef.line = [[self buffer] intValue];
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"sign"] )
+	{
+		if ( [[self buffer] isEqualToString:@"C"] )
+		{
+			_clef.sign = TAMusicClefSignC;
+		}
+		else if ( [[self buffer] isEqualToString:@"F"] )
+		{
+			_clef.sign = TAMusicClefSignF;
+		}
+		else
+		{
+			_clef.sign = TAMusicClefSignG;
+		}
+	
+		[self clearBuffer];
+	}
 	else if ( [elementName isEqualToString:@"measure"] )
 	{
 		_measure.keySignature = _keySignature;
 		_measure.timeSignature = _timeSignature;
+		_measure.clef = _clef;
 	}
 }
 

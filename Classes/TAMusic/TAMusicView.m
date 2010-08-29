@@ -35,12 +35,15 @@
 	CFRange measureRange = CFRangeMake(0, numberOfMeasures);
 	
 	CGFloat height = 32;
-	height = 44;
+	height = 88;
 	
 	CGRect staffFrame = CGRectMake(50, 70, rect.size.width, height);
 		
-	while (measureRange.length > 0) 
+	BOOL good = YES;
+	
+	while (/*measureRange.length > 0 */ good) 
 	{			
+		good = NO;
 		TAMusicStaff *staff = [[TAMusicStaff alloc] initWithPart:part frame:staffFrame inRange:measureRange];
 				
 		measureRange.location = staff.measureRange.location + staff.measureRange.length;
@@ -52,24 +55,6 @@
 		
 		staffFrame.origin.y += 50 + staffFrame.size.height;
 	}
-
-//	NSString *string = @" ";
-//		
-//	const char bytes[] = "\xEF\x80\xBD";
-//	size_t length = (sizeof bytes) - 1;
-//	
-//	NSData *data = [NSData dataWithBytes:bytes length:length];
-//	
-//	string = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
-//	NSLog(@"%@", string);
-//
-//
-//	
-//	
-//	[[UIColor blackColor] set];
-//
-//	UIFont *font = [UIFont fontWithName:@"Maestro" size:48];
-//	[string drawInRect:CGRectMake(40, 40, 400, 400) withFont:font];
 }
 
 - (void)dealloc

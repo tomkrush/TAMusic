@@ -29,6 +29,7 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 	NSArray *_notes;
 	TATimeSignature _timeSignature;
 	TAKeySignature _keySignature;
+	TAMusicClef	_clef;
 	
 	NSUInteger _number;
 	
@@ -38,6 +39,7 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 @property (nonatomic, retain) NSArray *notes;
 @property (nonatomic) TATimeSignature timeSignature;
 @property (nonatomic) TAKeySignature keySignature;
+@property (nonatomic) TAMusicClef clef;
 @property (nonatomic) NSUInteger number;
 
 @property (nonatomic, readonly) CGFloat width;

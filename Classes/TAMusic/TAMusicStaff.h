@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TAMusicPart.h"
+#import "TAMusicFont.h"
 #import "TAMusicMeasure.h"
 
 @interface TAMusicStaff : NSObject 

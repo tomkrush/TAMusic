@@ -10,6 +10,7 @@
 #import "TAToolkit.h"
 
 #import "TAMusicStaff.h"
+#import "TAMusicFont.h"
 
 BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOptions option)
 {
@@ -22,6 +23,7 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 @synthesize notes = _notes;
 @synthesize timeSignature = _timeSignature;
 @synthesize keySignature = _keySignature;
+@synthesize clef = _clef;
 
 - (CGFloat)width:(TAMusicMeasureOptions)options
 {
@@ -36,7 +38,9 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 	if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsClef) )
 	{
 		// Add width of clef
-		width += 22;
+		CGSize size = [TAMusicFont sizeOfSymbol:TAMusicGlyphTrebleClef];
+				
+		width += size.width;
 	}
 	
 	if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsTimeSignature) )
@@ -62,19 +66,12 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 
 - (TAMusicMeasureOptions)optionsAtIndexInStaff:(NSUInteger)index
 {
-//	if ( ! [staff.measures containsObject:self] )
-//	{
-//		return TAMusicMeasureOptionsNone;
-//	}
-
-	NSLog(@"%d", index);
-
 	TAMusicMeasureOptions options = TAMusicMeasureOptionsNotes;
 	
-	if ( index == 0 )
-	{
+	//if ( index == 0 )
+	//{
 		options |= TAMusicMeasureOptionsClef | TAMusicMeasureOptionsKeySignature;
-	}
+	//}
 	
 	if ( self.number == 1 )
 	{
