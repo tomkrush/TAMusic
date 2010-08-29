@@ -19,6 +19,16 @@ TATimeSignature TATimeSignatureMake(NSUInteger beatCount, NSUInteger beatDuratio
 	return timeSignature;
 }
 
+BOOL TAMusicTimeSignatureIsEqualToTimeSignature(TATimeSignature timeSignature1, TATimeSignature timeSignature2)
+{
+	if ( timeSignature1.beatCount == timeSignature2.beatCount && timeSignature1.beatDuration == timeSignature2.beatDuration && timeSignature1.symbol == timeSignature2.symbol) 
+	{
+		return YES;
+	}
+	
+	return NO;
+}
+
 CGSize TAMusicTimeSignatureSize(TATimeSignature timeSignature)
 {
 	TAMusicSymbol symbol = timeSignature.symbol;
@@ -68,6 +78,16 @@ TAKeySignature TAKeySignatureMake(NSInteger fifth, TAMusicMode mode)
 	return keySignature;
 }
 
+BOOL TAMusicKeySignatureIsEqualToKeySignature(TAKeySignature keySignature1, TAKeySignature keySignature2)
+{
+	if ( keySignature1.fifth == keySignature2.fifth && keySignature1.mode == keySignature2.mode) 
+	{
+		return YES;
+	}
+	
+	return NO;
+}
+
 TAMusicClef TAMusicClefMake(TAMusicClefSign sign, NSInteger line)
 {
 	TAMusicClef clef;
@@ -75,4 +95,14 @@ TAMusicClef TAMusicClefMake(TAMusicClefSign sign, NSInteger line)
 	clef.line = line;
 	
 	return clef;
+}
+
+BOOL TAMusicClefIsEqualToClef(TAMusicClef clef1, TAMusicClef clef2)
+{
+	if ( clef1.sign == clef2.sign && clef1.line == clef2.line) 
+	{
+		return YES;
+	}
+	
+	return NO;
 }

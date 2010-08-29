@@ -55,9 +55,7 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 	if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsTimeSignature) )
 	{
 		CGSize size = TAMusicTimeSignatureSize(self.timeSignature);
-	
-		CGSizeLog(size);
-	
+		
 		// Add width of clef
 		width += TAMusicSpaceBeforeTimeSignature + size.width + TAMusicSpaceAfterTimeSignature;
 	}
@@ -77,19 +75,24 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 	return width; 
 }
 
-- (TAMusicMeasureOptions)optionsAtIndexInStaff:(NSUInteger)index
+- (TAMusicMeasureOptions)optionsAtIndexInStaff:(NSUInteger)index previousMeasure:(TAMusicMeasure *)measure
 {
 	TAMusicMeasureOptions options = TAMusicMeasureOptionsNotes;
 	
-	//if ( index == 0 )
-	//{
-		options |= TAMusicMeasureOptionsClef | TAMusicMeasureOptionsKeySignature;
-	//}
+	if ( index == 0 || ! TAMusicClefIsEqualToClef(self.clef, measure.clef) )
+	{
+		options |= TAMusicMeasureOptionsClef;
+	}
+
+	if ( index == 0 )
+	{
+		options |= TAMusicMeasureOptionsKeySignature;
+	}
 	
-//	if ( self.number == 1 )
-//	{
+	if ( self.number == 1  || ! TAMusicTimeSignatureIsEqualToTimeSignature(self.timeSignature, measure.timeSignature) )
+	{
 		options |= TAMusicMeasureOptionsTimeSignature;
-//	}	
+	}	
 
 	return options;
 }

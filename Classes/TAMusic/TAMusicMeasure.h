@@ -57,6 +57,6 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 
 - (CGFloat)width:(TAMusicMeasureOptions)options;
 
-- (TAMusicMeasureOptions)optionsAtIndexInStaff:(NSUInteger)index;
+- (TAMusicMeasureOptions)optionsAtIndexInStaff:(NSUInteger)index previousMeasure:(TAMusicMeasure *)measure;
 
 @end

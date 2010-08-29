@@ -44,7 +44,9 @@
 			
 				TAMusicMeasure *measure = [part.measures objectAtIndex:i];
 				
-				TAMusicMeasureOptions options = [measure optionsAtIndexInStaff:index];
+				TAMusicMeasure *previousMeasure = i > 0 ? [part.measures objectAtIndex:i - 1] : nil;
+				
+				TAMusicMeasureOptions options = [measure optionsAtIndexInStaff:index previousMeasure:previousMeasure];
 				CGFloat measureWidth = [measure width:options];
 				
 				if ( totalWidth + measureWidth > _frame.size.width )
@@ -92,25 +94,31 @@
 	CGRect rect = _frame;
 	CGFloat interval = _frame.size.height / 4;
 
+	CGContextSaveGState(context);
 	
 	for (NSUInteger i = 0; i < [self.measures count]; i++) 
 	{
+		CGContextSetAllowsAntialiasing(context, YES);
+
 		TAMusicMeasure *measure = [self.measures objectAtIndex:i];
 		
-		TAMusicMeasureOptions options = [measure optionsAtIndexInStaff:i];
+		TAMusicMeasure *previousMeasure = i > 0 ? [self.measures objectAtIndex:i - 1] : nil;		
+		
+		TAMusicMeasureOptions options = [measure optionsAtIndexInStaff:i previousMeasure:previousMeasure];
 		
 		CGFloat width = [measure width:options] + _extraSpace;
 	
 		rect.size.width = width;
-		
-		CGContextSaveGState(context);
-		CGContextSetAllowsAntialiasing(context, YES);
 
 		CGFloat x = 0.0f;
+		
+		UIFont *font = [UIFont fontWithName:@"Maestro" size:self.frame.size.height];
 
 		// Draw Clef
-//		if ( i == 0 )
-//		{
+		if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsClef) )
+		{
+			CGContextSaveGState(context);
+
 			CGRect clefRect = rect;
 
 			TAMusicGlyph glyph;
@@ -144,71 +152,73 @@
 			CGSize clefSize = [TAMusicFont sizeOfGlyph:glyph];
 			clefRect.size.width = clefSize.width;
 
-			UIFont *font = [UIFont fontWithName:@"Maestro" size:self.frame.size.height];
-
 			[[UIColor colorWithWhite:0.0f alpha:0.75f] set];
 			[[UIColor blackColor] set];
 
 			[string drawInRect:clefRect withFont:font];
 			
 			x += clefRect.size.width + TAMusicSpaceAfterClef;
-//		}
-		
-		CGContextRestoreGState(context);
-
-		// Draw Time Signature
-		CGContextSaveGState(context);
-				
-		TAMusicSymbol symbol = measure.timeSignature.symbol;
-		
-		if ( symbol == TAMusicSymbolNone )
-		{
-			NSString *beatCount = [TAMusicFont characterForNumber:measure.timeSignature.beatCount];
-			NSString *beatDuration = [TAMusicFont characterForNumber:measure.timeSignature.beatDuration];		
-		
-			CGSize beatCountSize = [TAMusicFont sizeOfString:beatCount];
-			CGSize beatDurationSize = [TAMusicFont sizeOfString:beatDuration];
-		
-			CGSize timeSignatureSize = TAMusicTimeSignatureSize(measure.timeSignature);
-			
-			CGRect timeSignatureRect = rect;
-			timeSignatureRect.size = timeSignatureSize;
-
-			[[UIColor blackColor] set];
-
-			// Base
-			CGFloat timeSignatureXOrigin = timeSignatureRect.origin.x + TAMusicSpaceBeforeTimeSignature + x;
-			
-			timeSignatureRect.origin.x = timeSignatureXOrigin + (( timeSignatureSize.width - beatCountSize.width) / 2);
-			timeSignatureRect.origin.y -= (interval * 3);
-
-			[beatCount drawInRect:timeSignatureRect withFont:font];	
-			
-			timeSignatureRect.origin.x = timeSignatureXOrigin + (( timeSignatureSize.width - beatDurationSize.width) / 2);
-			timeSignatureRect.origin.y -= (interval * 2);
-			[beatDuration drawInRect:timeSignatureRect withFont:font];
-		}
-		else
-		{
-			if ( symbol == TAMusicSymbolCut )
-			{
-				string = [TAMusicFont characterForGlyph:TAMusicGlyphCutTime];
-			}
-			else {
-				string = [TAMusicFont characterForGlyph:TAMusicGlyphCommonTime];
-			}
 	
-			[[UIColor blackColor] set];
-			
-			CGRect timeSignatureRect = rect;
-			timeSignatureRect.origin.x += TAMusicSpaceBeforeTimeSignature + x;
-			timeSignatureRect.size.width -= (x - timeSignatureRect.origin.x);
-			timeSignatureRect.origin.y -= (interval * (3)) + interval;
-			
-			[string drawInRect:timeSignatureRect withFont:font];
+			CGContextRestoreGState(context);
 		}
+
+		// Draw Time Signature			
+		if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsTimeSignature) )
+		{
+			CGContextSaveGState(context);
+
+			TAMusicSymbol symbol = measure.timeSignature.symbol;
+			
+			if ( symbol == TAMusicSymbolNone )
+			{
+				NSString *beatCount = [TAMusicFont characterForNumber:measure.timeSignature.beatCount];
+				NSString *beatDuration = [TAMusicFont characterForNumber:measure.timeSignature.beatDuration];		
+			
+				CGSize beatCountSize = [TAMusicFont sizeOfString:beatCount];
+				CGSize beatDurationSize = [TAMusicFont sizeOfString:beatDuration];
+			
+				CGSize timeSignatureSize = TAMusicTimeSignatureSize(measure.timeSignature);
+				
+				CGRect timeSignatureRect = rect;
+				timeSignatureRect.size = timeSignatureSize;
+
+				[[UIColor blackColor] set];
+
+				// Base
+				CGFloat timeSignatureXOrigin = timeSignatureRect.origin.x + TAMusicSpaceBeforeTimeSignature + x;
+				
+				timeSignatureRect.origin.x = timeSignatureXOrigin + (( timeSignatureSize.width - beatCountSize.width) / 2);
+				timeSignatureRect.origin.y -= (interval * 3);
+
+				[beatCount drawInRect:timeSignatureRect withFont:font];	
+				
+				timeSignatureRect.origin.x = timeSignatureXOrigin + (( timeSignatureSize.width - beatDurationSize.width) / 2);
+				timeSignatureRect.origin.y -= (interval * 2);
+				[beatDuration drawInRect:timeSignatureRect withFont:font];
+			}
+			else
+			{
+				NSString *string;
+			
+				if ( symbol == TAMusicSymbolCut )
+				{
+					string = [TAMusicFont characterForGlyph:TAMusicGlyphCutTime];
+				}
+				else {
+					string = [TAMusicFont characterForGlyph:TAMusicGlyphCommonTime];
+				}
 		
-		CGContextRestoreGState(context);
+				[[UIColor blackColor] set];
+				
+				CGRect timeSignatureRect = rect;
+				timeSignatureRect.origin.x += TAMusicSpaceBeforeTimeSignature + x;
+				timeSignatureRect.size.width -= (x - timeSignatureRect.origin.x);
+				timeSignatureRect.origin.y -= (interval * (3)) + interval;
+				
+				[string drawInRect:timeSignatureRect withFont:font];
+			}
+			CGContextRestoreGState(context);
+		}
 
 			
 		CGContextSaveGState(context);
@@ -240,8 +250,9 @@
 		CGContextRestoreGState(context);
 		
 		rect.origin.x += width;
-		
 	}
+	
+	CGContextRestoreGState(context);
 }
 
 - (void)dealloc
