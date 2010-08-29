@@ -140,8 +140,8 @@
 			clefRect.origin.x += TAMusicSpaceBeforeClef;
 			clefRect.origin.y -= (interval * (line + offset)) + interval;
 
-			NSString *string = [TAMusicFont characterForSymbol:glyph];
-			CGSize clefSize = [TAMusicFont sizeOfSymbol:glyph];
+			NSString *string = [TAMusicFont characterForGlyph:glyph];
+			CGSize clefSize = [TAMusicFont sizeOfGlyph:glyph];
 			clefRect.size.width = clefSize.width;
 
 			UIFont *font = [UIFont fontWithName:@"Maestro" size:self.frame.size.height];
@@ -153,8 +153,6 @@
 			
 			x += clefRect.size.width + TAMusicSpaceAfterClef;
 //		}
-		
-		
 		
 		CGContextRestoreGState(context);
 
@@ -194,10 +192,10 @@
 		{
 			if ( symbol == TAMusicSymbolCut )
 			{
-				string = [TAMusicFont characterForSymbol:TAMusicGlyphCutTime];
+				string = [TAMusicFont characterForGlyph:TAMusicGlyphCutTime];
 			}
 			else {
-				string = [TAMusicFont characterForSymbol:TAMusicGlyphCommonTime];
+				string = [TAMusicFont characterForGlyph:TAMusicGlyphCommonTime];
 			}
 	
 			[[UIColor blackColor] set];

@@ -50,11 +50,11 @@ typedef NSUInteger TAMusicGlyph;
 
 }
 
-+ (NSString *)characterForSymbol:(TAMusicGlyph)symbol;
++ (NSString *)characterForGlyph:(TAMusicGlyph)symbol;
 
 + (NSString *)characterForNumber:(NSInteger)number;
 
-+ (CGSize)sizeOfSymbol:(TAMusicGlyph)symbol;
++ (CGSize)sizeOfGlyph:(TAMusicGlyph)symbol;
 
 + (CGSize)sizeOfString:(NSString *)string;
 

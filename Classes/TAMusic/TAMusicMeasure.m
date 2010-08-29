@@ -47,7 +47,7 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 	if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsClef) )
 	{
 		// Add width of clef
-		CGSize size = [TAMusicFont sizeOfSymbol:TAMusicGlyphTrebleClef];
+		CGSize size = [TAMusicFont sizeOfGlyph:TAMusicGlyphTrebleClef];
 				
 		width += TAMusicSpaceBeforeClef + size.width + TAMusicSpaceAfterClef;
 	}

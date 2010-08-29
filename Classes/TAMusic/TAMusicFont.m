@@ -11,7 +11,7 @@
 
 @implementation TAMusicFont
 
-+ (NSString *)characterForSymbol:(TAMusicGlyph)symbol
++ (NSString *)characterForGlyph:(TAMusicGlyph)symbol
 {	
 	char *bytes;
 	
@@ -177,15 +177,15 @@
 			glyph = TAMusicGlyphNine;
 		}
 		
-		result = [result stringByAppendingString:[TAMusicFont characterForSymbol:glyph]];
+		result = [result stringByAppendingString:[TAMusicFont characterForGlyph:glyph]];
 	}
 					
 	return result;
 }
 
-+ (CGSize)sizeOfSymbol:(TAMusicGlyph)symbol
++ (CGSize)sizeOfGlyph:(TAMusicGlyph)symbol
 {
-	NSString *glyph = [TAMusicFont characterForSymbol:symbol];
+	NSString *glyph = [TAMusicFont characterForGlyph:symbol];
 
 	return [TAMusicFont sizeOfString:glyph];
 }

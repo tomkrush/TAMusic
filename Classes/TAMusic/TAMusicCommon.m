@@ -37,7 +37,7 @@ CGSize TAMusicTimeSignatureSize(TATimeSignature timeSignature)
 	{
 		TAMusicGlyph glyph = symbol == TAMusicSymbolCut ? TAMusicGlyphCutTime : TAMusicGlyphCommonTime;
 		
-		size = [TAMusicFont sizeOfSymbol:glyph];
+		size = [TAMusicFont sizeOfGlyph:glyph];
 	}
 	
 	return size;
