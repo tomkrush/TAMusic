@@ -8,13 +8,12 @@
 
 #import "TAMusicStaff.h"
 
-
 @implementation TAMusicStaff
 
 @synthesize measures = _measures;
 @synthesize part = _part;
 
-- (id)initWithPart:(TAMusicPart *)part width:(CGFloat)width
+- (id)initWithPart:(TAMusicPart *)part frame:(CGRect)frame inRange:(CFRange)inRange
 {
 	if ( self = [super init]) 
 	{
@@ -22,20 +21,49 @@
 		{
 			return nil;
 		}
+		
+		_frame = frame;
+		_frame.size.width -= 100;
 	
 		if ( part.measures )
 		{
-//			NSRange range;
-//			range.location = measureRange.location;
-//			range.length = measureRange.length;
-//		
-			_measures = [part.measures subarrayWithRange:NSMakeRange(0, 4)];
-
-//			_measures = part.measures;
+			CGFloat totalWidth = 0;
+			NSUInteger totalMeasures = [part.measures count];
+			
+			NSUInteger location = inRange.location;
+			NSUInteger length = 0;
+			
+			NSUInteger index = 0;
+			for (NSUInteger i = inRange.location; i < totalMeasures; i++)
+			{
+				if ( i >= inRange.location + inRange.length )
+				{
+					break;
+				}
+			
+				TAMusicMeasure *measure = [part.measures objectAtIndex:i];
+				
+				TAMusicMeasureOptions options = [measure optionsAtIndexInStaff:index];
+				CGFloat measureWidth = [measure width:options];
+				
+				if ( totalWidth + measureWidth > _frame.size.width )
+				{
+					break;
+				}
+							
+				totalWidth += measureWidth;
+				length++;
+				index++;
+			}
+				
+			_extraSpace = (_frame.size.width - totalWidth) / length;
+				
+			_measureRange = CFRangeMake(location, length);		
+							
+			_measures = [part.measures subarrayWithRange:NSMakeRange(location, length)];
 			[_measures retain];
 		}
 	
-		_width = width - 100;
 		_part = part;
 		[_part retain];
 	}
@@ -43,69 +71,53 @@
 	return self;
 }
 
-- (CGFloat)width
+- (CFRange)measureRange
 {
-	if ( isnan(_width) )
-	{
-		return 320;
-	}
-
-	return _width;
+	return _measureRange;
 }
 
-- (void)setWidth:(CGFloat)width
+- (CGRect)frame
 {
-	_width = width;
+	return _frame;
 }
 
-- (CGFloat)measureWidth
+- (void)setFrame:(CGRect)frame
 {
-	CGFloat width = self.width / [self.measures count];
-	
-	// Minimum Width Per Measure
-	if ( width < 42 )
-	{
-		width = 42;
-	}
-	
-	// Maximum Width Per Measure
-	if ( width > 450 )
-	{
-		width = 450;
-	}
-
-	
-	return width;
+	_frame = frame;
 }
 
 - (void)drawInContext:(CGContextRef)context
 {
-	CGFloat height = 32;
-
-	CGRect rect;
-	rect.origin = CGPointMake(50, 70);
-	rect.size.width = self.measureWidth;
-	rect.size.height = height;
+	CGRect rect = _frame;
 	
 	for (NSUInteger i = 0; i < [self.measures count]; i++) 
 	{
+		TAMusicMeasure *measure = [self.measures objectAtIndex:i];
+		
+		TAMusicMeasureOptions options = [measure optionsAtIndexInStaff:i];
+		
+		CGFloat width = [measure width:options] + _extraSpace;
+	
+		rect.size.width = width;
+			
 		CGContextSetAllowsAntialiasing(context, NO);
+		CGContextSetLineCap(context, kCGLineCapRound);
 		CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:222/255 green:198/255 blue:137/255 alpha:0.2f].CGColor);
 		CGContextStrokeRect(context, rect);
 		
-		CGFloat interval = height / 4;
+		CGFloat interval = _frame.size.height / 4;
 		CGFloat y = interval;
 		
 		for ( NSUInteger l = 0; l < 3; l++ )
 		{
 			CGContextMoveToPoint(context, rect.origin.x, rect.origin.y + y);
-			CGContextAddLineToPoint(context, rect.origin.x + self.measureWidth, rect.origin.y + y);
+			CGContextAddLineToPoint(context, rect.origin.x + width, rect.origin.y + y);
 			CGContextStrokePath(context);
 			
 			y += interval;
 		}
 		
-		rect.origin.x += self.measureWidth;
+		rect.origin.x += width;
 	}
 }
 

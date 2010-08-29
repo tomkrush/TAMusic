@@ -30,6 +30,7 @@
 		6265F3FF121884A80010DEE2 /* TAMusicPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 6265F3EF121884800010DEE2 /* TAMusicPart.m */; };
 		6265F400121884A80010DEE2 /* TAMusicScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6265F3F1121884800010DEE2 /* TAMusicScore.m */; };
 		62708C931229792800DA149B /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62708C921229792800DA149B /* RootController.m */; };
+		62708F381229903600DA149B /* libTAToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62708F371229903300DA149B /* libTAToolkit.a */; };
 		62962EC3121A5FCE002F6246 /* TAMusicStaffLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62962EC2121A5FCE002F6246 /* TAMusicStaffLayer.m */; };
 		62962EFA121A603D002F6246 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62962EF9121A603D002F6246 /* QuartzCore.framework */; };
 		62ABE1881227918400A20A82 /* TAMusicCommonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62ABE1871227918400A20A82 /* TAMusicCommonTests.m */; };
@@ -162,6 +163,23 @@
 		62C599F512188C79003842DF /* TAMusicImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C599F312188C79003842DF /* TAMusicImporter.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		62708F361229903300DA149B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62708F321229903300DA149B /* TAToolkit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libTAToolkit.a */;
+			remoteInfo = TAToolkit;
+		};
+		62708F391229904200DA149B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62708F321229903300DA149B /* TAToolkit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D /* TAToolkit */;
+			remoteInfo = TAToolkit;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* OvertureAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OvertureAppDelegate.h; sourceTree = "<group>"; };
@@ -207,6 +225,7 @@
 		6265F421121885E10010DEE2 /* TAMusic Test Bundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TAMusic Test Bundle-Info.plist"; sourceTree = "<group>"; };
 		62708C911229792800DA149B /* RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootController.h; sourceTree = "<group>"; };
 		62708C921229792800DA149B /* RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootController.m; sourceTree = "<group>"; };
+		62708F321229903300DA149B /* TAToolkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TAToolkit.xcodeproj; path = Frameworks/TAToolkit/TAToolkit.xcodeproj; sourceTree = "<group>"; };
 		62962EC1121A5FCE002F6246 /* TAMusicStaffLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicStaffLayer.h; path = Classes/TAMusic/Layers/TAMusicStaffLayer.h; sourceTree = "<group>"; };
 		62962EC2121A5FCE002F6246 /* TAMusicStaffLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicStaffLayer.m; path = Classes/TAMusic/Layers/TAMusicStaffLayer.m; sourceTree = "<group>"; };
 		62962EF9121A603D002F6246 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -344,6 +363,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				62962EFA121A603D002F6246 /* QuartzCore.framework in Frameworks */,
+				62708F381229903600DA149B /* libTAToolkit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +435,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				62708F321229903300DA149B /* TAToolkit.xcodeproj */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
@@ -485,6 +506,14 @@
 				62ABE1871227918400A20A82 /* TAMusicCommonTests.m */,
 			);
 			name = "Unit Tests";
+			sourceTree = "<group>";
+		};
+		62708F331229903300DA149B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				62708F371229903300DA149B /* libTAToolkit.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		62962EC0121A5F95002F6246 /* Graphics */ = {
@@ -644,6 +673,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				62708F3A1229904200DA149B /* PBXTargetDependency */,
 			);
 			name = Overture;
 			productName = Overture;
@@ -678,6 +708,12 @@
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 62708F331229903300DA149B /* Products */;
+					ProjectRef = 62708F321229903300DA149B /* TAToolkit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* Overture */,
@@ -685,6 +721,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		62708F371229903300DA149B /* libTAToolkit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libTAToolkit.a;
+			remoteRef = 62708F361229903300DA149B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -885,6 +931,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		62708F3A1229904200DA149B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TAToolkit;
+			targetProxy = 62708F391229904200DA149B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -895,11 +949,16 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Overture_Prefix.pch;
+				HEADER_SEARCH_PATHS = Frameworks/TAToolkit;
 				INFOPLIST_FILE = "Overture-Info.plist";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = Overture;
 				SDKROOT = iphoneos3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -910,11 +969,16 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Overture_Prefix.pch;
+				HEADER_SEARCH_PATHS = Frameworks/TAToolkit;
 				INFOPLIST_FILE = "Overture-Info.plist";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = Overture;
 				SDKROOT = iphoneos3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

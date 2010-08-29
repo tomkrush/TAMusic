@@ -135,8 +135,15 @@
 			[_part addMeasure:_measure];
 			[_measure release];
 		}
-		
+				
 		_measure = [[TAMusicMeasure alloc] init];
+
+		NSString *number = [attributeDict valueForKey:@"number"];
+
+		if ( number )
+		{
+			_measure.number = [number intValue];
+		}
 	}
 
 	_element = elementName;

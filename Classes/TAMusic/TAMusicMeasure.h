@@ -9,17 +9,41 @@
 #import <Foundation/Foundation.h>
 #import "TAMusicCommon.h"
 
+@class TAMusicStaff;
+
+enum
+{
+   TAMusicMeasureOptionsTimeSignature	= 0,
+   TAMusicMeasureOptionsKeySignature	= 1 << 0,
+   TAMusicMeasureOptionsClef			= 1 << 1,
+   TAMusicMeasureOptionsNotes			= 1 << 2,
+   TAMusicMeasureOptionsLyrics			= 1 << 3,
+   TAMusicMeasureOptionsNone			= 1 << 4
+};
+typedef NSUInteger TAMusicMeasureOptions;
+
+BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOptions option);
+
 @interface TAMusicMeasure : NSObject 
 {
 	NSArray *_notes;
 	TATimeSignature _timeSignature;
 	TAKeySignature _keySignature;
+	
+	NSUInteger _number;
+	
+	CGFloat _width;
 }
 
 @property (nonatomic, retain) NSArray *notes;
 @property (nonatomic) TATimeSignature timeSignature;
 @property (nonatomic) TAKeySignature keySignature;
+@property (nonatomic) NSUInteger number;
 
+@property (nonatomic, readonly) CGFloat width;
 
+- (CGFloat)width:(TAMusicMeasureOptions)options;
+
+- (TAMusicMeasureOptions)optionsAtIndexInStaff:(NSUInteger)index;
 
 @end

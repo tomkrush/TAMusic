@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TAToolkit.h"
 #import "TAMusic.h"
 
-@interface RootController : UIViewController 
+@interface RootController : TAViewController 
 {
 	TAMusicView *_musicView;
 }

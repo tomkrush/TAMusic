@@ -7,13 +7,93 @@
 //
 
 #import "TAMusicMeasure.h"
+#import "TAToolkit.h"
 
+#import "TAMusicStaff.h"
+
+BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOptions option)
+{
+	return (options & option) != 0;
+}
 
 @implementation TAMusicMeasure
 
+@synthesize number = _number;
 @synthesize notes = _notes;
 @synthesize timeSignature = _timeSignature;
 @synthesize keySignature = _keySignature;
+
+- (CGFloat)width:(TAMusicMeasureOptions)options
+{
+//	if ( _width == 0 )
+//	{
+//		_width = 
+//
+//	}
+	
+	CGFloat width = 0;
+		
+	if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsClef) )
+	{
+		// Add width of clef
+		width += 22;
+	}
+	
+	if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsTimeSignature) )
+	{
+		// Add width of clef
+		width += 22;
+	}
+
+	if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsKeySignature) )
+	{
+		// Add width of clef
+		width += 22;
+	}
+	
+	if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsNotes) )
+	{
+		// Add width of clef
+		width += 72;
+	}
+		
+	return width; 
+}
+
+- (TAMusicMeasureOptions)optionsAtIndexInStaff:(NSUInteger)index
+{
+//	if ( ! [staff.measures containsObject:self] )
+//	{
+//		return TAMusicMeasureOptionsNone;
+//	}
+
+	NSLog(@"%d", index);
+
+	TAMusicMeasureOptions options = TAMusicMeasureOptionsNotes;
+	
+	if ( index == 0 )
+	{
+		options |= TAMusicMeasureOptionsClef | TAMusicMeasureOptionsKeySignature;
+	}
+	
+	if ( self.number == 1 )
+	{
+		options |= TAMusicMeasureOptionsTimeSignature;
+	}	
+
+	return options;
+}
+
+- (CGFloat)width
+{
+	TAMusicMeasureOptions options = TAMusicMeasureOptionsTimeSignature | 
+									TAMusicMeasureOptionsKeySignature | 
+									TAMusicMeasureOptionsClef | 
+									TAMusicMeasureOptionsNotes | 
+									TAMusicMeasureOptionsLyrics;
+
+	return [self width:options];
+}
 
 - (void)dealloc
 {

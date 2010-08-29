@@ -13,17 +13,23 @@
 @interface TAMusicStaff : NSObject 
 {
 	NSArray *_measures;
+	CFRange _measureRange;
+	
+	CGRect _frame;
+	
 	TAMusicPart *_part;
+	
+	CGFloat _extraSpace;
 	
 	CGFloat _width;
 }
 
-- (id)initWithPart:(TAMusicPart *)part width:(CGFloat)width;
+- (id)initWithPart:(TAMusicPart *)part frame:(CGRect)frame inRange:(CFRange)inRange;
 - (void)drawInContext:(CGContextRef)context;
 
 @property (nonatomic, readonly) NSArray *measures;
-@property (nonatomic) CGFloat width;
+@property (nonatomic) CGRect frame;
 @property (nonatomic, readonly) TAMusicPart *part;
-@property (nonatomic, readonly) CGFloat measureWidth;
+@property (nonatomic, readonly) CFRange measureRange;
 
 @end

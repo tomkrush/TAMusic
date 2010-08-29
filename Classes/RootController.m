@@ -7,14 +7,18 @@
 //
 
 #import "RootController.h"
+#import "TAToolkit.h"
 
 @implementation RootController
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidLoad
 {
-	[super viewWillAppear:animated];
-
 	[self.view addSubview:self.musicView];
+}
+
+- (void)layoutViewsWithOrientation:(UIInterfaceOrientation)orientation
+{
+	[self.musicView setNeedsDisplay];
 }
 
 - (TAMusicView *)musicView

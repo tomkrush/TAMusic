@@ -30,12 +30,28 @@
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
 	TAMusicPart *part = [_score.parts objectAtIndex:0];
+	NSUInteger numberOfMeasures = [part numberOfMeasures];
 	
-	TAMusicStaff *staff = [[TAMusicStaff alloc] initWithPart:part width:self.frame.size.width];
+	CFRange measureRange = CFRangeMake(0, numberOfMeasures);
+	
+	CGFloat height = 32;
+	height = 44;
+	
+	CGRect staffFrame = CGRectMake(50, 70, rect.size.width, height);
+		
+	while (measureRange.length > 0) 
+	{			
+		TAMusicStaff *staff = [[TAMusicStaff alloc] initWithPart:part frame:staffFrame inRange:measureRange];
+				
+		measureRange.location = staff.measureRange.location + staff.measureRange.length;
+		measureRange.length = numberOfMeasures - measureRange.location;
 
-	[staff drawInContext:context];
-	
-	[staff release];
+		[staff drawInContext:context];
+		
+		[staff release];
+		
+		staffFrame.origin.y += 50 + staffFrame.size.height;
+	}
 
 //	NSString *string = @" ";
 //		
