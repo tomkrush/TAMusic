@@ -19,8 +19,6 @@
 		62573343121A5B4700E1356F /* TAMusicXMLImporterTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 62573342121A5B4700E1356F /* TAMusicXMLImporterTestCase.m */; };
 		625FF51F121EE90700D201A8 /* TAMusicArticulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 625FF51E121EE90700D201A8 /* TAMusicArticulation.m */; };
 		625FF520121EE90700D201A8 /* TAMusicArticulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 625FF51E121EE90700D201A8 /* TAMusicArticulation.m */; };
-		625FF523121EE91100D201A8 /* TAMusicNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 625FF522121EE91100D201A8 /* TAMusicNote.m */; };
-		625FF524121EE91100D201A8 /* TAMusicNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 625FF522121EE91100D201A8 /* TAMusicNote.m */; };
 		625FF527121EE93800D201A8 /* TAMusicInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 625FF526121EE93800D201A8 /* TAMusicInstrument.m */; };
 		625FF528121EE93800D201A8 /* TAMusicInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 625FF526121EE93800D201A8 /* TAMusicInstrument.m */; };
 		625FF52B121EE94B00D201A8 /* TAMusicText.m in Sources */ = {isa = PBXBuildFile; fileRef = 625FF52A121EE94B00D201A8 /* TAMusicText.m */; };
@@ -201,8 +199,6 @@
 		62573342121A5B4700E1356F /* TAMusicXMLImporterTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicXMLImporterTestCase.m; path = "Classes/TAMusic/Unit Tests/TAMusicXMLImporterTestCase.m"; sourceTree = "<group>"; };
 		625FF51D121EE90700D201A8 /* TAMusicArticulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicArticulation.h; path = Classes/TAMusic/TAMusicArticulation.h; sourceTree = "<group>"; };
 		625FF51E121EE90700D201A8 /* TAMusicArticulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicArticulation.m; path = Classes/TAMusic/TAMusicArticulation.m; sourceTree = "<group>"; };
-		625FF521121EE91100D201A8 /* TAMusicNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicNote.h; path = Classes/TAMusic/TAMusicNote.h; sourceTree = "<group>"; };
-		625FF522121EE91100D201A8 /* TAMusicNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicNote.m; path = Classes/TAMusic/TAMusicNote.m; sourceTree = "<group>"; };
 		625FF525121EE93800D201A8 /* TAMusicInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicInstrument.h; path = Classes/TAMusic/TAMusicInstrument.h; sourceTree = "<group>"; };
 		625FF526121EE93800D201A8 /* TAMusicInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicInstrument.m; path = Classes/TAMusic/TAMusicInstrument.m; sourceTree = "<group>"; };
 		625FF529121EE94B00D201A8 /* TAMusicText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicText.h; path = Classes/TAMusic/TAMusicText.h; sourceTree = "<group>"; };
@@ -484,8 +480,6 @@
 				6265F3F1121884800010DEE2 /* TAMusicScore.m */,
 				625FF51D121EE90700D201A8 /* TAMusicArticulation.h */,
 				625FF51E121EE90700D201A8 /* TAMusicArticulation.m */,
-				625FF521121EE91100D201A8 /* TAMusicNote.h */,
-				625FF522121EE91100D201A8 /* TAMusicNote.m */,
 				625FF525121EE93800D201A8 /* TAMusicInstrument.h */,
 				625FF526121EE93800D201A8 /* TAMusicInstrument.m */,
 				625FF529121EE94B00D201A8 /* TAMusicText.h */,
@@ -907,7 +901,6 @@
 				62C599F512188C79003842DF /* TAMusicImporter.m in Sources */,
 				62962EC3121A5FCE002F6246 /* TAMusicStaffLayer.m in Sources */,
 				625FF51F121EE90700D201A8 /* TAMusicArticulation.m in Sources */,
-				625FF523121EE91100D201A8 /* TAMusicNote.m in Sources */,
 				625FF527121EE93800D201A8 /* TAMusicInstrument.m in Sources */,
 				625FF52B121EE94B00D201A8 /* TAMusicText.m in Sources */,
 				620FD91C12287C9900EDE2B7 /* TAMusicView.m in Sources */,
@@ -932,7 +925,6 @@
 				62C599F412188C79003842DF /* TAMusicImporter.m in Sources */,
 				62573343121A5B4700E1356F /* TAMusicXMLImporterTestCase.m in Sources */,
 				625FF520121EE90700D201A8 /* TAMusicArticulation.m in Sources */,
-				625FF524121EE91100D201A8 /* TAMusicNote.m in Sources */,
 				625FF528121EE93800D201A8 /* TAMusicInstrument.m in Sources */,
 				625FF52C121EE94B00D201A8 /* TAMusicText.m in Sources */,
 				62ABE1881227918400A20A82 /* TAMusicCommonTests.m in Sources */,

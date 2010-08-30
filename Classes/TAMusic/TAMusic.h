@@ -14,7 +14,6 @@
 #import "TAMusicMeasure.h"
 #import "TAMusicText.h"
 #import "TAMusicArticulation.h"
-#import "TAMusicNote.h"
 #import "TAMusicInstrument.h"
 #import "TAMusicView.h"
 #import "TAMusicStaff.h"

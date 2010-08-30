@@ -11,6 +11,9 @@
 #import "TAToolkit.h"
 
 #pragma mark -
+#pragma mark Notes
+
+#pragma mark -
 #pragma mark Time Signature
 
 TATimeSignature TATimeSignatureDefault()

@@ -38,13 +38,7 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 @synthesize clef = _clef;
 
 - (CGFloat)width:(TAMusicMeasureOptions)options
-{
-//	if ( _width == 0 )
-//	{
-//		_width = 
-//
-//	}
-	
+{	
 	CGFloat width = 0;
 		
 	if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsClef) )
@@ -96,6 +90,10 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 	
 	if ( self.number == 1  || ! TAMusicTimeSignatureIsEqualToTimeSignature(self.timeSignature, measure.timeSignature) )
 	{
+		TATimeSignatureLog(self.timeSignature);
+		TATimeSignatureLog(measure.timeSignature);
+
+	
 		options |= TAMusicMeasureOptionsTimeSignature;
 	}	
 

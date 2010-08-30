@@ -25,15 +25,9 @@
 {
 	if ( ! _musicView )
 	{
-		NSString *path = [[NSBundle mainBundle] pathForResource:@"13a-KeySignatures" ofType:@"xml"];
+		NSString *path = [[NSBundle mainBundle] pathForResource:@"01a-Pitches-Pitches" ofType:@"xml"];
 		
 		TAMusicXMLImporter *importer = [[TAMusicXMLImporter alloc] initWithContentsOfFile:path];
-		
-		TAMusicScore *score = importer.score;
-		
-		NSLog(@"%@", score.title);
-		NSLog(@"Number of Parts: %d", [score numberOfParts]);
-		NSLog(@"Parts %@", [score.parts valueForKey:@"name"]);
 
 		_musicView = [[TAMusicView alloc] initWithScore:importer.score];	
 		_musicView.frame = self.view.bounds;

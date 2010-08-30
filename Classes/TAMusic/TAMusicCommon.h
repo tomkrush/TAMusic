@@ -8,6 +8,82 @@
 
 #import <Foundation/Foundation.h>
 
+
+#pragma mark -
+#pragma mark Clef
+
+enum 
+{
+   TAMusicClefSignC,
+   TAMusicClefSignF,
+   TAMusicClefSignG,
+   TAMusicClefSignPercussion
+};
+typedef NSUInteger TAMusicClefSign;
+
+struct TAMusicClef 
+{
+   TAMusicClefSign sign;
+   NSInteger line;
+};
+typedef struct TAMusicClef TAMusicClef;
+
+TAMusicClef TAMusicClefMake(TAMusicClefSign sign, NSInteger line);
+TAMusicClef TAMusicClefDefault();
+
+BOOL TAMusicClefIsEqualToClef(TAMusicClef sign1, TAMusicClef sign2);
+
+#pragma mark -
+#pragma mark Pitch
+
+enum
+{
+   TAMusicStepC,
+   TAMusicStepG,
+   TAMusicStepD,
+   TAMusicStepA,
+   TAMusicStepE,
+   TAMusicStepB,
+};
+typedef NSUInteger TAMusicStep;
+
+struct TAMusicPitch 
+{
+   TAMusicStep step;
+   NSInteger alter;
+   NSUInteger octave;
+};
+typedef struct TAMusicPitch TAMusicPitch;
+
+#pragma mark -
+#pragma mark Notes
+
+enum
+{
+   TAMusicNoteTypeLonga,
+   TAMusicNoteTypeBreve,
+   TAMusicNoteTypeWhole,
+   TAMusicNoteTypeHalf,
+   TAMusicNoteTypeQuarter,
+   TAMusicNoteTypeEighth,
+   TAMusicNoteTypeSixteenth,
+   TAMusicNoteTypeThirtySecondth,
+   TAMusicNoteTypeSixtyForth,
+   TAMusicNoteTypeOneHundredTwentyEigth
+};
+typedef NSUInteger TAMusicNoteType;
+
+struct TAMusicNote 
+{
+   NSUInteger duration;
+   TAMusicPitch pitch;
+   TAMusicNoteType type;
+};
+typedef struct TAMusicNote TAMusicNote;
+
+#pragma mark -
+#pragma mark Time Signature
+
 enum
 {
    TAMusicSymbolCommon,
@@ -23,9 +99,6 @@ struct TATimeSignature
    TAMusicSymbol symbol;
 };
 typedef struct TATimeSignature TATimeSignature;
-
-#pragma mark -
-#pragma mark Time Signature
 
 void TATimeSignatureLog(TATimeSignature timeSignature);
 TATimeSignature TATimeSignatureMake(NSUInteger beatCount, NSUInteger beatDuration);
@@ -58,27 +131,3 @@ CGSize TAMusicKeySignatureSize(TAKeySignature keySignature);
 TAKeySignature TAKeySignatureMake(NSInteger fifth, TAMusicMode mode);
 BOOL TAMusicKeySignatureIsEqualToKeySignature(TAKeySignature keySignature1, TAKeySignature keySignature2);
 TAKeySignature TAKeySignatureDefault();
-
-#pragma mark -
-#pragma mark Clef
-
-enum 
-{
-   TAMusicClefSignC,
-   TAMusicClefSignF,
-   TAMusicClefSignG,
-   TAMusicClefSignPercussion
-};
-typedef NSUInteger TAMusicClefSign;
-
-struct TAMusicClef 
-{
-   TAMusicClefSign sign;
-   NSInteger line;
-};
-typedef struct TAMusicClef TAMusicClef;
-
-TAMusicClef TAMusicClefMake(TAMusicClefSign sign, NSInteger line);
-TAMusicClef TAMusicClefDefault();
-
-BOOL TAMusicClefIsEqualToClef(TAMusicClef sign1, TAMusicClef sign2);

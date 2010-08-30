@@ -102,8 +102,10 @@
 
 		TAMusicMeasure *measure = [self.measures objectAtIndex:i];
 		
-		TAMusicMeasure *previousMeasure = i > 0 ? [self.measures objectAtIndex:i - 1] : nil;		
+		NSUInteger measureIndex = [self.part.measures indexOfObject:measure];
 		
+		TAMusicMeasure *previousMeasure = measureIndex > 0 ? [self.part.measures objectAtIndex:measureIndex - 1] : nil;
+				
 		TAMusicMeasureOptions options = [measure optionsAtIndexInStaff:i previousMeasure:previousMeasure];
 		
 		CGFloat width = [measure width:options] + _extraSpace;
