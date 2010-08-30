@@ -19,4 +19,6 @@
 
 - (id)initWithScore:(TAMusicScore *)score;
 
+@property (nonatomic, retain) TAMusicScore *score;
+
 @end

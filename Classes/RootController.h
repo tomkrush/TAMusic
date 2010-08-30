@@ -10,11 +10,19 @@
 #import "TAToolkit.h"
 #import "TAMusic.h"
 
-@interface RootController : TAViewController 
+@interface RootController : TAViewController <UITableViewDataSource, UITableViewDelegate>
 {
 	TAMusicView *_musicView;
+	
+	UITableViewController *_scoreTableViewController;
+	UIPopoverController *_scorePopoverController;
+	
+	NSArray *_files;
 }
 
+@property (nonatomic, readonly) UIPopoverController *scorePopoverController;
+@property (nonatomic, retain) NSArray *files;
 @property (nonatomic, readonly) TAMusicView *musicView;
+@property (nonatomic, readonly) UITableViewController *scoreTableViewController;
 
 @end

@@ -11,6 +11,8 @@
 
 @implementation TAMusicView
 
+@synthesize score = _score;
+
 - (id)initWithScore:(TAMusicScore *)score
 {
 	if ( self = [super init] )

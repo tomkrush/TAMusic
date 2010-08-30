@@ -11,21 +11,113 @@
 
 @implementation RootController
 
+@synthesize files = _files;
+
 - (void)viewDidLoad
 {
+	NSError *error = nil;
+	
+	NSString *path = [[NSBundle mainBundle] bundlePath];
+	path = [path stringByAppendingPathComponent:@"musicXML.bundle"];
+	
+	self.files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&error];
+
 	[self.view addSubview:self.musicView];
+	
+	UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	[button setTitle:@"Change Score" forState:UIControlStateNormal];
+	[button sizeToFit];
+	
+	[button addTarget:self action:@selector(showScores:) forControlEvents:UIControlEventTouchDown];
+	button.origin = CGPointMake(10, 10);
+	
+	[self.view addSubview:button];
+}
+
+- (void)showScores:(UIButton *)button
+{
+	[self.scorePopoverController presentPopoverFromRect:button.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];	
 }
 
 - (void)layoutViewsWithOrientation:(UIInterfaceOrientation)orientation
 {
 	[self.musicView setNeedsDisplay];
+	
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	NSString *fileName = [self.files objectAtIndex:indexPath.row];
+
+	[[NSUserDefaults standardUserDefaults] setObject:fileName forKey:@"fileName"];
+
+	NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
+	
+	TAMusicXMLImporter *importer = [[TAMusicXMLImporter alloc] initWithContentsOfFile:path];
+	
+	self.musicView.score = importer.score;
+	[self.musicView setNeedsDisplay];
+	
+	[importer release];
+	
+	[self.scorePopoverController dismissPopoverAnimated:YES];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{	
+	NSString *cellIdentifier = @"Cell";;
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	
+    if (cell == nil) 
+	{
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+	}
+		
+	cell.textLabel.text = [self.files objectAtIndex:indexPath.row];
+		
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	return [self.files count];
+}
+
+- (UIPopoverController *)scorePopoverController
+{
+	if ( ! _scorePopoverController )
+	{
+		_scorePopoverController = [[UIPopoverController alloc] initWithContentViewController:self.scoreTableViewController];
+	}
+	
+	return _scorePopoverController;
+}
+
+- (UITableViewController *)scoreTableViewController
+{
+	if ( ! _scoreTableViewController )
+	{
+		_scoreTableViewController = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
+		_scoreTableViewController.tableView.dataSource = self;
+		_scoreTableViewController.tableView.delegate = self;
+	}
+
+	return _scoreTableViewController;
 }
 
 - (TAMusicView *)musicView
 {
 	if ( ! _musicView )
 	{
-		NSString *path = [[NSBundle mainBundle] pathForResource:@"01a-Pitches-Pitches" ofType:@"xml"];
+		NSString *fileName = [[NSUserDefaults standardUserDefaults] objectForKey:@"fileName"];
+	
+		if ( ! fileName )
+		{
+			fileName = @"01a-Pitches-Pitches.xml";
+		}
+		
+		NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
 		
 		TAMusicXMLImporter *importer = [[TAMusicXMLImporter alloc] initWithContentsOfFile:path];
 
@@ -46,7 +138,10 @@
 
 - (void)dealloc
 {
+	[_scorePopoverController release];
+	[_files release];
 	[_musicView release];
+	[_scoreTableViewController release];
 	[super dealloc];
 }
 
