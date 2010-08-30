@@ -24,6 +24,9 @@ struct TATimeSignature
 };
 typedef struct TATimeSignature TATimeSignature;
 
+#pragma mark -
+#pragma mark Time Signature
+
 void TATimeSignatureLog(TATimeSignature timeSignature);
 TATimeSignature TATimeSignatureMake(NSUInteger beatCount, NSUInteger beatDuration);
 BOOL TAMusicTimeSignatureIsEqualToTimeSignature(TATimeSignature timeSignature1, TATimeSignature timeSignature2);
@@ -31,6 +34,11 @@ BOOL TAMusicTimeSignatureIsEqualToTimeSignature(TATimeSignature timeSignature1, 
 TATimeSignature TATimeSignatureDefault();
 
 CGSize TAMusicTimeSignatureSize(TATimeSignature timeSignature);
+
+#pragma mark -
+#pragma mark Key Signature
+
+const CGFloat TAMusicSpaceBetweenKeySignatureAccidentals;
 
 enum 
 {
@@ -46,9 +54,13 @@ struct TAKeySignature
 };
 typedef struct TAKeySignature TAKeySignature;
 
+CGSize TAMusicKeySignatureSize(TAKeySignature keySignature);
 TAKeySignature TAKeySignatureMake(NSInteger fifth, TAMusicMode mode);
 BOOL TAMusicKeySignatureIsEqualToKeySignature(TAKeySignature keySignature1, TAKeySignature keySignature2);
 TAKeySignature TAKeySignatureDefault();
+
+#pragma mark -
+#pragma mark Clef
 
 enum 
 {

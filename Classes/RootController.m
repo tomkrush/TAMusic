@@ -25,7 +25,7 @@
 {
 	if ( ! _musicView )
 	{
-		NSString *path = [[NSBundle mainBundle] pathForResource:@"12b-Clefs-NoKeyOrClef" ofType:@"xml"];
+		NSString *path = [[NSBundle mainBundle] pathForResource:@"13a-KeySignatures" ofType:@"xml"];
 		
 		TAMusicXMLImporter *importer = [[TAMusicXMLImporter alloc] initWithContentsOfFile:path];
 		
@@ -36,7 +36,7 @@
 		NSLog(@"Parts %@", [score.parts valueForKey:@"name"]);
 
 		_musicView = [[TAMusicView alloc] initWithScore:importer.score];	
-		_musicView.frame = self.view.frame;
+		_musicView.frame = self.view.bounds;
 		_musicView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 
 		[importer release];	

@@ -41,6 +41,13 @@ enum
 	TAMusicGlyphCutTime,
 	TAMusicGlyphCommonTime,
 	
+	// Key Signature
+	TAMusicGlyphNatural,
+	TAMusicGlyphFlat,
+	TAMusicGlyphSharp,
+	TAMusicGlyphDoubleFlat,
+	TAMusicGlyphDoubleSharp,
+	
 	TAMusicGlyphNone
 };
 typedef NSUInteger TAMusicGlyph;

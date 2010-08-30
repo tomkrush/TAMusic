@@ -17,6 +17,8 @@
 	{
 		_score = score;
 		[_score retain];
+		
+		self.contentSize = self.bounds.size;
 	}
 	
 	return self;
@@ -31,7 +33,7 @@
 	
 	TAMusicPart *part = [_score.parts objectAtIndex:0];
 	NSUInteger numberOfMeasures = [part numberOfMeasures];
-	
+		
 	CFRange measureRange = CFRangeMake(0, numberOfMeasures);
 	
 	CGFloat height = 32;
@@ -52,6 +54,9 @@
 		
 		staffFrame.origin.y += (height * 1.5) + staffFrame.size.height;
 	}
+	
+	//rect.size = CGSizeMake(rect.size.width, staffFrame.origin.y);
+	//self.bounds = rect;
 }
 
 - (void)dealloc

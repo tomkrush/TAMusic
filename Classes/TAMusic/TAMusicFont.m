@@ -107,8 +107,28 @@
 		
 		case TAMusicGlyphMinus:
 			bytes = "\xEF\x80\xAD";
+		break;		
+
+		case TAMusicGlyphNatural:
+			bytes = "\xEF\x81\xAE";
+		break;
+		
+		case TAMusicGlyphFlat:
+			bytes = "\xEF\x81\xA2";
+		break;
+		
+		case TAMusicGlyphSharp:
+			bytes = "\xEF\x80\xA3";
+		break;		
+
+		case TAMusicGlyphDoubleFlat:
+			bytes = "\xEF\x82\xBA";
 		break;	
 
+		case TAMusicGlyphDoubleSharp:
+			bytes = "\xEF\x83\x9C";
+		break;	
+		
 		case TAMusicGlyphNone:
 			bytes = "";
 		break;

@@ -11,9 +11,10 @@
 #import "TAMusicStaff.h"
 #import "TAMusicPart.h"
 
-@interface TAMusicView : UIView 
+@interface TAMusicView : UIScrollView 
 {
 	TAMusicScore *_score;
+	
 }
 
 - (id)initWithScore:(TAMusicScore *)score;

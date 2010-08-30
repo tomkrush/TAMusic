@@ -231,9 +231,7 @@
 		{
 			_timeSignature.symbol = TAMusicSymbolCut;
 		}
-		
-		TATimeSignatureLog(_timeSignature);
-		
+				
 		// Assign parts to measure
 		_measure.keySignature = _keySignature;
 		_measure.timeSignature = _timeSignature;

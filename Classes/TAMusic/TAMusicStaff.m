@@ -122,7 +122,7 @@
 			CGRect clefRect = rect;
 
 			TAMusicGlyph glyph;
-			
+						
 			CGFloat offset = 0;
 
 			NSUInteger line = measure.clef.line;
@@ -157,8 +157,103 @@
 
 			[string drawInRect:clefRect withFont:font];
 			
-			x += clefRect.size.width + TAMusicSpaceAfterClef;
+			x += TAMusicSpaceBeforeClef + clefRect.size.width + TAMusicSpaceAfterClef;
 	
+			CGContextRestoreGState(context);
+		}
+		
+		// Draw Key Signature
+		if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsKeySignature) )
+		{
+			CGContextSaveGState(context);
+
+			NSInteger fifth = measure.keySignature.fifth;
+			//TAMusicMode mode = measure.keySignature.mode;
+
+			NSInteger amount = abs(fifth);
+
+			CGSize accidentalSize = TAMusicKeySignatureSize(measure.keySignature);
+
+			CGRect accidentalRect = rect;
+			accidentalRect.size.width = accidentalSize.width;
+			
+			NSString *glyph = [TAMusicFont characterForGlyph:TAMusicGlyphNatural];
+			NSString *doubleGlyph = [TAMusicFont characterForGlyph:TAMusicGlyphNatural];
+
+			// Treble Lines
+			CGFloat fifths[7];
+						
+			if ( fifth > 0 )
+			{
+				fifths[0] = 5.0f;
+				fifths[1] = 3.5f;
+				fifths[2] = 5.5f;
+				fifths[3] = 4.0f;
+				fifths[4] = 2.5f;
+				fifths[5] = 4.5f;
+				fifths[6] = 3.0f;
+
+				glyph = [TAMusicFont characterForGlyph:TAMusicGlyphSharp];
+				doubleGlyph = [TAMusicFont characterForGlyph:TAMusicGlyphDoubleSharp];
+			}
+			else
+			{
+				fifths[0] = 3.0f;
+				fifths[1] = 4.5f;
+				fifths[2] = 2.5f;
+				fifths[3] = 4.0f;
+				fifths[4] = 2.0f;
+				fifths[5] = 3.5f;
+				fifths[6] = 1.5f;
+				
+				glyph = [TAMusicFont characterForGlyph:TAMusicGlyphFlat];
+				doubleGlyph = [TAMusicFont characterForGlyph:TAMusicGlyphDoubleFlat];
+			}
+			
+			CGSize glyphSize = [TAMusicFont sizeOfString:glyph];
+			CGSize doubleGlyphSize = [TAMusicFont sizeOfString:doubleGlyph];
+	
+			CGFloat offset = 0;
+			CGFloat line = 0;
+
+			[[UIColor blackColor] set];
+
+			accidentalRect.origin.x += TAMusicSpaceBeforeKeySignature + x;
+			CGFloat accidentalY = accidentalRect.origin.y;	
+
+			for ( NSInteger index = 0; index < 7; index++ )
+			{
+				if (index >= amount) break;
+			
+				NSString *drawGlyph = glyph;
+				CGSize size = glyphSize;
+				
+				NSInteger lineIndex = index;
+						
+				if ( amount > 7 )
+				{
+					lineIndex = index + (amount - 7);
+					
+					if ( lineIndex >= 7 )
+					{
+						lineIndex -= 7;
+						
+						drawGlyph = doubleGlyph;
+						size = doubleGlyphSize;
+					}
+				}
+				//NSLog(@"%f %d", fifths[lineIndex], lineIndex);
+				line = fifths[lineIndex];		
+				
+				accidentalRect.origin.y = accidentalY - ((interval * (line + offset)) + interval);
+
+				[drawGlyph drawInRect:accidentalRect withFont:font];
+
+				accidentalRect.origin.x += size.width + TAMusicSpaceBetweenKeySignatureAccidentals;
+			}
+
+			x += TAMusicSpaceBeforeKeySignature + accidentalRect.size.width + TAMusicSpaceAfterKeySignature;
+
 			CGContextRestoreGState(context);
 		}
 
@@ -195,6 +290,8 @@
 				timeSignatureRect.origin.x = timeSignatureXOrigin + (( timeSignatureSize.width - beatDurationSize.width) / 2);
 				timeSignatureRect.origin.y -= (interval * 2);
 				[beatDuration drawInRect:timeSignatureRect withFont:font];
+				
+				x += TAMusicSpaceBeforeTimeSignature + timeSignatureRect.size.width + TAMusicSpaceAfterTimeSignature;
 			}
 			else
 			{
@@ -216,7 +313,10 @@
 				timeSignatureRect.origin.y -= (interval * (3)) + interval;
 				
 				[string drawInRect:timeSignatureRect withFont:font];
+				
+				x += TAMusicSpaceBeforeTimeSignature + timeSignatureRect.size.width + TAMusicSpaceAfterTimeSignature;
 			}
+			
 			CGContextRestoreGState(context);
 		}
 

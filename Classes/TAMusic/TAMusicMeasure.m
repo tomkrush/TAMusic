@@ -19,6 +19,9 @@ const CGFloat TAMusicSpaceAfterClef = 0;
 const CGFloat TAMusicSpaceBeforeTimeSignature = 6;
 const CGFloat TAMusicSpaceAfterTimeSignature = 3;
 
+const CGFloat TAMusicSpaceBeforeKeySignature = 6;
+const CGFloat TAMusicSpaceAfterKeySignature = 3;
+
 BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOptions option)
 {
 	return (options & option) != 0;
@@ -62,8 +65,10 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 	
 	if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsKeySignature) )
 	{
+		CGSize size = TAMusicKeySignatureSize(self.keySignature);
+
 		// Add width of clef
-		width += 22;
+		width += TAMusicSpaceBeforeKeySignature + size.width + TAMusicSpaceAfterKeySignature;
 	}
 	
 	if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsNotes) )
@@ -84,7 +89,7 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 		options |= TAMusicMeasureOptionsClef;
 	}
 
-	if ( index == 0 )
+	if ( index == 0 || ! TAMusicKeySignatureIsEqualToKeySignature(self.keySignature, measure.keySignature) )
 	{
 		options |= TAMusicMeasureOptionsKeySignature;
 	}

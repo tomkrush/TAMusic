@@ -8,6 +8,10 @@
 
 #import "TAMusicCommon.h"
 #import "TAMusicFont.h"
+#import "TAToolkit.h"
+
+#pragma mark -
+#pragma mark Time Signature
 
 TATimeSignature TATimeSignatureDefault()
 {
@@ -74,6 +78,51 @@ void TATimeSignatureLog(TATimeSignature timeSignature)
 	NSLog(@"Time Signature:{beatCount:%d, beatDuration:%d, symbol:%@}", timeSignature.beatCount, timeSignature.beatDuration, symbol);
 }
 
+#pragma mark -
+#pragma mark Key Signature
+
+const CGFloat TAMusicSpaceBetweenKeySignatureAccidentals = 0;
+
+CGSize TAMusicKeySignatureSize(TAKeySignature keySignature)
+{
+	CGSize size;
+
+	NSInteger fifth = keySignature.fifth;
+	TAMusicGlyph glyph = TAMusicGlyphNatural;
+	TAMusicGlyph doubleGlyph = TAMusicGlyphNatural;
+				
+	if ( fifth < 0 )
+	{
+		glyph = TAMusicGlyphFlat;
+		doubleGlyph = TAMusicGlyphDoubleFlat;
+	}
+	else if ( fifth > 0 )
+	{
+		glyph = TAMusicGlyphSharp;
+		doubleGlyph = TAMusicGlyphDoubleSharp;
+	}
+	
+	CGSize glyphSize = [TAMusicFont sizeOfGlyph:glyph];
+	CGSize doubleGlyphSize = [TAMusicFont sizeOfGlyph:doubleGlyph];
+	
+	
+	NSInteger absFifth = (CGFloat)abs(fifth);
+	
+	NSUInteger doubles = absFifth > 7 ? 4 + -(11 - absFifth) : 0;
+	NSUInteger singles = doubles > 0 ? 7 - doubles : absFifth;
+	
+	CGFloat amount = (CGFloat)abs(fifth);
+	amount = amount > 7 ? 7 : amount;
+	
+	size.width = (amount * TAMusicSpaceBetweenKeySignatureAccidentals);
+	size.width += glyphSize.width * singles;
+	size.width += doubleGlyphSize.width * doubles;
+		
+	//size.height = glyphSize.height + (0.5f * glyphSize.height * amount);
+
+	return size;
+}
+
 TAKeySignature TAKeySignatureMake(NSInteger fifth, TAMusicMode mode)
 {
 	TAKeySignature keySignature;
@@ -97,6 +146,9 @@ BOOL TAMusicKeySignatureIsEqualToKeySignature(TAKeySignature keySignature1, TAKe
 	
 	return NO;
 }
+
+#pragma mark -
+#pragma mark Clef
 
 TAMusicClef TAMusicClefMake(TAMusicClefSign sign, NSInteger line)
 {
