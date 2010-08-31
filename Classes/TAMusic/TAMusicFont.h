@@ -61,6 +61,18 @@ enum
 	TAMusicNoteHead64th,
 	TAMusicNoteHead128th,
 	
+	// Rests
+	TAMusicRestDoubleWhole,
+	TAMusicRestWhole,
+	TAMusicRestHalf,
+	TAMusicRestQuarter,
+	TAMusicRestEighth,
+	TAMusicRest16th,
+	TAMusicRest32nd,
+	TAMusicRest64th,
+	TAMusicRest128th,
+	TAMusicRestDefault,
+	
 	TAMusicGlyphNone
 };
 typedef NSUInteger TAMusicGlyph;

@@ -173,6 +173,46 @@
 			bytes = "\xEF\x83\x8F";
 		break;
 		
+		case TAMusicRestDoubleWhole:
+			bytes = "\xE2\x80\x9E";
+		break;
+
+		case TAMusicRestWhole:
+			bytes = "\xE2\x88\x91";
+		break;
+
+		case TAMusicRestHalf:
+			bytes = "\xC3\x93";
+		break;
+
+		case TAMusicRestQuarter:
+			bytes = "\xC5\x92";
+		break;
+
+		case TAMusicRestEighth:
+			bytes = "\xE2\x80\xB0";
+		break;
+
+		case TAMusicRest16th:
+			bytes = "\xE2\x89\x88";
+		break;
+
+		case TAMusicRest32nd:
+			bytes = "\xC2\xAE";
+		break;
+
+		case TAMusicRest64th:
+			bytes = "\xC3\x99";
+		break;
+
+		case TAMusicRest128th:
+			bytes = "\xC3\x82";
+		break;
+
+		case TAMusicRestDefault:
+			bytes = "\xE2\x88\x91";
+		break;
+		
 		case TAMusicGlyphNone:
 			bytes = "";
 		break;
