@@ -98,12 +98,8 @@
 	
 	for (NSUInteger i = 0; i < [self.measures count]; i++) 
 	{
-		CGContextSetAllowsAntialiasing(context, YES);
-
 		TAMusicMeasure *measure = [self.measures objectAtIndex:i];
-		
-		NSLog(@"%d %d", measure.number, [measure.notes count]);
-		
+
 		NSUInteger measureIndex = [self.part.measures indexOfObject:measure];
 		
 		TAMusicMeasure *previousMeasure = measureIndex > 0 ? [self.part.measures objectAtIndex:measureIndex - 1] : nil;
@@ -117,6 +113,36 @@
 		CGFloat x = 0.0f;
 		
 		UIFont *font = [UIFont fontWithName:@"Maestro" size:self.frame.size.height];
+
+		CGContextSaveGState(context);
+		CGContextSetAllowsAntialiasing(context, NO);
+		CGContextSetLineCap(context, kCGLineCapRound);
+		CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:222/255 green:198/255 blue:137/255 alpha:0.4f].CGColor);
+		//CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:0 green:0 blue:0 alpha:1.0f].CGColor);
+		
+		// Draw Outer border
+		CGContextMoveToPoint(context, rect.origin.x, rect.origin.y);
+		CGContextAddLineToPoint(context, rect.origin.x + width, rect.origin.y);
+		CGContextAddLineToPoint(context, rect.origin.x + width, rect.origin.y+rect.size.height);
+		CGContextAddLineToPoint(context, rect.origin.x, rect.origin.y+rect.size.height);
+		
+		CGFloat y = interval;
+				
+		// Draw Lines
+		for ( NSUInteger l = 0; l < 3; l++ )
+		{
+			CGContextMoveToPoint(context, rect.origin.x, rect.origin.y + y);
+			CGContextAddLineToPoint(context, rect.origin.x + width, rect.origin.y + y);
+			
+			y += interval;
+		}
+
+		CGContextStrokePath(context);
+
+		CGContextRestoreGState(context);
+
+
+		CGContextSetAllowsAntialiasing(context, YES);
 
 		// Draw Clef
 		if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsClef) )
@@ -169,7 +195,7 @@
 	
 			CGContextRestoreGState(context);
 		}
-		
+					
 		// Draw Key Signature
 		if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsKeySignature) )
 		{
@@ -327,35 +353,60 @@
 			
 			CGContextRestoreGState(context);
 		}
-
-			
-		CGContextSaveGState(context);
-		CGContextSetAllowsAntialiasing(context, NO);
-		CGContextSetLineCap(context, kCGLineCapRound);
-		CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:222/255 green:198/255 blue:137/255 alpha:0.4f].CGColor);
-		//CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:0 green:0 blue:0 alpha:1.0f].CGColor);
 		
-		// Draw Outer border
-		CGContextMoveToPoint(context, rect.origin.x, rect.origin.y);
-		CGContextAddLineToPoint(context, rect.origin.x + width, rect.origin.y);
-		CGContextAddLineToPoint(context, rect.origin.x + width, rect.origin.y+rect.size.height);
-		CGContextAddLineToPoint(context, rect.origin.x, rect.origin.y+rect.size.height);
-		
-		CGFloat y = interval;
-				
-		// Draw Lines
-		for ( NSUInteger l = 0; l < 3; l++ )
+		// Draw Notes			
+		if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsNotes) )
 		{
-			CGContextMoveToPoint(context, rect.origin.x, rect.origin.y + y);
-			CGContextAddLineToPoint(context, rect.origin.x + width, rect.origin.y + y);
-			
-			y += interval;
+			CGRect measureRect = rect;
+			measureRect.origin.x += TAMusicSpaceBeforeNotes + x;
+			measureRect.size.width -= (x - measureRect.origin.x);
+			measureRect.origin.y -= (interval * (3)) + interval;
+		
+			for ( TAMusicNote *note in measure.notes )
+			{
+				NSString *noteHead;
+				
+				switch (note.type) {
+					case TAMusicNoteTypeBreve:
+						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHeadBreve];
+						break;
+					case TAMusicNoteTypeLonga:
+						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHeadLonga];
+						break;
+					case TAMusicNoteTypeWhole:
+						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHeadWhole];
+						break;
+					case TAMusicNoteTypeHalf:
+						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHeadHalf];
+						break;
+					case TAMusicNoteTypeQuarter:
+						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHeadQuarter];
+						break;
+					case TAMusicNoteTypeEighth:
+						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHeadEighth];
+						break;
+					case TAMusicNoteType16th:
+						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHead16th];
+						break;
+					case TAMusicNoteType32nd:
+						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHead32nd];
+						break;
+					case TAMusicNoteType64th:
+						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHead64th];
+						break;
+					case TAMusicNoteType128th:
+						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHead128th];
+						break;
+				}
+				
+				CGSize size = [TAMusicFont sizeOfString:noteHead];
+
+				[[UIColor blackColor] set];
+				[noteHead drawInRect:measureRect withFont:font];
+				
+				measureRect.origin.x += size.width;
+			}
 		}
-
-		CGContextStrokePath(context);
-
-
-		CGContextRestoreGState(context);
 		
 		rect.origin.x += width;
 	}

@@ -10,6 +10,7 @@
 #import "TAMusicPart.h"
 #import "TAMusicFont.h"
 #import "TAMusicMeasure.h"
+#import "TAMusicNote.h"
 
 @interface TAMusicStaff : NSObject 
 {

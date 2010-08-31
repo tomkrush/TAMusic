@@ -49,6 +49,18 @@ enum
 	TAMusicGlyphDoubleFlat,
 	TAMusicGlyphDoubleSharp,
 	
+	// Note Heads
+	TAMusicNoteHeadLonga,
+	TAMusicNoteHeadBreve,
+	TAMusicNoteHeadWhole,
+	TAMusicNoteHeadHalf,
+	TAMusicNoteHeadQuarter,
+	TAMusicNoteHeadEighth,
+	TAMusicNoteHead16th,
+	TAMusicNoteHead32nd,
+	TAMusicNoteHead64th,
+	TAMusicNoteHead128th,
+	
 	TAMusicGlyphNone
 };
 typedef NSUInteger TAMusicGlyph;

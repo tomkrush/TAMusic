@@ -133,6 +133,46 @@
 			bytes = "\xEF\x83\x9C";
 		break;	
 		
+		case TAMusicNoteHeadLonga:
+			bytes = "\xEF\x82\x87";
+		break;
+
+		case TAMusicNoteHeadBreve:
+			bytes = "\xEF\x82\x87";
+		break;
+
+		case TAMusicNoteHeadWhole:
+			bytes = "\xEF\x81\xB7";
+		break;
+
+		case TAMusicNoteHeadHalf:
+			bytes = "\xEF\x82\xBC";
+		break;
+
+		case TAMusicNoteHeadQuarter:
+			bytes = "\xEF\x83\x8F";
+		break;
+
+		case TAMusicNoteHeadEighth:
+			bytes = "\xEF\x83\x8F";
+		break;
+
+		case TAMusicNoteHead16th:
+			bytes = "\xEF\x83\x8F";
+		break;
+
+		case TAMusicNoteHead32nd:
+			bytes = "\xEF\x83\x8F";
+		break;
+
+		case TAMusicNoteHead64th:
+			bytes = "\xEF\x83\x8F";
+		break;
+
+		case TAMusicNoteHead128th:
+			bytes = "\xEF\x83\x8F";
+		break;
+		
 		case TAMusicGlyphNone:
 			bytes = "";
 		break;

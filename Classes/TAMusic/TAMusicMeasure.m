@@ -23,6 +23,9 @@ const CGFloat TAMusicSpaceAfterTimeSignature = 3;
 const CGFloat TAMusicSpaceBeforeKeySignature = 6;
 const CGFloat TAMusicSpaceAfterKeySignature = 3;
 
+const CGFloat TAMusicSpaceBeforeNotes = 8;
+const CGFloat TAMusicSpaceAfterNotes = 0;
+
 BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOptions option)
 {
 	return (options & option) != 0;
