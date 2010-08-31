@@ -20,6 +20,7 @@ enum
 	TAMusicGlyphBassClefDown,
 	TAMusicGlyphBassClef,
 	TAMusicGlyphPercussionClef,
+	TAMusicGlyphUnknownClef,
 	
 	// Numbers
 	TAMusicGlyphZero,

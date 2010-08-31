@@ -17,7 +17,8 @@ enum
    TAMusicClefSignC,
    TAMusicClefSignF,
    TAMusicClefSignG,
-   TAMusicClefSignPercussion
+   TAMusicClefSignPercussion,
+   TAMusicClefUnknown
 };
 typedef NSUInteger TAMusicClefSign;
 
@@ -55,31 +56,8 @@ struct TAMusicPitch
 };
 typedef struct TAMusicPitch TAMusicPitch;
 
-#pragma mark -
-#pragma mark Notes
-
-enum
-{
-   TAMusicNoteTypeLonga,
-   TAMusicNoteTypeBreve,
-   TAMusicNoteTypeWhole,
-   TAMusicNoteTypeHalf,
-   TAMusicNoteTypeQuarter,
-   TAMusicNoteTypeEighth,
-   TAMusicNoteTypeSixteenth,
-   TAMusicNoteTypeThirtySecondth,
-   TAMusicNoteTypeSixtyForth,
-   TAMusicNoteTypeOneHundredTwentyEigth
-};
-typedef NSUInteger TAMusicNoteType;
-
-struct TAMusicNote 
-{
-   NSUInteger duration;
-   TAMusicPitch pitch;
-   TAMusicNoteType type;
-};
-typedef struct TAMusicNote TAMusicNote;
+TAMusicPitch TAMusicPitchMake(TAMusicStep step, NSUInteger alter, NSUInteger octave);
+TAMusicPitch TAMusicPitchDefault();
 
 #pragma mark -
 #pragma mark Time Signature

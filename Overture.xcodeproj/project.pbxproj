@@ -16,6 +16,7 @@
 		620FD91C12287C9900EDE2B7 /* TAMusicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 620FD91B12287C9900EDE2B7 /* TAMusicView.m */; };
 		620FD9E2122887D100EDE2B7 /* Maestro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 620FD91812287C3800EDE2B7 /* Maestro.ttf */; };
 		620FDA4712289E0F00EDE2B7 /* TAMusicStaff.m in Sources */ = {isa = PBXBuildFile; fileRef = 620FDA4612289E0F00EDE2B7 /* TAMusicStaff.m */; };
+		623BDE06122C8968005605B4 /* TAMusicNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 623BDE05122C8968005605B4 /* TAMusicNote.m */; };
 		62573343121A5B4700E1356F /* TAMusicXMLImporterTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 62573342121A5B4700E1356F /* TAMusicXMLImporterTestCase.m */; };
 		625FF51F121EE90700D201A8 /* TAMusicArticulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 625FF51E121EE90700D201A8 /* TAMusicArticulation.m */; };
 		625FF520121EE90700D201A8 /* TAMusicArticulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 625FF51E121EE90700D201A8 /* TAMusicArticulation.m */; };
@@ -80,6 +81,8 @@
 		620FD91B12287C9900EDE2B7 /* TAMusicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicView.m; path = Classes/TAMusic/TAMusicView.m; sourceTree = "<group>"; };
 		620FDA4512289E0F00EDE2B7 /* TAMusicStaff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicStaff.h; path = Classes/TAMusic/TAMusicStaff.h; sourceTree = "<group>"; };
 		620FDA4612289E0F00EDE2B7 /* TAMusicStaff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicStaff.m; path = Classes/TAMusic/TAMusicStaff.m; sourceTree = "<group>"; };
+		623BDE04122C8968005605B4 /* TAMusicNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicNote.h; path = Classes/TAMusic/TAMusicNote.h; sourceTree = "<group>"; };
+		623BDE05122C8968005605B4 /* TAMusicNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicNote.m; path = Classes/TAMusic/TAMusicNote.m; sourceTree = "<group>"; };
 		62573341121A5B4700E1356F /* TAMusicXMLImporterTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicXMLImporterTestCase.h; path = "Classes/TAMusic/Unit Tests/TAMusicXMLImporterTestCase.h"; sourceTree = "<group>"; };
 		62573342121A5B4700E1356F /* TAMusicXMLImporterTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicXMLImporterTestCase.m; path = "Classes/TAMusic/Unit Tests/TAMusicXMLImporterTestCase.m"; sourceTree = "<group>"; };
 		625FF51D121EE90700D201A8 /* TAMusicArticulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicArticulation.h; path = Classes/TAMusic/TAMusicArticulation.h; sourceTree = "<group>"; };
@@ -260,6 +263,8 @@
 				620FDA4612289E0F00EDE2B7 /* TAMusicStaff.m */,
 				627092481229FA1700DA149B /* TAMusicFont.h */,
 				627092491229FA1700DA149B /* TAMusicFont.m */,
+				623BDE04122C8968005605B4 /* TAMusicNote.h */,
+				623BDE05122C8968005605B4 /* TAMusicNote.m */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -439,6 +444,7 @@
 				620FDA4712289E0F00EDE2B7 /* TAMusicStaff.m in Sources */,
 				62708C931229792800DA149B /* RootController.m in Sources */,
 				6270924A1229FA1700DA149B /* TAMusicFont.m in Sources */,
+				623BDE06122C8968005605B4 /* TAMusicNote.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

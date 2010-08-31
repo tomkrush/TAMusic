@@ -11,7 +11,22 @@
 #import "TAToolkit.h"
 
 #pragma mark -
-#pragma mark Notes
+#pragma mark Pitch
+
+TAMusicPitch TAMusicPitchMake(TAMusicStep step, NSUInteger alter, NSUInteger octave)
+{
+	TAMusicPitch pitch;
+	pitch.step = step;
+	pitch.alter = alter;
+	pitch.octave = octave;
+	
+	return pitch;
+}
+
+TAMusicPitch TAMusicPitchDefault()
+{
+	return TAMusicPitchMake(TAMusicStepC, 0, 2);
+}
 
 #pragma mark -
 #pragma mark Time Signature

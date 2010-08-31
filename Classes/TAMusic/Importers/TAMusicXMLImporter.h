@@ -10,6 +10,7 @@
 #import "TAMusicImporter.h"
 #import "TAMusicPart.h"
 #import "TAMusicMeasure.h"
+#import "TAMusicNote.h"
 
 typedef NSUInteger TAMusicXMLElementKey;
 
@@ -25,6 +26,7 @@ typedef NSUInteger TAMusicXMLElement;
 	TATimeSignature _timeSignature;
 	TAKeySignature _keySignature;
 	TAMusicClef _clef;
+	TAMusicNote *_note;
 	TAMusicMeasure *_measure;
 }
 

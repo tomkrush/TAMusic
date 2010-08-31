@@ -33,6 +33,10 @@
 			bytes = "\xEF\x80\xA6";
 		break;
 
+		case TAMusicGlyphUnknownClef:
+			bytes = "\xEF\x83\x96";
+		break;
+
 		case TAMusicGlyphAltoClef:
 			bytes = "\xEF\x81\x82";
 		break;

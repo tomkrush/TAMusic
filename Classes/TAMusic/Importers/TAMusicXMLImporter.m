@@ -157,7 +157,43 @@
 	{		
 		[self clearBuffer];
 	}
+	else if ( [elementName isEqualToString:@"note"] )
+	{
+		[self clearBuffer];	
 
+		if ( _note )
+		{
+			[_measure addNote:_note];
+			[_note release];
+		}
+	
+		_note = [[TAMusicNote alloc] init];
+	}
+	else if ( [elementName isEqualToString:@"pitch"] )
+	{
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"duration"] )
+	{
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"type"] )
+	{
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"octave"] )
+	{
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"alter"] )
+	{
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"step"] )
+	{
+		[self clearBuffer];
+	}
+			
 	_element = elementName;
 }
 
@@ -209,6 +245,10 @@
 		{
 			_clef.sign = TAMusicClefSignC;
 		}
+		else if ( [[self buffer] isEqualToString:@"G"] )
+		{
+			_clef.sign = TAMusicClefSignG;
+		}
 		else if ( [[self buffer] isEqualToString:@"F"] )
 		{
 			_clef.sign = TAMusicClefSignF;
@@ -219,7 +259,7 @@
 		}
 		else
 		{
-			_clef.sign = TAMusicClefSignG;
+			_clef.sign = TAMusicClefUnknown;
 		}
 	
 		[self clearBuffer];
@@ -244,6 +284,125 @@
 			_measure = nil;
 		}
 	}
+	else if ( [elementName isEqualToString:@"note"] )
+	{
+		// Add Note to measure
+		[self clearBuffer];	
+
+		if ( _note )
+		{
+			[_measure addNote:_note];
+			[_note release];
+			_note = nil;
+		}
+	}
+	else if ( [elementName isEqualToString:@"pitch"] )
+	{
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"octave"] )
+	{
+		TAMusicPitch pitch = _note.pitch;
+		pitch.octave = [[self buffer] intValue];
+	
+		_note.pitch = pitch;
+		
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"duration"] )
+	{
+		_note.duration = [[self buffer] intValue];
+		
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"alter"] )
+	{
+		TAMusicPitch pitch = _note.pitch;
+		pitch.alter = [[self buffer] intValue];
+	
+		_note.pitch = pitch;
+				
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"type"] )
+	{
+		if ( [[self buffer] isEqualToString:@"longa"] )
+		{
+			_note.type = TAMusicNoteTypeLonga;
+		}
+		else if ( [[self buffer] isEqualToString:@"breve"] )
+		{
+			_note.type = TAMusicNoteTypeBreve;
+		}
+		else if ( [[self buffer] isEqualToString:@"whole"] )
+		{
+			_note.type = TAMusicNoteTypeWhole;
+		}
+		else if ( [[self buffer] isEqualToString:@"half"] )
+		{
+			_note.type = TAMusicNoteTypeHalf;
+		}
+		else if ( [[self buffer] isEqualToString:@"quarter"] )
+		{
+			_note.type = TAMusicNoteTypeQuarter;
+		}
+		else if ( [[self buffer] isEqualToString:@"eighth"] )
+		{
+			_note.type = TAMusicNoteTypeEighth;
+		}
+		else if ( [[self buffer] isEqualToString:@"16th"] )
+		{
+			_note.type = TAMusicNoteType16th;
+		}
+		else if ( [[self buffer] isEqualToString:@"32nd"] )
+		{
+			_note.type = TAMusicNoteType32nd;
+		}
+		else if ( [[self buffer] isEqualToString:@"64th"] )
+		{
+			_note.type = TAMusicNoteType64th;
+		}
+		else if ( [[self buffer] isEqualToString:@"128th"] )
+		{
+			_note.type = TAMusicNoteType128th;
+		}
+						
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"step"] )
+	{
+		TAMusicPitch pitch = _note.pitch;
+		pitch.octave = [[self buffer] intValue];
+	
+		if ( [[self buffer] isEqualToString:@"C"] )
+		{
+			pitch.step = TAMusicStepC;
+		}
+		else if ( [[self buffer] isEqualToString:@"G"] )
+		{
+			pitch.step = TAMusicStepG;
+		}
+		else if ( [[self buffer] isEqualToString:@"D"] )
+		{
+			pitch.step = TAMusicStepD;
+		}
+		else if ( [[self buffer] isEqualToString:@"A"] )
+		{
+			pitch.step = TAMusicStepA;
+		}
+		else if ( [[self buffer] isEqualToString:@"E"] )
+		{
+			pitch.step = TAMusicStepE;
+		}		
+		else if ( [[self buffer] isEqualToString:@"B"] )
+		{
+			pitch.step = TAMusicStepB;
+		}
+		
+		_note.pitch = pitch;
+		
+		[self clearBuffer];
+	}
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
@@ -260,13 +419,7 @@
 	}
 	else
 	{
-		NSString *tempBuffer = [[NSString alloc] initWithFormat:@"%@%@", _buffer, string];
-		
-		[_buffer release];
-		_buffer = tempBuffer;
-		[_buffer retain];
-		
-		[tempBuffer release];
+		_buffer = [[_buffer stringByAppendingString:string] retain];
 	}
 }
 
@@ -278,6 +431,16 @@
 - (NSString *)buffer
 {
 	return _buffer;
+}
+
+- (void)dealloc
+{
+	[_buffer release];
+//	[_part release];
+//	[_note release];
+//	[_measure release];
+
+	[super dealloc];
 }
 
 @end

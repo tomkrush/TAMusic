@@ -102,6 +102,8 @@
 
 		TAMusicMeasure *measure = [self.measures objectAtIndex:i];
 		
+		NSLog(@"%d %d", measure.number, [measure.notes count]);
+		
 		NSUInteger measureIndex = [self.part.measures indexOfObject:measure];
 		
 		TAMusicMeasure *previousMeasure = measureIndex > 0 ? [self.part.measures objectAtIndex:measureIndex - 1] : nil;
@@ -144,6 +146,10 @@
 					break;
 				case TAMusicClefSignC:
 					glyph = TAMusicGlyphAltoClef;
+					break;
+				default:
+					glyph = TAMusicGlyphUnknownClef;
+					line = 3;
 					break;
 			}
 	

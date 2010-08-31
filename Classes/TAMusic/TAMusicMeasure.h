@@ -24,6 +24,7 @@ const CGFloat TAMusicSpaceAfterKeySignature;
 CGSize TAMusicTimeSignatureSize(TATimeSignature timeSignature);
 
 @class TAMusicStaff;
+@class TAMusicNote;
 
 enum
 {
@@ -40,7 +41,7 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 
 @interface TAMusicMeasure : NSObject 
 {
-	NSArray *_notes;
+	NSMutableArray *_notes;
 	TATimeSignature _timeSignature;
 	TAKeySignature _keySignature;
 	TAMusicClef	_clef;
@@ -50,7 +51,7 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 	CGFloat _width;
 }
 
-@property (nonatomic, retain) NSArray *notes;
+@property (nonatomic, readonly) NSArray *notes;
 @property (nonatomic) TATimeSignature timeSignature;
 @property (nonatomic) TAKeySignature keySignature;
 @property (nonatomic) TAMusicClef clef;
@@ -61,5 +62,7 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 - (CGFloat)width:(TAMusicMeasureOptions)options;
 
 - (TAMusicMeasureOptions)optionsAtIndexInStaff:(NSUInteger)index previousMeasure:(TAMusicMeasure *)measure;
+
+- (void)addNote:(TAMusicNote *)note;
 
 @end

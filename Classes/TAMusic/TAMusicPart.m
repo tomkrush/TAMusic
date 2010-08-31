@@ -54,7 +54,7 @@
 
 - (NSArray *)measures
 {
-	return [[self _measures] copy];
+	return [[[self _measures] copy] autorelease];
 }
 
 - (void)dealloc

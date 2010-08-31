@@ -11,6 +11,7 @@
 
 #import "TAMusicStaff.h"
 #import "TAMusicFont.h"
+#import "TAMusicNote.h"
 
 const CGFloat TAMusicSpaceBeforeClef = 6;
 const CGFloat TAMusicSpaceAfterClef = 0;
@@ -27,6 +28,11 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 	return (options & option) != 0;
 }
 
+@interface TAMusicMeasure ()
+
+- (NSMutableArray *)_notes;
+
+@end
 
 
 @implementation TAMusicMeasure
@@ -38,7 +44,7 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 @synthesize clef = _clef;
 
 - (CGFloat)width:(TAMusicMeasureOptions)options
-{	
+{
 	CGFloat width = 0;
 		
 	if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsClef) )
@@ -89,11 +95,7 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 	}
 	
 	if ( self.number == 1  || ! TAMusicTimeSignatureIsEqualToTimeSignature(self.timeSignature, measure.timeSignature) )
-	{
-		TATimeSignatureLog(self.timeSignature);
-		TATimeSignatureLog(measure.timeSignature);
-
-	
+	{	
 		options |= TAMusicMeasureOptionsTimeSignature;
 	}	
 
@@ -109,6 +111,21 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 									TAMusicMeasureOptionsLyrics;
 
 	return [self width:options];
+}
+
+- (NSMutableArray *)_notes
+{
+	if ( ! _notes )
+	{
+		_notes = [[NSMutableArray alloc] init];
+	}
+	
+	return _notes;
+}
+
+- (void)addNote:(TAMusicNote *)note
+{
+	[[self _notes] addObject:note];
 }
 
 - (void)dealloc

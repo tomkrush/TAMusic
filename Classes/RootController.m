@@ -15,13 +15,6 @@
 
 - (void)viewDidLoad
 {
-	NSError *error = nil;
-	
-	NSString *path = [[NSBundle mainBundle] bundlePath];
-	path = [path stringByAppendingPathComponent:@"musicXML.bundle"];
-	
-	self.files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&error];
-
 	[self.view addSubview:self.musicView];
 	
 	UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -36,7 +29,45 @@
 
 - (void)showScores:(UIButton *)button
 {
-	[self.scorePopoverController presentPopoverFromRect:button.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];	
+	if ( ! self.files )
+	{
+		NSError *error = nil;
+		
+		NSString *path = [[NSBundle mainBundle] bundlePath];
+		path = [path stringByAppendingPathComponent:@"musicXML.bundle"];
+		
+		self.files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&error];
+	}
+			
+	if ( [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone )
+	{
+		UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.scoreTableViewController];
+		self.scoreTableViewController.title = @"Scores";
+		
+		UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleBordered target:self action:@selector(close)];
+		self.scoreTableViewController.navigationItem.rightBarButtonItem = button;
+		[button release];
+		
+		[self presentModalViewController:navController animated:YES];
+		
+		[navController release];
+	}
+	else
+	{
+		if ( ! self.scorePopoverController.popoverVisible )
+		{
+			[self.scorePopoverController presentPopoverFromRect:button.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];	
+		}
+		else
+		{
+			[self.scorePopoverController dismissPopoverAnimated:YES];
+		}
+	}
+}
+
+- (void)close
+{
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)layoutViewsWithOrientation:(UIInterfaceOrientation)orientation
@@ -60,7 +91,14 @@
 	
 	[importer release];
 	
-	[self.scorePopoverController dismissPopoverAnimated:YES];
+	if ( self.modalViewController )
+	{
+		[self dismissModalViewControllerAnimated:YES];
+	}
+	else
+	{
+		[self.scorePopoverController dismissPopoverAnimated:YES];
+	}
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

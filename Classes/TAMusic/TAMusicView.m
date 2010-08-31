@@ -32,10 +32,10 @@
 	UIRectFill(rect);
 
 	CGContextRef context = UIGraphicsGetCurrentContext();
-	
+		
 	TAMusicPart *part = [_score.parts objectAtIndex:0];
 	NSUInteger numberOfMeasures = [part numberOfMeasures];
-		
+
 	CFRange measureRange = CFRangeMake(0, numberOfMeasures);
 	
 	CGFloat height = 32;
