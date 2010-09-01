@@ -132,85 +132,89 @@
 		case TAMusicGlyphDoubleSharp:
 			bytes = "\xEF\x83\x9C";
 		break;	
-		
-		case TAMusicNoteHeadLonga:
+
+		case TAMusicGlyphNoteHeadLonga:
 			bytes = "\xEF\x82\x87";
 		break;
 
-		case TAMusicNoteHeadBreve:
+		case TAMusicGlyphNoteHeadBreve:
 			bytes = "\xEF\x82\x87";
 		break;
 
-		case TAMusicNoteHeadWhole:
+		case TAMusicGlyphNoteHeadWhole:
 			bytes = "\xEF\x81\xB7";
 		break;
 
-		case TAMusicNoteHeadHalf:
-			bytes = "\xEF\x82\xBC";
+		case TAMusicGlyphNoteHeadHalf:
+			bytes = "\xEF\x83\xBA";
 		break;
 
-		case TAMusicNoteHeadQuarter:
+		case TAMusicGlyphNoteHeadQuarter:
 			bytes = "\xEF\x83\x8F";
 		break;
 
-		case TAMusicNoteHeadEighth:
+		case TAMusicGlyphNoteHeadEighth:
 			bytes = "\xEF\x83\x8F";
 		break;
 
-		case TAMusicNoteHead16th:
+		case TAMusicGlyphNoteHead16th:
 			bytes = "\xEF\x83\x8F";
 		break;
 
-		case TAMusicNoteHead32nd:
+		case TAMusicGlyphNoteHead32nd:
 			bytes = "\xEF\x83\x8F";
 		break;
 
-		case TAMusicNoteHead64th:
+		case TAMusicGlyphNoteHead64th:
 			bytes = "\xEF\x83\x8F";
 		break;
 
-		case TAMusicNoteHead128th:
+		case TAMusicGlyphNoteHead128th:
 			bytes = "\xEF\x83\x8F";
 		break;
-		
-		case TAMusicRestDoubleWhole:
-			bytes = "\xE2\x80\x9E";
+
+		case TAMusicGlyphRestDoubleWhole:
+			bytes = "\xEF\x83\x90";
 		break;
 
-		case TAMusicRestWhole:
-			bytes = "\xE2\x88\x91";
+		case TAMusicGlyphRestWhole:
+			bytes = "\xEF\x82\xB7";
 		break;
 
-		case TAMusicRestHalf:
-			bytes = "\xC3\x93";
+		case TAMusicGlyphRestHalf:
+			bytes = "\xEF\x83\xAE";
 		break;
 
-		case TAMusicRestQuarter:
-			bytes = "\xC5\x92";
+		case TAMusicGlyphRestQuarter:
+			bytes = "\xEF\x83\x8E";
 		break;
 
-		case TAMusicRestEighth:
-			bytes = "\xE2\x80\xB0";
+		case TAMusicGlyphRestEighth:
+			bytes = "\xEF\x83\xA4";
 		break;
 
-		case TAMusicRest16th:
-			bytes = "\xE2\x89\x88";
+		case TAMusicGlyphRest16th:
+			bytes = "\xEF\x83\x85";
 		break;
 
-		case TAMusicRest32nd:
-			bytes = "\xC2\xAE";
+		case TAMusicGlyphRest32nd:
+			bytes = "\xEF\x82\xA8";
 		break;
 
-		case TAMusicRest64th:
-			bytes = "\xC3\x99";
+		case TAMusicGlyphRest64th:
+			bytes = "\xEF\x83\xB4";
 		break;
 
-		case TAMusicRest128th:
-			bytes = "\xC3\x82";
+		case TAMusicGlyphRest128th:
+			bytes = "\xEF\x83\xA5";
 		break;
 
-		case TAMusicRestDefault:
-			bytes = "\xE2\x88\x91";
+		case TAMusicGlyphRestDefault:
+			bytes = "\xEF\x82\xB7";
+		break;
+
+		case TAMusicAugmentationDot:
+			bytes = "\xEF\x80\xAE";
 		break;
 		
 		case TAMusicGlyphNone:

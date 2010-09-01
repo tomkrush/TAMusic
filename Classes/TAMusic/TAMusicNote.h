@@ -29,10 +29,15 @@ typedef NSUInteger TAMusicNoteType;
 	NSUInteger _duration;
 	TAMusicPitch _pitch;
 	TAMusicNoteType _type;
+	BOOL _rest;
 }
 
 @property (nonatomic) NSUInteger duration;
 @property (nonatomic) TAMusicPitch pitch;
 @property (nonatomic) TAMusicNoteType type;
+@property (nonatomic) BOOL rest;
+
+@property (nonatomic, readonly) NSString *restGlyph;
+@property (nonatomic, readonly) NSString *noteHeadGlyph;
 
 @end

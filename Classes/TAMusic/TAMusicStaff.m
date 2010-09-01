@@ -325,7 +325,7 @@
 				timeSignatureRect.origin.y -= (interval * 2);
 				[beatDuration drawInRect:timeSignatureRect withFont:font];
 				
-				x += TAMusicSpaceBeforeTimeSignature + timeSignatureRect.size.width + TAMusicSpaceAfterTimeSignature;
+				x += timeSignatureRect.size.width + TAMusicSpaceAfterTimeSignature;
 			}
 			else
 			{
@@ -348,7 +348,7 @@
 				
 				[string drawInRect:timeSignatureRect withFont:font];
 				
-				x += TAMusicSpaceBeforeTimeSignature + timeSignatureRect.size.width + TAMusicSpaceAfterTimeSignature;
+				x += timeSignatureRect.size.width + TAMusicSpaceAfterTimeSignature;
 			}
 			
 			CGContextRestoreGState(context);
@@ -364,47 +364,25 @@
 		
 			for ( TAMusicNote *note in measure.notes )
 			{
-				NSString *noteHead;
+				NSString *glyph;
 				
-				switch (note.type) {
-					case TAMusicNoteTypeBreve:
-						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHeadBreve];
-						break;
-					case TAMusicNoteTypeLonga:
-						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHeadLonga];
-						break;
-					case TAMusicNoteTypeWhole:
-						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHeadWhole];
-						break;
-					case TAMusicNoteTypeHalf:
-						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHeadHalf];
-						break;
-					case TAMusicNoteTypeQuarter:
-						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHeadQuarter];
-						break;
-					case TAMusicNoteTypeEighth:
-						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHeadEighth];
-						break;
-					case TAMusicNoteType16th:
-						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHead16th];
-						break;
-					case TAMusicNoteType32nd:
-						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHead32nd];
-						break;
-					case TAMusicNoteType64th:
-						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHead64th];
-						break;
-					case TAMusicNoteType128th:
-						noteHead = [TAMusicFont characterForGlyph:TAMusicNoteHead128th];
-						break;
+				if ( note.rest )
+				{
+					glyph = note.restGlyph;
+				}
+				else
+				{
+					glyph = note.noteHeadGlyph;
 				}
 				
-				CGSize size = [TAMusicFont sizeOfString:noteHead];
+				CGSize size = [TAMusicFont sizeOfString:glyph];
+
+				measureRect.origin.x += TAMusicSpaceBeforeNote;
 
 				[[UIColor blackColor] set];
-				[noteHead drawInRect:measureRect withFont:font];
+				[glyph drawInRect:measureRect withFont:font];
 				
-				measureRect.origin.x += size.width;
+				measureRect.origin.x += size.width + TAMusicSpaceAfterNote;
 			}
 		}
 		

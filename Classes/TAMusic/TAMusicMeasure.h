@@ -24,6 +24,9 @@ const CGFloat TAMusicSpaceAfterKeySignature;
 const CGFloat TAMusicSpaceBeforeNotes;
 const CGFloat TAMusicSpaceAfterNotes;
 
+const CGFloat TAMusicSpaceBeforeNote;
+const CGFloat TAMusicSpaceAfterNote;
+
 CGSize TAMusicTimeSignatureSize(TATimeSignature timeSignature);
 
 @class TAMusicStaff;

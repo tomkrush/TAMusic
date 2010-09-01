@@ -26,7 +26,7 @@
 		NSError *error;
 		
 		NSData *data = [NSData dataWithContentsOfFile:path options:0 error:&error];
-		
+
 		return [self initWithData:data];
 	}
 	
@@ -52,7 +52,7 @@
 	if ( data )
 	{
 		if ( [super init] )
-		{	
+		{		
 			NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
 			[parser setDelegate:self];
 
@@ -77,7 +77,9 @@
 	{		
 		NSString *UID = [attributeDict valueForKey:@"id"];
 
-		if ( UID && ! [self.score partWithUID:UID] )
+		TAMusicPart *part = [self.score partWithUID:UID];
+
+		if ( UID && ! part )
 		{
 			TAMusicPart *part = [[TAMusicPart alloc] init];
 			part.UID = UID;
@@ -86,6 +88,10 @@
 
 			[self.score addPart:part];
 			[part release];
+		}
+		else
+		{
+			_part = part;
 		}
 	}
 	else if ( [elementName isEqualToString:@"part-name"] )
@@ -322,6 +328,12 @@
 	
 		_note.pitch = pitch;
 				
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"rest"] )
+	{
+		_note.rest = TRUE;
+		NSLog(@"Found Rest");
 		[self clearBuffer];
 	}
 	else if ( [elementName isEqualToString:@"type"] )

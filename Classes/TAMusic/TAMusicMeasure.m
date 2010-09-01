@@ -26,6 +26,9 @@ const CGFloat TAMusicSpaceAfterKeySignature = 3;
 const CGFloat TAMusicSpaceBeforeNotes = 8;
 const CGFloat TAMusicSpaceAfterNotes = 0;
 
+const CGFloat TAMusicSpaceBeforeNote = 6;
+const CGFloat TAMusicSpaceAfterNote = 6;
+
 BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOptions option)
 {
 	return (options & option) != 0;
@@ -77,7 +80,32 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 	if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsNotes) )
 	{
 		// Add width of clef
-		width += 120;
+		//width += 120;
+		
+		//TAMusicNoteType type = [[self.notes valueForKeyPath:@"@min.type"] intValue];
+
+		for ( TAMusicNote *note in self.notes )
+		{
+			NSString *glyph;
+		
+			if ( note.rest )
+			{
+				glyph = note.restGlyph;
+			}
+			else
+			{
+				glyph = note.noteHeadGlyph;
+			}
+			
+			CGSize size = [TAMusicFont sizeOfString:glyph];
+						
+			width += TAMusicSpaceBeforeNote + size.width + TAMusicSpaceAfterNote;
+		}
+	}
+	
+	if ( width < 44 )
+	{
+		width = 44;
 	}
 		
 	return width; 

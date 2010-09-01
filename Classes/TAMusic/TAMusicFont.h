@@ -50,28 +50,31 @@ enum
 	TAMusicGlyphDoubleSharp,
 	
 	// Note Heads
-	TAMusicNoteHeadLonga,
-	TAMusicNoteHeadBreve,
-	TAMusicNoteHeadWhole,
-	TAMusicNoteHeadHalf,
-	TAMusicNoteHeadQuarter,
-	TAMusicNoteHeadEighth,
-	TAMusicNoteHead16th,
-	TAMusicNoteHead32nd,
-	TAMusicNoteHead64th,
-	TAMusicNoteHead128th,
-	
+	TAMusicGlyphNoteHeadLonga,
+	TAMusicGlyphNoteHeadBreve,
+	TAMusicGlyphNoteHeadWhole,
+	TAMusicGlyphNoteHeadHalf,
+	TAMusicGlyphNoteHeadQuarter,
+	TAMusicGlyphNoteHeadEighth,
+	TAMusicGlyphNoteHead16th,
+	TAMusicGlyphNoteHead32nd,
+	TAMusicGlyphNoteHead64th,
+	TAMusicGlyphNoteHead128th,
+
 	// Rests
-	TAMusicRestDoubleWhole,
-	TAMusicRestWhole,
-	TAMusicRestHalf,
-	TAMusicRestQuarter,
-	TAMusicRestEighth,
-	TAMusicRest16th,
-	TAMusicRest32nd,
-	TAMusicRest64th,
-	TAMusicRest128th,
-	TAMusicRestDefault,
+	TAMusicGlyphRestDoubleWhole,
+	TAMusicGlyphRestWhole,
+	TAMusicGlyphRestHalf,
+	TAMusicGlyphRestQuarter,
+	TAMusicGlyphRestEighth,
+	TAMusicGlyphRest16th,
+	TAMusicGlyphRest32nd,
+	TAMusicGlyphRest64th,
+	TAMusicGlyphRest128th,
+	TAMusicGlyphRestDefault,
+	
+	// Augmentation
+	TAMusicAugmentationDot,
 	
 	TAMusicGlyphNone
 };

@@ -24,7 +24,7 @@
 	[button addTarget:self action:@selector(showScores:) forControlEvents:UIControlEventTouchDown];
 	button.origin = CGPointMake(10, 10);
 	
-	[self.view addSubview:button];
+	//[self.view addSubview:button];
 }
 
 - (void)showScores:(UIButton *)button
@@ -149,14 +149,16 @@
 	if ( ! _musicView )
 	{
 		NSString *fileName = [[NSUserDefaults standardUserDefaults] objectForKey:@"fileName"];
-	
+		
 		if ( ! fileName )
 		{
 			fileName = @"01a-Pitches-Pitches.xml";
 		}
-		
-		NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
-		
+
+		NSString *bundlePath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"musicXML.bundle"];
+
+		NSString *path = [[NSBundle bundleWithPath:bundlePath] pathForResource:fileName ofType:nil];		
+				
 		TAMusicXMLImporter *importer = [[TAMusicXMLImporter alloc] initWithContentsOfFile:path];
 
 		_musicView = [[TAMusicView alloc] initWithScore:importer.score];	
