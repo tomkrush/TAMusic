@@ -40,4 +40,8 @@ typedef NSUInteger TAMusicNoteType;
 @property (nonatomic, readonly) NSString *restGlyph;
 @property (nonatomic, readonly) NSString *noteHeadGlyph;
 
++ (NSString *)restGlyphForNoteType:(TAMusicNoteType)type;
++ (NSString *)noteHeadGlyphForNoteType:(TAMusicNoteType)type;
+
+
 @end

@@ -18,60 +18,29 @@
 
 - (NSString *)restGlyph
 {
-	if ( self.rest == NO )
+	if ( self.rest )
 	{
-		return nil;
+		return [TAMusicNote restGlyphForNoteType:self.type];
 	}
-	
-	NSString *glyph;
-	
-	switch (self.type) 
-	{
-		case TAMusicNoteTypeBreve:
-			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRestDefault];
-			break;
-		case TAMusicNoteTypeLonga:
-			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRestDoubleWhole];
-			break;
-		case TAMusicNoteTypeWhole:
-			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRestWhole];
-			break;
-		case TAMusicNoteTypeHalf:
-			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRestHalf];
-			break;
-		case TAMusicNoteTypeQuarter:
-			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRestQuarter];
-			break;
-		case TAMusicNoteTypeEighth:
-			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRestEighth];
-			break;
-		case TAMusicNoteType16th:
-			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRest16th];
-			break;
-		case TAMusicNoteType32nd:
-			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRest32nd];
-			break;
-		case TAMusicNoteType64th:
-			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRest64th];
-			break;
-		case TAMusicNoteType128th:
-			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRest128th];
-			break;
-	}
-	
-	return glyph;
+
+	return nil;
 }
 
 - (NSString *)noteHeadGlyph
 {
-	if ( self.rest)
+	if ( self.rest == NO)
 	{
-		return nil;
+		return [TAMusicNote noteHeadGlyphForNoteType:self.type];
 	}
-	
+
+	return nil;
+}
+
++ (NSString *)noteHeadGlyphForNoteType:(TAMusicNoteType)type
+{
 	NSString *glyph;
 
-	switch (self.type) 
+	switch (type) 
 	{
 		case TAMusicNoteTypeBreve:
 			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphNoteHeadBreve];
@@ -102,6 +71,47 @@
 			break;
 		case TAMusicNoteType128th:
 			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphNoteHead128th];
+			break;
+	}
+	
+	return glyph;
+}
+
++ (NSString *)restGlyphForNoteType:(TAMusicNoteType)type
+{
+	NSString *glyph;
+	
+	switch (type) 
+	{
+		case TAMusicNoteTypeBreve:
+			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRestDefault];
+			break;
+		case TAMusicNoteTypeLonga:
+			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRestDoubleWhole];
+			break;
+		case TAMusicNoteTypeWhole:
+			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRestWhole];
+			break;
+		case TAMusicNoteTypeHalf:
+			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRestHalf];
+			break;
+		case TAMusicNoteTypeQuarter:
+			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRestQuarter];
+			break;
+		case TAMusicNoteTypeEighth:
+			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRestEighth];
+			break;
+		case TAMusicNoteType16th:
+			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRest16th];
+			break;
+		case TAMusicNoteType32nd:
+			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRest32nd];
+			break;
+		case TAMusicNoteType64th:
+			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRest64th];
+			break;
+		case TAMusicNoteType128th:
+			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRest128th];
 			break;
 	}
 	

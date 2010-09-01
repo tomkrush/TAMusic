@@ -82,7 +82,14 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 		// Add width of clef
 		//width += 120;
 		
-		//TAMusicNoteType type = [[self.notes valueForKeyPath:@"@min.type"] intValue];
+//		TAMusicNoteType type = [[self.notes valueForKeyPath:@"@min.type"] intValue];
+//
+//		NSString *glyph = [TAMusicNote noteHeadGlyphForNoteType:type];
+//		CGSize size = [TAMusicFont sizeOfString:glyph];
+//		
+////	Should not be based off the note count. Should be based on the now many of the smallest not can fit into each note.
+//		width += (TAMusicSpaceBeforeNote + size.width + TAMusicSpaceAfterNote) * [self.notes count];
+
 
 		for ( TAMusicNote *note in self.notes )
 		{
@@ -101,6 +108,7 @@ BOOL TAMusicMeasureHasOption(TAMusicMeasureOptions options, TAMusicMeasureOption
 						
 			width += TAMusicSpaceBeforeNote + size.width + TAMusicSpaceAfterNote;
 		}
+
 	}
 	
 	if ( width < 44 )
