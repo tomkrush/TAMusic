@@ -14,11 +14,12 @@
 @interface TAMusicView : UIScrollView 
 {
 	TAMusicScore *_score;
-	
+	TAMusicPart *_part;
 }
 
 - (id)initWithScore:(TAMusicScore *)score;
 
+@property (nonatomic, retain) TAMusicPart *part;
 @property (nonatomic, retain) TAMusicScore *score;
 
 @end

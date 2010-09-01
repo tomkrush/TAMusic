@@ -12,6 +12,7 @@
 @implementation TAMusicView
 
 @synthesize score = _score;
+@synthesize part = _part;
 
 - (id)initWithScore:(TAMusicScore *)score
 {
@@ -32,8 +33,9 @@
 	UIRectFill(rect);
 
 	CGContextRef context = UIGraphicsGetCurrentContext();
-		
-	TAMusicPart *part = [_score.parts objectAtIndex:0];
+				
+	TAMusicPart *part = self.part ? self.part : [_score.parts objectAtIndex:0];
+	
 	NSUInteger numberOfMeasures = [part numberOfMeasures];
 
 	CFRange measureRange = CFRangeMake(0, numberOfMeasures);
@@ -63,6 +65,7 @@
 
 - (void)dealloc
 {
+	[_part release];
 	[_score release];
 	[super dealloc];
 }
