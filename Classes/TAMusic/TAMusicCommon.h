@@ -8,6 +8,32 @@
 
 #import <Foundation/Foundation.h>
 
+#pragma mark -
+#pragma mark Pitch
+
+enum
+{
+   TAMusicStepA,
+   TAMusicStepB,
+   TAMusicStepC,
+   TAMusicStepD,
+   TAMusicStepE,
+   TAMusicStepF,
+   TAMusicStepG
+};
+typedef NSUInteger TAMusicStep;
+
+struct TAMusicPitch 
+{
+   TAMusicStep step;
+   NSInteger alter;
+   NSInteger octave;
+};
+typedef struct TAMusicPitch TAMusicPitch;
+
+TAMusicPitch TAMusicPitchMake(TAMusicStep step, NSUInteger alter, NSInteger octave);
+TAMusicPitch TAMusicPitchDefault();
+void TAMusicPitchLog(TAMusicPitch pitch);
 
 #pragma mark -
 #pragma mark Clef
@@ -31,33 +57,12 @@ typedef struct TAMusicClef TAMusicClef;
 
 TAMusicClef TAMusicClefMake(TAMusicClefSign sign, NSInteger line);
 TAMusicClef TAMusicClefDefault();
+void TAMusicClefLog(TAMusicClef clef);
+CGFloat TAMusicDifferenceInStep(TAMusicClef clef, TAMusicPitch pitch);
+CGFloat TAMusicVerticalPosition(TAMusicClef clef, TAMusicPitch pitch);
+TAMusicPitch TAMusicPitchForClef(TAMusicClef clef);
 
 BOOL TAMusicClefIsEqualToClef(TAMusicClef sign1, TAMusicClef sign2);
-
-#pragma mark -
-#pragma mark Pitch
-
-enum
-{
-   TAMusicStepC,
-   TAMusicStepG,
-   TAMusicStepD,
-   TAMusicStepA,
-   TAMusicStepE,
-   TAMusicStepB,
-};
-typedef NSUInteger TAMusicStep;
-
-struct TAMusicPitch 
-{
-   TAMusicStep step;
-   NSInteger alter;
-   NSUInteger octave;
-};
-typedef struct TAMusicPitch TAMusicPitch;
-
-TAMusicPitch TAMusicPitchMake(TAMusicStep step, NSUInteger alter, NSUInteger octave);
-TAMusicPitch TAMusicPitchDefault();
 
 #pragma mark -
 #pragma mark Time Signature

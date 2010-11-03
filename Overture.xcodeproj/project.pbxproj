@@ -24,6 +24,7 @@
 		625FF528121EE93800D201A8 /* TAMusicInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 625FF526121EE93800D201A8 /* TAMusicInstrument.m */; };
 		625FF52B121EE94B00D201A8 /* TAMusicText.m in Sources */ = {isa = PBXBuildFile; fileRef = 625FF52A121EE94B00D201A8 /* TAMusicText.m */; };
 		625FF52C121EE94B00D201A8 /* TAMusicText.m in Sources */ = {isa = PBXBuildFile; fileRef = 625FF52A121EE94B00D201A8 /* TAMusicText.m */; };
+		62615A421239AFD9008FDA09 /* images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 62615A411239AFD9008FDA09 /* images.bundle */; };
 		6265F3FD121884A80010DEE2 /* TAMusicCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6265F3EB121884800010DEE2 /* TAMusicCommon.m */; };
 		6265F3FE121884A80010DEE2 /* TAMusicMeasure.m in Sources */ = {isa = PBXBuildFile; fileRef = 6265F3ED121884800010DEE2 /* TAMusicMeasure.m */; };
 		6265F3FF121884A80010DEE2 /* TAMusicPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 6265F3EF121884800010DEE2 /* TAMusicPart.m */; };
@@ -91,6 +92,7 @@
 		625FF526121EE93800D201A8 /* TAMusicInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicInstrument.m; path = Classes/TAMusic/TAMusicInstrument.m; sourceTree = "<group>"; };
 		625FF529121EE94B00D201A8 /* TAMusicText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicText.h; path = Classes/TAMusic/TAMusicText.h; sourceTree = "<group>"; };
 		625FF52A121EE94B00D201A8 /* TAMusicText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicText.m; path = Classes/TAMusic/TAMusicText.m; sourceTree = "<group>"; };
+		62615A411239AFD9008FDA09 /* images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = images.bundle; sourceTree = "<group>"; };
 		6265F3D41218840F0010DEE2 /* TAMusic Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TAMusic Unit Tests-Info.plist"; sourceTree = "<group>"; };
 		6265F3E0121884760010DEE2 /* TAMusicMeasureTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicMeasureTestCase.h; path = "Classes/TAMusic/Unit Tests/TAMusicMeasureTestCase.h"; sourceTree = "<group>"; };
 		6265F3E1121884760010DEE2 /* TAMusicMeasureTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicMeasureTestCase.m; path = "Classes/TAMusic/Unit Tests/TAMusicMeasureTestCase.m"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				62615A411239AFD9008FDA09 /* images.bundle */,
 				6270A138122B6F2F00DA149B /* musicXML.bundle */,
 				620FD90F12287A4100EDE2B7 /* Fonts */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
@@ -360,7 +363,11 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Overture" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectReferences = (
@@ -395,6 +402,7 @@
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				620FD9E2122887D100EDE2B7 /* Maestro.ttf in Resources */,
 				6270A139122B6F2F00DA149B /* musicXML.bundle in Resources */,
+				62615A421239AFD9008FDA09 /* images.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

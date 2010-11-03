@@ -353,17 +353,19 @@
 			
 			CGContextRestoreGState(context);
 		}
-		
+				
 		// Draw Notes			
 		if ( TAMusicMeasureHasOption(options, TAMusicMeasureOptionsNotes) )
 		{
 			CGRect measureRect = rect;
 			measureRect.origin.x += TAMusicSpaceBeforeNotes + x;
 			measureRect.size.width -= (x - measureRect.origin.x);
-			measureRect.origin.y -= (interval * (3)) + interval;
+
+			CGFloat measureX = measureRect.origin.x;			
+			CGFloat measureY = measureRect.origin.y;
 		
 			for ( TAMusicNote *note in measure.notes )
-			{
+			{			
 				NSString *glyph;
 				
 				if ( note.rest )
@@ -377,12 +379,62 @@
 				
 				CGSize size = [TAMusicFont sizeOfString:glyph];
 
-				measureRect.origin.x += TAMusicSpaceBeforeNote;
+				if ( ! note.chord ) {
+					measureRect.origin.x += TAMusicSpaceBeforeNote;
+				}
+				
+				CGFloat line = TAMusicVerticalPosition(measure.clef, note.pitch);
+																			
+//				switch (note.pitch.step) {
+//					case TAMusicStepA:
+//						line = 2.5f;
+//						break;
+//					case TAMusicStepB:
+//						line = 3.0f;
+//						break;
+//					case TAMusicStepC:
+//						line = 3.5f;
+//						break;
+//					case TAMusicStepD:
+//						line = 4.0f;
+//						break;
+//					case TAMusicStepE:
+//						line = 4.5f;
+//						break;
+//					case TAMusicStepF:
+//						line = 5.0f;
+//						break;
+//					case TAMusicStepG:
+//						line = 5.5f;
+//						break;
+//				}
+				
+				//line += ( note.pitch.octave - 1) * 7;
+				
+				if ( note.rest )
+				{
+					line = 3.0f;
+				}
+				
+				measureRect.origin.y = measureY - ((interval * (line)) + interval);
+
+				CGRect noteRect = measureRect;
+
+				if ( note.chord )
+				{
+					noteRect.origin.x = measureX;
+				}
 
 				[[UIColor blackColor] set];
-				[glyph drawInRect:measureRect withFont:font];
+				[glyph drawInRect:noteRect withFont:font];
+
 				
-				measureRect.origin.x += size.width + TAMusicSpaceAfterNote;
+				if ( ! note.chord )
+				{
+					measureX = measureRect.origin.x;
+
+					measureRect.origin.x += size.width + TAMusicSpaceAfterNote;
+				}
 			}
 		}
 		

@@ -38,7 +38,7 @@
 
 	TAMusicPart *part = [self.musicView.score.parts objectAtIndex:0];
 	NSString *name = part.name ? part.name : @"Untitled Part";
-	[_part setTitle:part.name forState:UIControlStateNormal];
+	[_part setTitle:name forState:UIControlStateNormal];
 	[_part sizeToFit];
 	
 	[self.view addSubview:self.scoreTitle];

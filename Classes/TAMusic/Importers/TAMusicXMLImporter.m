@@ -333,7 +333,11 @@
 	else if ( [elementName isEqualToString:@"rest"] )
 	{
 		_note.rest = TRUE;
-		NSLog(@"Found Rest");
+		[self clearBuffer];
+	}
+	else if ( [elementName isEqualToString:@"chord"] )
+	{
+		_note.chord = TRUE;
 		[self clearBuffer];
 	}
 	else if ( [elementName isEqualToString:@"type"] )
@@ -410,6 +414,10 @@
 		{
 			pitch.step = TAMusicStepB;
 		}
+		else if ( [[self buffer] isEqualToString:@"F"] )
+		{
+			pitch.step = TAMusicStepF;
+		}		
 		
 		_note.pitch = pitch;
 		

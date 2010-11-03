@@ -7,6 +7,7 @@
 //
 
 #import "OvertureAppDelegate.h"
+#import "TAMusic.h"
 
 @implementation OvertureAppDelegate
 
@@ -18,6 +19,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 {    
+	TAMusicClef clef = TAMusicClefMake(TAMusicClefSignG, 2);
+	TAMusicPitch pitch = TAMusicPitchMake(TAMusicStepA, 0, 4);
+	
+	TAMusicClefLog(clef);
+	TAMusicPitchLog(pitch);
+	NSLog(@"pitch difference: %d", TAMusicDifferenceInStep(clef, pitch));
+
     // Override point for customization after application launch.
 		
 	[self.window addSubview:self.rootController.view];	

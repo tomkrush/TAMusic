@@ -20,12 +20,14 @@ enum
    TAMusicNoteType16th,
    TAMusicNoteType32nd,
    TAMusicNoteType64th,
-   TAMusicNoteType128th
+   TAMusicNoteType128th,
+   TAMusicNoteTypeUnknown,
 };
 typedef NSUInteger TAMusicNoteType;
 
 @interface TAMusicNote : NSObject 
 {
+	BOOL _chord;
 	NSUInteger _duration;
 	TAMusicPitch _pitch;
 	TAMusicNoteType _type;
@@ -36,6 +38,7 @@ typedef NSUInteger TAMusicNoteType;
 @property (nonatomic) TAMusicPitch pitch;
 @property (nonatomic) TAMusicNoteType type;
 @property (nonatomic) BOOL rest;
+@property (nonatomic) BOOL chord;
 
 @property (nonatomic, readonly) NSString *restGlyph;
 @property (nonatomic, readonly) NSString *noteHeadGlyph;

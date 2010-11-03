@@ -13,7 +13,7 @@
 #pragma mark -
 #pragma mark Pitch
 
-TAMusicPitch TAMusicPitchMake(TAMusicStep step, NSUInteger alter, NSUInteger octave)
+TAMusicPitch TAMusicPitchMake(TAMusicStep step, NSUInteger alter, NSInteger octave)
 {
 	TAMusicPitch pitch;
 	pitch.step = step;
@@ -26,6 +26,43 @@ TAMusicPitch TAMusicPitchMake(TAMusicStep step, NSUInteger alter, NSUInteger oct
 TAMusicPitch TAMusicPitchDefault()
 {
 	return TAMusicPitchMake(TAMusicStepC, 0, 2);
+}
+
+void TAMusicPitchLog(TAMusicPitch pitch)
+{
+	NSString *step;
+	
+	switch (pitch.step) {
+		case TAMusicStepF:
+			step = @"F";
+		break;
+
+		case TAMusicStepC:
+			step = @"C";
+		break;
+		
+		case TAMusicStepG:
+			step = @"G";
+		break;
+		
+		case TAMusicStepD:
+			step = @"D";
+		break;
+		
+		case TAMusicStepA:
+			step = @"A";
+		break;
+		
+		case TAMusicStepE:
+			step = @"E";
+		break;
+		
+		case TAMusicStepB:
+			step = @"B";
+		break;
+	}
+
+	NSLog(@"pitch: {step:%@, alter:%d, octave:%d}", step, pitch.alter, pitch.octave);
 }
 
 #pragma mark -
@@ -177,6 +214,40 @@ TAMusicClef TAMusicClefMake(TAMusicClefSign sign, NSInteger line)
 	return clef;
 }
 
+void TAMusicClefLog(TAMusicClef clef)
+{
+    NSString *sign;
+    NSInteger octave;
+    
+    switch ( clef.sign )
+    {
+        case TAMusicClefSignC:
+            sign = @"C";
+            octave = 4;
+        break;
+        
+        case TAMusicClefSignF:
+            sign = @"F";
+            octave = 3;
+        break;
+        
+        case TAMusicClefSignG:
+            sign = @"G";
+            octave = 4;
+        break;
+        
+        case TAMusicClefSignPercussion:
+            sign = @"Percussion";
+        break;
+        
+        case TAMusicClefUnknown:
+            sign = @"Unknown";
+        break;
+    }
+
+    NSLog(@"Clef: {sign: %@, line: %d, octave: %d}", sign, clef.line, octave);
+}
+
 TAMusicClef TAMusicClefDefault()
 {
 	return TAMusicClefMake(TAMusicClefSignG, 2);
@@ -190,4 +261,91 @@ BOOL TAMusicClefIsEqualToClef(TAMusicClef clef1, TAMusicClef clef2)
 	}
 	
 	return NO;
+}
+
+TAMusicPitch TAMusicPitchForClef(TAMusicClef clef)
+{
+	TAMusicPitch pitch;
+	pitch.alter = 0;
+
+	switch (clef.sign) {
+		case TAMusicClefSignG:
+			pitch.step = TAMusicStepG;
+			pitch.octave = 4;
+			break;
+		case TAMusicClefSignF:
+			pitch.step = TAMusicStepF;
+			pitch.octave = 3;
+			break;
+		case TAMusicClefSignC:
+			pitch.step = TAMusicStepC;
+			pitch.octave = 4;
+			break;
+		default:
+			pitch.step = TAMusicStepC;
+			pitch.octave = 4;
+			break;
+	}
+
+	return pitch;
+}
+
+CGFloat TAMusicDifferenceInStep(TAMusicClef clef, TAMusicPitch pitch)
+{
+	TAMusicPitch clefPitch = TAMusicPitchForClef(clef);
+
+	CGFloat steps = 0;
+	NSInteger difference = pitch.step - clefPitch.step;
+
+//	if ( difference < 0 )
+//	{
+//		difference = abs(difference);
+//	}
+//	
+	steps += difference / 2;
+
+	//steps += 0.5f;
+
+	NSLog(@"value: %d", steps);
+
+	if ( pitch.octave > clefPitch.octave )
+	{
+		steps += (pitch.octave - clefPitch.octave);
+	}
+	else if ( pitch.octave < clefPitch.octave )
+	{
+		steps += (clefPitch.octave - pitch.octave);
+	}
+
+	return steps;
+}
+
+CGFloat TAMusicVerticalPosition(TAMusicClef clef, TAMusicPitch pitch)
+{
+	CGFloat step = 0;
+	NSInteger octave = 0;
+	
+	TAMusicPitch clefPitch = TAMusicPitchForClef(clef);
+	octave = clefPitch.octave;
+
+	switch (clef.sign)
+	{
+		case TAMusicClefSignG:
+			step = 2;
+		break;
+
+		case TAMusicClefSignF:
+			step = 4;
+		break;
+
+		case TAMusicClefSignC:
+			step = 3;
+		break;
+	}
+	
+	step += TAMusicDifferenceInStep(clef, pitch);
+	
+	//step = ((pitch.octave - 1) * 8) + pitch.step - (octave * 8);	
+	
+	return step;
 }

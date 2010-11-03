@@ -15,6 +15,17 @@
 @synthesize duration = _duration;
 @synthesize type = _type;
 @synthesize rest = _rest;
+@synthesize chord = _chord;
+
+- (id)init
+{
+	if ( self = [super init] )
+	{
+		self.type = TAMusicNoteTypeUnknown;
+	}
+	
+	return self;
+}
 
 - (NSString *)restGlyph
 {
@@ -72,6 +83,9 @@
 		case TAMusicNoteType128th:
 			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphNoteHead128th];
 			break;
+		case TAMusicNoteTypeUnknown:
+			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphNoteHeadQuarter];
+			break;
 	}
 	
 	return glyph;
@@ -112,6 +126,9 @@
 			break;
 		case TAMusicNoteType128th:
 			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRest128th];
+			break;
+		case TAMusicNoteTypeUnknown:
+			glyph = [TAMusicFont characterForGlyph:TAMusicGlyphRestDefault];
 			break;
 	}
 	
