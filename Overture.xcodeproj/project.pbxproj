@@ -48,6 +48,7 @@
 		62C599F012188C43003842DF /* TAMusicXMLImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C599EE12188C43003842DF /* TAMusicXMLImporter.m */; };
 		62C599F412188C79003842DF /* TAMusicImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C599F312188C79003842DF /* TAMusicImporter.m */; };
 		62C599F512188C79003842DF /* TAMusicImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C599F312188C79003842DF /* TAMusicImporter.m */; };
+		62CF48D612820BA80075797D /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CF48D512820BA80075797D /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		62C599EE12188C43003842DF /* TAMusicXMLImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicXMLImporter.m; path = Classes/TAMusic/Importers/TAMusicXMLImporter.m; sourceTree = "<group>"; };
 		62C599F212188C79003842DF /* TAMusicImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMusicImporter.h; path = Classes/TAMusic/Importers/TAMusicImporter.h; sourceTree = "<group>"; };
 		62C599F312188C79003842DF /* TAMusicImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMusicImporter.m; path = Classes/TAMusic/Importers/TAMusicImporter.m; sourceTree = "<group>"; };
+		62CF48D512820BA80075797D /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Overture-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Overture-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 				62962EFA121A603D002F6246 /* QuartzCore.framework in Frameworks */,
 				62708F381229903600DA149B /* libTAToolkit.a in Frameworks */,
 				6270942F122A19F200DA149B /* CoreText.framework in Frameworks */,
+				62CF48D612820BA80075797D /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +222,7 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				62962EF9121A603D002F6246 /* QuartzCore.framework */,
 				6270942E122A19F200DA149B /* CoreText.framework */,
+				62CF48D512820BA80075797D /* GameKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -505,7 +509,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Overture;
-				SDKROOT = iphoneos3.2;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -526,7 +530,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Overture;
-				SDKROOT = iphoneos3.2;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
